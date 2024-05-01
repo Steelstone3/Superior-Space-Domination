@@ -1,10 +1,8 @@
 use bevy::prelude::*;
-use plugins::{resources::ResourcesPlugin, running::RunningPlugin, start::StartPlugin};
-// use plugins::{
-//     event_handlers::EventHandlersPlugin, events::EventsPlugin, resources::ResourcesPlugin,
-//     running::RunningPlugin, start::StartPlugin, states::GameStatesPlugin,
-//     user_interface::UserInterfacePlugin,
-// };
+use plugins::{
+    event_handlers::EventHandlersPlugin, events::EventsPlugin, resources::ResourcesPlugin,
+    running::RunningPlugin, start::StartPlugin,
+};
 
 mod assets;
 mod components;
@@ -32,8 +30,8 @@ fn main() {
                     }),
                     ..Default::default()
                 }),
-            // EventsPlugin,
-            // EventHandlersPlugin,
+            EventsPlugin,
+            EventHandlersPlugin,
             ResourcesPlugin,
             StartPlugin,
             RunningPlugin,
