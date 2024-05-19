@@ -2,7 +2,7 @@ use bevy::reflect::Reflect;
 use rand_derive2::RandGen;
 use std::fmt::Display;
 
-#[derive(RandGen, Debug, PartialEq, Reflect)]
+#[derive(RandGen, Debug, PartialEq, Reflect, Clone, Copy)]
 pub enum SpaceStationSprite {
     AstralSovereignStation1,
     AstralSovereignStation2,

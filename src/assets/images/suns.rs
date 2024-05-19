@@ -1,0 +1,38 @@
+use bevy::reflect::Reflect;
+use rand_derive2::RandGen;
+use std::fmt::Display;
+
+#[derive(RandGen, Debug, PartialEq, Reflect, Clone, Copy)]
+pub enum SunSprite {
+    PixelSun,
+}
+
+impl Display for SunSprite {
+    fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            SunSprite::PixelSun => {
+                write!(formatter, "images/suns/Sun_Pixel.png")
+            }
+        }
+    }
+}
+
+#[cfg(test)]
+mod space_station_sprite_should {
+    use super::*;
+    use rstest::rstest;
+
+    #[rstest]
+    #[case(SunSprite::PixelSun, "images/suns/Sun_Pixel.png")]
+
+    fn return_the_expected_file_path(
+        #[case] space_station_sprite: SunSprite,
+        #[case] expected_file_path: String,
+    ) {
+        // When
+        let file_path = space_station_sprite.to_string();
+
+        // Then
+        assert_eq!(expected_file_path, file_path);
+    }
+}
