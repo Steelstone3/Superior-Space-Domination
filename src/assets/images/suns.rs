@@ -23,7 +23,7 @@ mod space_station_sprite_should {
     use rstest::rstest;
 
     #[rstest]
-    #[case(SunSprite::PixelSun, "images/suns/Sun_Pixel.png")]
+    #[case(SunSprite::PixelSun, "images/suns/sun_1.png")]
 
     fn return_the_expected_file_path(
         #[case] space_station_sprite: SunSprite,

@@ -2,8 +2,6 @@ use crate::{assets::images::planets::PlanetSprite, resources::constants::PLANET_
 use bevy::{ecs::component::Component, math::Vec2};
 use rand::Rng;
 
-// const PLANET_SPRITE_SIZE: Vec2 = Vec2::new(PLANET_TILE_SIZE, PLANET_TILE_SIZE);
-
 #[derive(Component, Clone, Copy)]
 pub struct Planet {
     pub sprite_path: PlanetSprite,
