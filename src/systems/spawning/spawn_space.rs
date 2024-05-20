@@ -21,8 +21,8 @@ pub fn spawn_space(mut commands: Commands, mut spawn_sprite_event: EventWriter<S
                 size: space.size,
                 transform: Transform {
                     translation: Vec3::new(
-                        x as f32 * TILE_SIZE,
-                        y as f32 * TILE_SIZE,
+                        (x as f32 * TILE_SIZE) + (TILE_SIZE / 2.0),
+                        (y as f32 * TILE_SIZE) + (TILE_SIZE / 2.0),
                         space.z_index,
                     ),
                     ..Default::default()
