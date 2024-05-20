@@ -1,4 +1,4 @@
 pub mod planet;
 pub mod space;
-pub mod spacestation;
+pub mod space_station;
 pub mod sun;

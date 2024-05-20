@@ -11,7 +11,7 @@ impl Display for SunSprite {
     fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             SunSprite::PixelSun => {
-                write!(formatter, "images/suns/Sun_Pixel.png")
+                write!(formatter, "images/suns/sun_1.png")
             }
         }
     }
@@ -23,7 +23,7 @@ mod space_station_sprite_should {
     use rstest::rstest;
 
     #[rstest]
-    #[case(SunSprite::PixelSun, "images/suns/Sun_Pixel.png")]
+    #[case(SunSprite::PixelSun, "images/suns/sun_1.png")]
 
     fn return_the_expected_file_path(
         #[case] space_station_sprite: SunSprite,
