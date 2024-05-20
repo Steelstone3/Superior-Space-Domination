@@ -4,7 +4,7 @@ use crate::{
     assets::images::space_stations::SpaceStationSprite, resources::constants::STATION_SIZE,
 };
 
-const SPACESTATION_SIZE: Vec2 = Vec2::new(STATION_SIZE, STATION_SIZE);
+const SPACE_STATION_SIZE: Vec2 = Vec2::new(STATION_SIZE, STATION_SIZE);
 
 #[derive(Component, Clone, Copy)]
 pub struct SpaceStation {
@@ -17,7 +17,7 @@ impl SpaceStation {
     pub fn new(sprite_path: SpaceStationSprite) -> Self {
         Self {
             sprite_path,
-            size: SPACESTATION_SIZE,
+            size: SPACE_STATION_SIZE,
             z_index: 1.0,
         }
     }
