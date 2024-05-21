@@ -2,35 +2,35 @@ use core::fmt::Display;
 use rand_derive2::RandGen;
 
 #[derive(RandGen, Debug, PartialEq)]
-pub enum Targetting {
+pub enum Targeting {
     CombatTarget,
     TradingTarget,
     CombatTargetOffScreen,
     TradingTargetOffScreen,
 }
 
-impl Display for Targetting {
+impl Display for Targeting {
     fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Targetting::CombatTarget => {
+            Targeting::CombatTarget => {
                 write!(
                     formatter,
                     "images/user_interface/targetting/lock_on_combat_target.png"
                 )
             }
-            Targetting::CombatTargetOffScreen => {
+            Targeting::CombatTargetOffScreen => {
                 write!(
                     formatter,
                     "images/user_interface/targetting/lock_on_combat_target_off_screen_indicator.png"
                 )
             }
-            Targetting::TradingTarget => {
+            Targeting::TradingTarget => {
                 write!(
                     formatter,
                     "images/user_interface/targetting/lock_on_trading_target.png"
                 )
             }
-            Targetting::TradingTargetOffScreen => {
+            Targeting::TradingTargetOffScreen => {
                 write!(
                     formatter,
                     "images/user_interface/targetting/lock_on_trading_target_off_screen_indicator.png"
@@ -41,29 +41,29 @@ impl Display for Targetting {
 }
 
 #[cfg(test)]
-mod targetting_sprite_should {
+mod targeting_sprite_should {
     use super::*;
     use rstest::rstest;
 
     #[rstest]
     #[case(
-        Targetting::CombatTarget,
+        Targeting::CombatTarget,
         "images/user_interface/targetting/lock_on_combat_target.png"
     )]
     #[case(
-        Targetting::CombatTargetOffScreen,
+        Targeting::CombatTargetOffScreen,
         "images/user_interface/targetting/lock_on_combat_target_off_screen_indicator.png"
     )]
     #[case(
-        Targetting::TradingTarget,
+        Targeting::TradingTarget,
         "images/user_interface/targetting/lock_on_trading_target.png"
     )]
     #[case(
-        Targetting::TradingTargetOffScreen,
+        Targeting::TradingTargetOffScreen,
         "images/user_interface/targetting/lock_on_trading_target_off_screen_indicator.png"
     )]
     fn return_the_expected_file_path(
-        #[case] targetting_sprite: Targetting,
+        #[case] targetting_sprite: Targeting,
         #[case] expected_file_path: String,
     ) {
         // When

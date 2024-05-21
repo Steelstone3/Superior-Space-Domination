@@ -4,13 +4,14 @@ use bevy::{
 };
 
 use crate::{
-    events::spawn_planet_event::SpawnPlanetEvent,
+    events::{event_handlers::select::select, spawn_planet_event::SpawnPlanetEvent},
     systems::{
         camera::{
             camera_movement::camera_movement, camera_position_reset::camera_position_reset,
             camera_zoom_keyboard::camera_zoom_keyboard,
             camera_zoom_mouse_and_touchpad::camera_zoom_mouse_and_touchpad,
         },
+        selecting::select_space_station::select_space_station,
         spawning::spawn_resource_planets::spawn_resource_planets,
     },
 };
@@ -28,6 +29,8 @@ impl Plugin for RunningPlugin {
                 camera_zoom_mouse_and_touchpad,
                 camera_movement,
                 camera_position_reset,
+                select,
+                select_space_station,
             ),
         )
         .add_systems(
