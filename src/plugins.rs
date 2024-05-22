@@ -1,3 +1,4 @@
+pub mod developer;
 pub mod event_handlers;
 pub mod events;
 pub mod resources;

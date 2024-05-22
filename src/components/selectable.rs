@@ -1,6 +1,5 @@
+use crate::assets::images::user_interface::selection::SelectionSprite;
 use bevy::ecs::component::Component;
-
-use crate::assets::images::selection::SelectionSprite;
 
 #[derive(Component, Clone, Copy)]
 pub struct Selection {

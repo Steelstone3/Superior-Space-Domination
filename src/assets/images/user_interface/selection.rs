@@ -11,7 +11,7 @@ impl Display for SelectionSprite {
     fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             SelectionSprite::TeamSelect1 => {
-                write!(formatter, "images/selection/Team_Select-1.png")
+                write!(formatter, "images/selection/team_select_1.png")
             }
         }
     }
@@ -23,7 +23,7 @@ mod targeting_sprite_should {
     use rstest::rstest;
 
     #[rstest]
-    #[case(SelectionSprite::TeamSelect1, "images/selection/Team_Select-1.png")]
+    #[case(SelectionSprite::TeamSelect1, "images/selection/team_select_1.png")]
 
     fn return_the_expected_file_path(
         #[case] selection_sprite: SelectionSprite,

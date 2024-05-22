@@ -35,6 +35,7 @@ fn main() {
             ResourcesPlugin,
             StartPlugin,
             RunningPlugin,
+            // DeveloperPlugin,
             // UserInterfacePlugin,
         ))
         .run();
