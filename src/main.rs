@@ -1,6 +1,7 @@
 use bevy::prelude::*;
 use plugins::{
-    event_handlers::EventHandlersPlugin, events::EventsPlugin, resources::ResourcesPlugin,
+    event_handlers::EventHandlersPlugin, events::EventsPlugin,
+    groups::developer_plugin_group::DeveloperPluginGroup, resources::ResourcesPlugin,
     running::RunningPlugin, start::StartPlugin,
 };
 
@@ -37,8 +38,7 @@ fn main() {
             ResourcesPlugin,
             StartPlugin,
             RunningPlugin,
-            // DeveloperPlugin,
-            // UserInterfacePlugin,
+            //DeveloperPluginGroup,
         ))
         .run();
 }
