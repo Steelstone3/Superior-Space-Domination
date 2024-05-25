@@ -5,18 +5,19 @@ use bevy::{
         query::With,
         system::{Commands, Query},
     },
+    sprite::Sprite,
     transform::components::Transform,
 };
 use rand::random;
 
 use crate::{
-    components::{selection::Selection, space_station::SpaceStation},
+    components::{selectable::Selectable, selection::Selection},
     events::{mouse_click_event::MouseClickEvent, spawn_sprite_event::SpawnSpriteEvent},
 };
 
-pub fn select_space_station(
+pub fn select_selectable(
     mut select_event_reader: EventReader<MouseClickEvent>,
-    space_station_query: Query<(&Transform, &SpaceStation)>,
+    selectable_query: Query<(&Transform, &Selectable, &Sprite)>,
     mut spawn_sprite_writer: EventWriter<SpawnSpriteEvent>,
     mut commands: Commands,
     selection_query: Query<Entity, With<Selection>>,
@@ -25,11 +26,11 @@ pub fn select_space_station(
         return;
     };
 
-    for space_station in space_station_query.iter() {
+    for space_station in selectable_query.iter() {
         let cursor_position = event.cursor_world_position;
-        let size = space_station.1.size;
-
-        eprintln!("{:?}", size);
+        let Some(size) = space_station.2.custom_size else {
+            return;
+        };
 
         let mut transform = space_station.0.to_owned();
         let x_min = transform.translation.x - size.x / 2.0;
