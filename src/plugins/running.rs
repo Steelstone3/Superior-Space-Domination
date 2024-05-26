@@ -11,7 +11,7 @@ use crate::{
             camera_zoom_keyboard::camera_zoom_keyboard,
             camera_zoom_mouse_and_touchpad::camera_zoom_mouse_and_touchpad,
         },
-        selecting::select_space_station::select_space_station,
+        selecting::select_selectable::select_selectable,
         spawning::spawn_resource_planets::spawn_resource_planets,
     },
 };
@@ -30,7 +30,7 @@ impl Plugin for RunningPlugin {
                 camera_movement,
                 camera_position_reset,
                 select,
-                select_space_station,
+                select_selectable,
             ),
         )
         .add_systems(
