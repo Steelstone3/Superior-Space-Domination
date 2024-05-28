@@ -1,3 +1,7 @@
+pub mod new_planets;
+pub mod new_space;
+pub mod new_starships;
+pub mod new_suns;
 pub mod planets;
 pub mod space;
 pub mod space_stations;
