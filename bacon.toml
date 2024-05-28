@@ -131,6 +131,6 @@ f = "job:format"
 u = "job:update"
 s = "job:git-status"
 i = "job:git-add" # Runs: git add . && git commit
-o = "job:git-pull"
+o = "job:git-pull-rebase"
 p = "job:git-push"
 # v = "jobs:check"
