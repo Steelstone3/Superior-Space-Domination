@@ -22,10 +22,10 @@ pub fn spawn_animated_sprite(
     for spawn_animated_sprite_event in spawn_animated_sprite_events.read() {
         let layout = TextureAtlasLayout::from_grid(
             Vec2::new(
-                spawn_animated_sprite_event.tile_size,
-                spawn_animated_sprite_event.tile_size,
+                spawn_animated_sprite_event.sprite_tile_size,
+                spawn_animated_sprite_event.sprite_tile_size,
             ),
-            spawn_animated_sprite_event.tile_columns,
+            spawn_animated_sprite_event.frame_count,
             1,
             None,
             None,
