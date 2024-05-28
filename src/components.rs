@@ -1,3 +1,4 @@
+pub mod animation_timer;
 pub mod planet;
 pub mod selectable;
 pub mod selection;
