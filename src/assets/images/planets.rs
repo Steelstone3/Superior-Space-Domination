@@ -29,11 +29,11 @@ pub enum PlanetSprite {
     GasGiantWorld3,
     GasGiantWorld4,
     GasGiantWorld5,
-    GasGiantWorld6,
-    GasGiantWorld7,
-    GasGiantWorld8,
-    GasGiantWorld9,
-    GasGiantWorld10,
+    // GasGiantWorld6,
+    // GasGiantWorld7,
+    // GasGiantWorld8,
+    // GasGiantWorld9,
+    // GasGiantWorld10,
     IceWorld1,
     IceWorld2,
     IceWorld3,
@@ -64,16 +64,16 @@ pub enum PlanetSprite {
     WetWorld8,
     WetWorld9,
     WetWorld10,
-    BlackHole1,
-    BlackHole2,
-    BlackHole3,
-    BlackHole4,
-    BlackHole5,
-    Galaxy1,
-    Galaxy2,
-    Galaxy3,
-    Galaxy4,
-    Galaxy5,
+    // BlackHole1,
+    // BlackHole2,
+    // BlackHole3,
+    // BlackHole4,
+    // BlackHole5,
+    // Galaxy1,
+    // Galaxy2,
+    // Galaxy3,
+    // Galaxy4,
+    // Galaxy5,
 }
 
 impl Display for PlanetSprite {
@@ -154,21 +154,21 @@ impl Display for PlanetSprite {
             PlanetSprite::GasGiantWorld5 => {
                 write!(formatter, "images/planets/gas_giant_world_5.png")
             }
-            PlanetSprite::GasGiantWorld6 => {
-                write!(formatter, "images/planets/gas_giant_world_6.png")
-            }
-            PlanetSprite::GasGiantWorld7 => {
-                write!(formatter, "images/planets/gas_giant_world_7.png")
-            }
-            PlanetSprite::GasGiantWorld8 => {
-                write!(formatter, "images/planets/gas_giant_world_8.png")
-            }
-            PlanetSprite::GasGiantWorld9 => {
-                write!(formatter, "images/planets/gas_giant_world_9.png")
-            }
-            PlanetSprite::GasGiantWorld10 => {
-                write!(formatter, "images/planets/gas_giant_world_10.png")
-            }
+            // PlanetSprite::GasGiantWorld6 => {
+            //     write!(formatter, "images/planets/gas_giant_world_6.png")
+            // }
+            // PlanetSprite::GasGiantWorld7 => {
+            //     write!(formatter, "images/planets/gas_giant_world_7.png")
+            // }
+            // PlanetSprite::GasGiantWorld8 => {
+            //     write!(formatter, "images/planets/gas_giant_world_8.png")
+            // }
+            // PlanetSprite::GasGiantWorld9 => {
+            //     write!(formatter, "images/planets/gas_giant_world_9.png")
+            // }
+            // PlanetSprite::GasGiantWorld10 => {
+            //     write!(formatter, "images/planets/gas_giant_world_10.png")
+            // }
             PlanetSprite::IceWorld1 => {
                 write!(formatter, "images/planets/ice_world_1.png")
             }
@@ -258,37 +258,36 @@ impl Display for PlanetSprite {
             }
             PlanetSprite::WetWorld10 => {
                 write!(formatter, "images/planets/wet_world_10.png")
-            }
-            PlanetSprite::BlackHole1 => {
-                write!(formatter, "images/planets/black_hole_1.png")
-            }
-            PlanetSprite::BlackHole2 => {
-                write!(formatter, "images/planets/black_hole_2.png")
-            }
-            PlanetSprite::BlackHole3 => {
-                write!(formatter, "images/planets/black_hole_3.png")
-            }
-            PlanetSprite::BlackHole4 => {
-                write!(formatter, "images/planets/black_hole_4.png")
-            }
-            PlanetSprite::BlackHole5 => {
-                write!(formatter, "images/planets/black_hole_5.png")
-            }
-            PlanetSprite::Galaxy1 => {
-                write!(formatter, "images/planets/galaxy_1.png")
-            }
-            PlanetSprite::Galaxy2 => {
-                write!(formatter, "images/planets/galaxy_2.png")
-            }
-            PlanetSprite::Galaxy3 => {
-                write!(formatter, "images/planets/galaxy_3.png")
-            }
-            PlanetSprite::Galaxy4 => {
-                write!(formatter, "images/planets/galaxy_4.png")
-            }
-            PlanetSprite::Galaxy5 => {
-                write!(formatter, "images/planets/galaxy_5.png")
-            }
+            } // PlanetSprite::BlackHole1 => {
+              //     write!(formatter, "images/planets/black_hole_1.png")
+              // }
+              // PlanetSprite::BlackHole2 => {
+              //     write!(formatter, "images/planets/black_hole_2.png")
+              // }
+              // PlanetSprite::BlackHole3 => {
+              //     write!(formatter, "images/planets/black_hole_3.png")
+              // }
+              // PlanetSprite::BlackHole4 => {
+              //     write!(formatter, "images/planets/black_hole_4.png")
+              // }
+              // PlanetSprite::BlackHole5 => {
+              //     write!(formatter, "images/planets/black_hole_5.png")
+              // }
+              // PlanetSprite::Galaxy1 => {
+              //     write!(formatter, "images/planets/galaxy_1.png")
+              // }
+              // PlanetSprite::Galaxy2 => {
+              //     write!(formatter, "images/planets/galaxy_2.png")
+              // }
+              // PlanetSprite::Galaxy3 => {
+              //     write!(formatter, "images/planets/galaxy_3.png")
+              // }
+              // PlanetSprite::Galaxy4 => {
+              //     write!(formatter, "images/planets/galaxy_4.png")
+              // }
+              // PlanetSprite::Galaxy5 => {
+              //     write!(formatter, "images/planets/galaxy_5.png")
+              // }
         }
     }
 }
