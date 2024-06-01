@@ -24,9 +24,9 @@ pub fn spawn_sun(
         frame_count: 50,
         spawn_sprite_event: SpawnSpriteEvent {
             sprite_path: sun.sprite_path.to_string(),
-            size: sun.size,
+            size: sun.transform.size,
             transform: Transform {
-                translation: Vec3::new(0.0, 0.0, sun.z_index),
+                translation: Vec3::new(0.0, 0.0, sun.transform.z_index),
                 ..Default::default()
             },
             entity: commands.spawn(sun).id(),

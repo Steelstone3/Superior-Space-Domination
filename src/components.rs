@@ -1,7 +1,11 @@
 pub mod animation_timer;
+pub mod faction;
 pub mod planet;
+pub mod player;
 pub mod selectable;
 pub mod selection;
 pub mod space;
 pub mod space_station;
+pub mod starship;
 pub mod sun;
+pub mod transform_component;

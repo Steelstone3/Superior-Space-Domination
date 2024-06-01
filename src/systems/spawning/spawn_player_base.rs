@@ -26,14 +26,14 @@ pub fn spawn_space_stations(
     for player in 0..game_settings.number_of_players {
         let space_station = SpaceStation::new(random());
         let current_angle = angle * player.to_float_sample();
-        let mut transform = Transform::from_xyz(0.0, 0.0, space_station.z_index)
+        let mut transform = Transform::from_xyz(0.0, 0.0, space_station.transform.z_index)
             .with_rotation(Quat::from_rotation_z(current_angle.to_radians()));
 
         transform.translation += transform.up() * SPACE_STATION_DISTANCE_FROM_CENTRE;
 
         spawn_sprite_event.send(SpawnSpriteEvent {
             sprite_path: space_station.sprite_path.to_string(),
-            size: space_station.size,
+            size: space_station.transform.size,
             transform,
             entity: commands.spawn(space_station).insert(Selectable).id(),
         });

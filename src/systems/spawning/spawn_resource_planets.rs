@@ -37,7 +37,7 @@ pub fn spawn_resource_planets(
             frame_count: 50,
             spawn_sprite_event: SpawnSpriteEvent {
                 sprite_path: planet.sprite_path.to_string(),
-                size: planet.size,
+                size: planet.transform.size,
                 transform,
                 entity: commands.spawn(planet).id(),
             },
