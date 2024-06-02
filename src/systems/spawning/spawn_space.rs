@@ -32,12 +32,12 @@ pub fn spawn_space(
         {
             spawn_sprite_event.send(SpawnSpriteEvent {
                 sprite_path: space.sprite_path.to_string(),
-                size: space.transform.size,
+                size: space.size_component.size,
                 transform: Transform {
                     translation: Vec3::new(
                         (x as f32 * SPACE_TILE_SIZE) + (SPACE_TILE_SIZE / 2.0),
                         (y as f32 * SPACE_TILE_SIZE) + (SPACE_TILE_SIZE / 2.0),
-                        space.transform.z_index,
+                        space.size_component.z_index,
                     ),
                     ..Default::default()
                 },

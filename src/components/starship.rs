@@ -1,5 +1,5 @@
 use super::{
-    starship_sprite_bundle::StarshipSpriteBundle, transform_component::TransformComponent,
+    size_component::SizeComponent, starship_sprite_bundle::StarshipSpriteBundle, weapon::Weapon,
 };
 use crate::{
     assets::images::faction_starships::starships::StarshipSprite,
@@ -11,8 +11,9 @@ use bevy::{ecs::component::Component, math::Vec2};
 #[allow(dead_code)]
 pub struct Starship {
     pub starship_sprite_bundle: StarshipSpriteBundle,
+    pub weapon: Weapon,
     pub faction: Faction,
-    pub transform: TransformComponent,
+    pub size_component: SizeComponent,
 }
 
 impl Starship {
@@ -21,10 +22,11 @@ impl Starship {
         Self {
             starship_sprite_bundle: StarshipSpriteBundle::new(starship_sprite),
             faction: Faction::new(starship_sprite),
-            transform: TransformComponent {
+            size_component: SizeComponent {
                 size: Vec2::new(TILE_SIZE, TILE_SIZE),
-                z_index: 4.0,
+                z_index: 5.0,
             },
+            weapon: Weapon::new(starship_sprite),
         }
     }
 }

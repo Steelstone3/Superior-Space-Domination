@@ -34,8 +34,8 @@ pub fn spawn_resource_planets(
         transform.translation +=
             transform.up() * PLANET_CLOSEST_DISTANCE_TO_SUN * rng.gen_range(1.0..3.0)
                 + (cmp::max(
-                    planet.transform.size.x as u32,
-                    planet.transform.size.y as u32,
+                    planet.size_component.size.x as u32,
+                    planet.size_component.size.y as u32,
                 ) * 2) as f32;
 
         spawn_animated_sprite_event.send(SpawnAnimatedSpriteEvent {
@@ -44,7 +44,7 @@ pub fn spawn_resource_planets(
             frame_count: 50,
             spawn_sprite_event: SpawnSpriteEvent {
                 sprite_path: planet.sprite_path.to_string(),
-                size: planet.transform.size,
+                size: planet.size_component.size,
                 transform,
                 entity: commands.spawn(planet).id(),
             },

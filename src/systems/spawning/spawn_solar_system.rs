@@ -36,7 +36,7 @@ pub fn spawn_sun(
         );
 
         let sun_transform = Transform {
-            translation: Vec3::new(x, y, sun.transform.z_index),
+            translation: Vec3::new(x, y, sun.size_component.z_index),
             ..Default::default()
         };
 
@@ -53,7 +53,7 @@ pub fn spawn_sun(
             frame_count: 50,
             spawn_sprite_event: SpawnSpriteEvent {
                 sprite_path: sun.sprite_path.to_string(),
-                size: sun.transform.size,
+                size: sun.size_component.size,
                 transform: sun_transform,
                 entity: commands.spawn(sun).id(),
             },
