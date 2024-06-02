@@ -21,9 +21,9 @@ pub fn spawn_space_stations(
     mut commands: Commands,
     mut spawn_sprite_event: EventWriter<SpawnSpriteEvent>,
 ) {
-    let angle = 360.0 / game_settings.number_of_players.to_float_sample();
+    let angle = 360.0 / (game_settings.number_of_players as i8).to_float_sample();
 
-    for player in 0..game_settings.number_of_players {
+    for player in 0..game_settings.number_of_players as i8 {
         let space_station = SpaceStation::new(random());
         let current_angle = angle * player.to_float_sample();
         let mut transform = Transform::from_xyz(0.0, 0.0, space_station.transform.z_index)
