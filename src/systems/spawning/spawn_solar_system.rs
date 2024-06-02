@@ -1,8 +1,5 @@
 use bevy::{
-    ecs::{
-        event::EventWriter,
-        system::{Commands, Res},
-    },
+    ecs::{event::EventWriter, system::Commands},
     math::Vec3,
     transform::components::Transform,
 };
@@ -14,22 +11,18 @@ use crate::{
         spawn_animated_sprite_event::SpawnAnimatedSpriteEvent,
         spawn_planet_event::SpawnPlanetEvent, spawn_sprite_event::SpawnSpriteEvent,
     },
-    resources::{
-        constants::{NUMBER_OF_TILES, SPACE_TILE_SIZE},
-        game_settings::GameSettings,
-    },
+    resources::constants::{NUMBER_OF_TILES, SPACE_TILE_SIZE},
 };
 
 pub fn spawn_sun(
     mut commands: Commands,
     mut spawn_animated_sprite_event: EventWriter<SpawnAnimatedSpriteEvent>,
     mut spawn_planet_event: EventWriter<SpawnPlanetEvent>,
-    game_settings: Res<GameSettings>,
 ) {
     let mut rng = rand::thread_rng();
-    let none_player_owned_stars: usize = rng.gen_range(0..3);
+    let none_player_owned_stars: usize = rng.gen_range(1..3);
 
-    for _ in 0..game_settings.number_of_players + none_player_owned_stars {
+    for _ in 0..none_player_owned_stars {
         let sun = Sun::new(random());
 
         let mut rng = rand::thread_rng();

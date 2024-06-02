@@ -1,5 +1,4 @@
 pub mod animation_timer;
-pub mod faction;
 pub mod planet;
 pub mod player;
 pub mod selectable;

@@ -15,7 +15,6 @@ use crate::{
     resources::{constants::SPACE_STATION_DISTANCE_FROM_CENTRE, game_settings::GameSettings},
 };
 
-#[allow(dead_code)]
 pub fn spawn_space_stations(
     game_settings: Res<GameSettings>,
     mut commands: Commands,

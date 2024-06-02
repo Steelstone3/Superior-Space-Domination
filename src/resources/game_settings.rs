@@ -8,7 +8,7 @@ pub struct GameSettings {
 impl Default for GameSettings {
     fn default() -> Self {
         Self {
-            number_of_players: 4,
+            number_of_players: 2,
         }
     }
 }
