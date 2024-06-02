@@ -20,7 +20,7 @@ impl Default for CameraSettings {
         Self {
             zoom_speed: 1.5,
             minimum_zoom: 0.5,
-            maximum_zoom: 5.0,
+            maximum_zoom: 10.0,
             current_zoom: 3.0,
             zoom_in: 1.1,
             zoom_out: 0.9,

@@ -11,15 +11,15 @@ use rand::random;
 
 use crate::{
     components::{selectable::Selectable, space_station::SpaceStation},
-    events::{spawn_planet_event::SpawnPlanetEvent, spawn_sprite_event::SpawnSpriteEvent},
+    events::spawn_sprite_event::SpawnSpriteEvent,
     resources::{constants::SPACE_STATION_DISTANCE_FROM_CENTRE, game_settings::GameSettings},
 };
 
+#[allow(dead_code)]
 pub fn spawn_space_stations(
     game_settings: Res<GameSettings>,
     mut commands: Commands,
     mut spawn_sprite_event: EventWriter<SpawnSpriteEvent>,
-    mut spawn_planet_event: EventWriter<SpawnPlanetEvent>,
 ) {
     let angle = 360.0 / game_settings.number_of_players.to_float_sample();
 
@@ -36,10 +36,6 @@ pub fn spawn_space_stations(
             size: space_station.transform.size,
             transform,
             entity: commands.spawn(space_station).insert(Selectable).id(),
-        });
-
-        spawn_planet_event.send(SpawnPlanetEvent {
-            space_station_transform: transform,
         });
     }
 }
