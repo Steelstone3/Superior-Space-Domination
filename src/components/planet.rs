@@ -19,7 +19,7 @@ impl Planet {
             sprite_path,
             transform: TransformComponent {
                 size: Vec2::new(planet_sprite_size, planet_sprite_size),
-                z_index: 0.0,
+                z_index: 2.0,
             },
         }
     }

@@ -7,5 +7,6 @@ pub mod selection;
 pub mod space;
 pub mod space_station;
 pub mod starship;
+pub mod starship_sprite_bundle;
 pub mod sun;
 pub mod transform_component;

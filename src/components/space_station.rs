@@ -20,7 +20,7 @@ impl SpaceStation {
             sprite_path,
             transform: TransformComponent {
                 size: SPACE_STATION_SIZE,
-                z_index: 1.0,
+                z_index: 3.0,
             },
         }
     }
