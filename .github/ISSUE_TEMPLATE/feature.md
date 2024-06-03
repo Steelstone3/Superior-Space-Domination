@@ -23,7 +23,7 @@ Describe the intended changes
 
 ### Feature: *NAME THE FEATURE HERE*
 
-**Senario**: *THE SENARIO HERE*
+**Scenario**: *THE SENARIO HERE*
 
 - **Given**:
   - **And**:
