@@ -1,24 +1,32 @@
 ---
 name: Task
 about: Provides the implementation detail of a User Story in sub-tasks
-title: 'Task:'
+title: 'Feature:'
 labels: enhancement
 assignees: ''
 
 ---
 
-## Descriptive task summary
+## Background
 
-**In order to** get some value
-**As a** actor/role 
-**I would like to** desired action
+*Provide a brief overview*
 
-## Rationale
+### Current Functionality
 
-Provide the reasoning for completing this work
+*Desribe the current functionality*
 
-## Expected behaviour
+### Desired Functionality
 
-Provide a list of the expected behaviours
+*Describe the intended changes*
 
-- 
+## Features
+
+### Feature: *NAME THE FEATURE HERE*
+
+**Senario**: *THE SENARIO HERE*
+
+- **Given**:
+  - **And**:
+- **When**:
+  - **And**:
+- **Then**:
