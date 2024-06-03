@@ -1,6 +1,7 @@
-pub mod destruction;
-pub mod engines;
-pub mod firing;
-pub mod shields;
-pub mod starships;
-pub mod weapon;
+// TODO rename file faction_starship_sprites
+pub mod destruction_sprite;
+pub mod engine_sprite;
+pub mod firing_sprite;
+pub mod shield_sprite;
+pub mod starship_sprite;
+pub mod weapon_sprite;
