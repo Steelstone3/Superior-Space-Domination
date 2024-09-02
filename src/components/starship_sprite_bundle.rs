@@ -3,6 +3,8 @@ use crate::assets::images::faction_starships::{
     shields::ShieldSprite, starships::StarshipSprite,
 };
 
+// TODO AH Implement
+#[allow(dead_code)]
 pub struct StarshipSpriteBundle {
     pub starship_sprite: StarshipSprite,
     pub shield_sprite: ShieldSprite,

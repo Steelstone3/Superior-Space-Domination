@@ -39,7 +39,7 @@ pub fn spawn_resource_planets(
                 ) * 2) as f32;
 
         spawn_animated_sprite_event.send(SpawnAnimatedSpriteEvent {
-            sprite_tile_size: 100.0,
+            sprite_tile_size: 100,
             frame_timing: 0.1,
             frame_count: 50,
             spawn_sprite_event: SpawnSpriteEvent {

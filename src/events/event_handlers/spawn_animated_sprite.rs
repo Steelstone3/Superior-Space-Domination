@@ -4,8 +4,8 @@ use bevy::{
         event::EventReader,
         system::{Commands, Res, ResMut},
     },
-    math::Vec2,
-    sprite::{Sprite, SpriteSheetBundle, TextureAtlas, TextureAtlasLayout},
+    math::UVec2,
+    sprite::{Sprite, SpriteBundle, TextureAtlas, TextureAtlasLayout},
 };
 
 use crate::{
@@ -21,11 +21,11 @@ pub fn spawn_animated_sprite(
 ) {
     for spawn_animated_sprite_event in spawn_animated_sprite_events.read() {
         let layout = TextureAtlasLayout::from_grid(
-            Vec2::new(
+            UVec2::new(
                 spawn_animated_sprite_event.sprite_tile_size,
                 spawn_animated_sprite_event.sprite_tile_size,
             ),
-            spawn_animated_sprite_event.frame_count,
+            spawn_animated_sprite_event.frame_count as u32,
             1,
             None,
             None,
@@ -36,7 +36,7 @@ pub fn spawn_animated_sprite(
             commands.get_entity(spawn_animated_sprite_event.spawn_sprite_event.entity)
         {
             entity.insert((
-                SpriteSheetBundle {
+                SpriteBundle {
                     sprite: Sprite {
                         custom_size: Some(spawn_animated_sprite_event.spawn_sprite_event.size),
                         ..Default::default()
@@ -47,12 +47,12 @@ pub fn spawn_animated_sprite(
                             .sprite_path
                             .to_string(),
                     ),
-                    atlas: TextureAtlas {
-                        layout: texture_atlas_layout,
-                        index: 0,
-                    },
                     transform: spawn_animated_sprite_event.spawn_sprite_event.transform,
                     ..Default::default()
+                },
+                TextureAtlas {
+                    layout: texture_atlas_layout,
+                    index: 0,
                 },
                 AnimationTimer::new(
                     spawn_animated_sprite_event.frame_timing,

@@ -48,7 +48,7 @@ pub fn spawn_sun(
         }
 
         spawn_animated_sprite_event.send(SpawnAnimatedSpriteEvent {
-            sprite_tile_size: 200.0,
+            sprite_tile_size: 200,
             frame_timing: 0.1,
             frame_count: 50,
             spawn_sprite_event: SpawnSpriteEvent {
