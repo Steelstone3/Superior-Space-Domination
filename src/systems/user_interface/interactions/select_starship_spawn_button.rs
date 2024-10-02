@@ -14,7 +14,7 @@ use crate::{
 
 // TODO AH This is just for the atark faction not sure how to handle this in future
 #[allow(dead_code)]
-pub fn select_starship_spawn_menu_button(
+pub fn select_starship_spawn_button(
     mut select_starship_spawn_menu_button_queries: Query<
         SelectStarshipSpawnMenuButtonQuery,
         ButtonFilters,
