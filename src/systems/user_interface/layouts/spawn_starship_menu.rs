@@ -21,13 +21,16 @@ use crate::{
     },
 };
 
-pub fn spawn_starship(
+#[allow(dead_code)]
+pub fn spawn_starship_sub_menu(
     selected_item: Res<SpawnMenuSelection>,
     mut user_interface_events: EventReader<UserInterfaceEvent>,
     sub_menu_queries: Query<SpawnSubMenuQuery>,
     mut commands: Commands,
     asset_server: Res<AssetServer>,
 ) {
+    // TODO Check "Spawn Menu" has spawned
+
     if selected_item.selection == SpawnSelection::Starships {
         for _ in user_interface_events.read() {
             // Remove UI
