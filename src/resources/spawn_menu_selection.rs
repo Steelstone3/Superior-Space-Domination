@@ -9,7 +9,7 @@ use crate::{
 #[derive(Resource)]
 pub struct SpawnMenuSelection {
     pub selection: SpawnSelection,
-    pub ships_selection: AtarkIcon,
+    pub starship_selection: AtarkIcon,
     // pub facilities_selection: Facility,
 }
 
@@ -17,7 +17,7 @@ impl Default for SpawnMenuSelection {
     fn default() -> Self {
         Self {
             selection: SpawnSelection::None,
-            ships_selection: AtarkIcon::None,
+            starship_selection: AtarkIcon::None,
         }
     }
 }
@@ -25,6 +25,6 @@ impl Default for SpawnMenuSelection {
 impl SpawnMenuSelection {
     pub fn reset(selected_item: &mut ResMut<'_, SpawnMenuSelection>) {
         selected_item.selection = SpawnSelection::None;
-        selected_item.ships_selection = AtarkIcon::None;
+        selected_item.starship_selection = AtarkIcon::None;
     }
 }

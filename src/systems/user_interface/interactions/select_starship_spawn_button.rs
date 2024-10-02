@@ -7,7 +7,7 @@ use bevy::{
 
 use crate::{
     events::user_interface_event::UserInterfaceEvent,
-    queries::user_interface_queries::{ButtonFilters, SelectStarshipSpawnMenuButtonQuery},
+    queries::user_interface_queries::{ButtonFilters, SelectStarshipSpawnButtonQuery},
     resources::spawn_menu_selection::SpawnMenuSelection,
     systems::user_interface::interactions::spawn_selection::SpawnSelection,
 };
@@ -16,7 +16,7 @@ use crate::{
 #[allow(dead_code)]
 pub fn select_starship_spawn_button(
     mut select_starship_spawn_menu_button_queries: Query<
-        SelectStarshipSpawnMenuButtonQuery,
+        SelectStarshipSpawnButtonQuery,
         ButtonFilters,
     >,
     mut selected_item: ResMut<SpawnMenuSelection>,
@@ -36,6 +36,8 @@ pub fn select_starship_spawn_button(
 
             selected_item.selection = SpawnSelection::Ships;
 
+            // selected_item.starship_selection = select_starship_spawn_menu_button_query.button.starship;
+
             *select_starship_spawn_menu_button_query.border_color = YELLOW.into();
 
             user_interface_event.send(UserInterfaceEvent {});
@@ -50,3 +52,22 @@ pub fn select_starship_spawn_button(
         }
     }
 }
+
+// match *select_animal_button_query.interaction {
+//     Interaction::Pressed => {
+//         tracing::info!("Pressed Animal");
+
+//         SelectedMenuItem::reset(&mut selected_item);
+//         selected_item.menu_selection = MainMenuSelection::Animals;
+//         selected_item.animal_selection =
+//             select_animal_button_query.selected_animal_button.animal;
+
+//         user_interface_event.send(UserInterfaceEvent {});
+//     }
+//     Interaction::Hovered => {
+//         tracing::info!("Hovered Animal");
+//     }
+//     Interaction::None => {
+//         // Dark Grey
+//         *select_animal_button_query.border_color = GREY.into();
+//     }
