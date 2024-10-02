@@ -1,14 +1,15 @@
 use bevy::ecs::system::{ResMut, Resource};
 
 use crate::{
-    assets::images::faction_starships::starships::StarshipSprite,
+    assets::user_interace::icons::starships::atark_icons::AtarkIcon,
     systems::user_interface::interactions::spawn_selection::SpawnSelection,
 };
 
+// TODO AH Make generic current only works for Atark faction
 #[derive(Resource)]
 pub struct SpawnMenuSelection {
     pub selection: SpawnSelection,
-    pub ships_selection: StarshipSprite,
+    pub ships_selection: AtarkIcon,
     // pub facilities_selection: Facility,
 }
 
@@ -16,7 +17,7 @@ impl Default for SpawnMenuSelection {
     fn default() -> Self {
         Self {
             selection: SpawnSelection::None,
-            ships_selection: StarshipSprite::None,
+            ships_selection: AtarkIcon::None,
         }
     }
 }
@@ -24,6 +25,6 @@ impl Default for SpawnMenuSelection {
 impl SpawnMenuSelection {
     pub fn reset(selected_item: &mut ResMut<'_, SpawnMenuSelection>) {
         selected_item.selection = SpawnSelection::None;
-        selected_item.ships_selection = StarshipSprite::None;
+        selected_item.ships_selection = AtarkIcon::None;
     }
 }

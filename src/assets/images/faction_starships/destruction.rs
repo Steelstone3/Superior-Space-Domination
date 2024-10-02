@@ -26,7 +26,6 @@ pub enum DestructionSprite {
     NoozlerScout,
     NoozlerSupportShip,
     NoozlerTorpedoShip,
-    None,
 }
 
 impl Display for DestructionSprite {
@@ -127,10 +126,6 @@ impl Display for DestructionSprite {
             DestructionSprite::NoozlerTorpedoShip => write!(
                 formatter,
                 "images/factions/noozler/starships/battlecruiser/noozler_torpedo_ship_destruction.png"
-            ),
-            DestructionSprite::None => write!(
-                formatter,
-                ""
             ),
         }
     }

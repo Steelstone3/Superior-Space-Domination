@@ -4,6 +4,7 @@ use std::fmt::Display;
 
 #[derive(RandGen, Debug, PartialEq, Reflect, Clone, Copy)]
 pub enum AtarkIcon {
+    Commander,
     Battlecruiser,
     Bomber,
     Dreadnought,
@@ -12,11 +13,18 @@ pub enum AtarkIcon {
     Scout,
     SupportShip,
     TorpedoShip,
+    None,
 }
 
 impl Display for AtarkIcon {
     fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            AtarkIcon::Commander => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/atark/atark_commander.png"
+                )
+            }
             AtarkIcon::Battlecruiser => {
                 write!(
                     formatter,
@@ -65,6 +73,7 @@ impl Display for AtarkIcon {
                     "user_interface/icons/starships/atark/atark_torpedo_ship_icon.png"
                 )
             }
+            AtarkIcon::None => write!(formatter, ""),
         }
     }
 }

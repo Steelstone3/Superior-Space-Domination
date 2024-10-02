@@ -142,11 +142,6 @@ impl Weapon {
                 size,
                 faction: Faction::Noozler,
             },
-            StarshipSprite::None => Self {
-                weapon_sprite: WeaponSprite::NoozlerTorpedoShip,
-                size,
-                faction: Faction::None,
-            },
         }
     }
 }

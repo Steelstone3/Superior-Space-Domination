@@ -27,7 +27,6 @@ pub enum StarshipSprite {
     NoozlerScout,
     NoozlerSupportShip,
     NoozlerTorpedoShip,
-    None,
 }
 
 impl Display for StarshipSprite {
@@ -129,7 +128,6 @@ impl Display for StarshipSprite {
                 formatter,
                 "images/factions/noozler/starships/battlecruiser/noozler_torpedo_ship.png"
             ),
-            StarshipSprite::None => write!(formatter, ""),
         }
     }
 }
