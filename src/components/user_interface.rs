@@ -1,4 +1,4 @@
-use super::starship::Starship;
+use crate::assets::user_interace::icons::starships::atark_icons::AtarkIcon;
 use bevy::prelude::Component;
 
 #[derive(Component)]
@@ -7,7 +7,7 @@ pub struct SelectStarshipSpawnMenuButton;
 #[allow(dead_code)]
 #[derive(Component)]
 pub struct SelectStarshipSpawnButton {
-    pub starship: Starship,
+    pub icon: AtarkIcon,
 }
 
 #[allow(dead_code)]
@@ -17,5 +17,5 @@ pub struct SelectFacilitySpawnMenuButton;
 #[allow(dead_code)]
 #[derive(Component)]
 pub struct SelectFacilitySpawnButton {
-    pub starship: Starship,
+    pub icon: AtarkIcon,
 }

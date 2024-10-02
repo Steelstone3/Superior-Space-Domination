@@ -36,7 +36,7 @@ pub fn select_starship_spawn_button(
 
             selected_item.selection = SpawnSelection::Ships;
 
-            // selected_item.starship_selection = select_starship_spawn_menu_button_query.button.starship;
+            selected_item.starship_selection = select_starship_spawn_menu_button_query.button.icon;
 
             *select_starship_spawn_menu_button_query.border_color = YELLOW.into();
 
@@ -44,30 +44,9 @@ pub fn select_starship_spawn_button(
         }
         Interaction::Hovered => {
             tracing::info!("Hovered Ships");
-
-            *select_starship_spawn_menu_button_query.border_color = YELLOW.into();
         }
         Interaction::None => {
             *select_starship_spawn_menu_button_query.border_color = GREY.into();
         }
     }
 }
-
-// match *select_animal_button_query.interaction {
-//     Interaction::Pressed => {
-//         tracing::info!("Pressed Animal");
-
-//         SelectedMenuItem::reset(&mut selected_item);
-//         selected_item.menu_selection = MainMenuSelection::Animals;
-//         selected_item.animal_selection =
-//             select_animal_button_query.selected_animal_button.animal;
-
-//         user_interface_event.send(UserInterfaceEvent {});
-//     }
-//     Interaction::Hovered => {
-//         tracing::info!("Hovered Animal");
-//     }
-//     Interaction::None => {
-//         // Dark Grey
-//         *select_animal_button_query.border_color = GREY.into();
-//     }
