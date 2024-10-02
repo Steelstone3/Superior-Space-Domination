@@ -7,9 +7,7 @@ use bevy::{
 
 use crate::{
     events::user_interface_event::UserInterfaceEvent,
-    queries::user_interface_queries::{
-        ButtonFilters, SelectStarshipSpawnButtonQuery, SelectStarshipSpawnMenuButtonQuery,
-    },
+    queries::user_interface_queries::{ButtonFilters, SelectStarshipSpawnMenuButtonQuery},
     resources::spawn_menu_selection::SpawnMenuSelection,
     systems::user_interface::interactions::spawn_selection::SpawnSelection,
 };
