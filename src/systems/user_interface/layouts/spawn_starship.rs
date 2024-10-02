@@ -10,7 +10,15 @@ use bevy::{
 };
 
 use crate::{
-    assets::user_interace::icons::starships::atark_icons::AtarkIcon, components::user_interface::SpawnSubMenu, events::user_interface_event::UserInterfaceEvent, queries::user_interface_queries::SpawnSubMenuQuery, resources::spawn_menu_selection::SpawnMenuSelection, systems::user_interface::interactions::spawn_selection::SpawnSelection
+    assets::user_interace::icons::starships::atark_icons::AtarkIcon,
+    components::user_interface::SpawnSubMenu,
+    events::user_interface_event::UserInterfaceEvent,
+    queries::user_interface_queries::SpawnSubMenuQuery,
+    resources::spawn_menu_selection::SpawnMenuSelection,
+    systems::user_interface::{
+        interactions::spawn_selection::SpawnSelection,
+        styles::{create_starship_button_bundle, create_starship_button_icon},
+    },
 };
 
 pub fn spawn_starship(
@@ -59,7 +67,7 @@ pub fn spawn_starship(
                 // Battlecruiser
                 .with_children(|parent| {
                     parent
-                        .spawn(create_starship_button_bundle(ZooAnimal::Wolf))
+                        .spawn(create_starship_button_bundle(AtarkIcon::Battlecruiser))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
