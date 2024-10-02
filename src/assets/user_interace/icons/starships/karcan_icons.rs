@@ -4,6 +4,7 @@ use std::fmt::Display;
 
 #[derive(RandGen, Debug, PartialEq, Reflect, Clone, Copy)]
 pub enum KarcanIcon {
+    Commander,
     Battlecruiser,
     Bomber,
     Dreadnought,
@@ -12,11 +13,18 @@ pub enum KarcanIcon {
     Scout,
     SupportShip,
     TorpedoShip,
+    None,
 }
 
 impl Display for KarcanIcon {
     fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            KarcanIcon::Commander => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/karcan/karcan_commander.png"
+                )
+            }
             KarcanIcon::Battlecruiser => {
                 write!(
                     formatter,
@@ -65,6 +73,7 @@ impl Display for KarcanIcon {
                     "user_interface/icons/starships/karcan/karcan_torpedo_ship_icon.png"
                 )
             }
+            KarcanIcon::None => write!(formatter, ""),
         }
     }
 }

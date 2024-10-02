@@ -4,6 +4,7 @@ use std::fmt::Display;
 
 #[derive(RandGen, Debug, PartialEq, Reflect, Clone, Copy)]
 pub enum NoozlerIcon {
+    Commander,
     Battlecruiser,
     Bomber,
     Dreadnought,
@@ -12,11 +13,18 @@ pub enum NoozlerIcon {
     Scout,
     SupportShip,
     TorpedoShip,
+    None,
 }
 
 impl Display for NoozlerIcon {
     fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            NoozlerIcon::Commander => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/noozler/noozler_commander.png"
+                )
+            }
             NoozlerIcon::Battlecruiser => {
                 write!(
                     formatter,
@@ -65,6 +73,7 @@ impl Display for NoozlerIcon {
                     "user_interface/icons/starships/noozler/noozler_torpedo_ship_icon.png"
                 )
             }
+            NoozlerIcon::None => write!(formatter, ""),
         }
     }
 }
