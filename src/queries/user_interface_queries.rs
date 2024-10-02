@@ -1,8 +1,12 @@
 use bevy::{
-    ecs::query::{Changed, QueryData, QueryFilter}, prelude::Entity, ui::{BorderColor, Interaction}
+    ecs::query::{Changed, QueryData, QueryFilter},
+    prelude::Entity,
+    ui::{BorderColor, Interaction},
 };
 
-use crate::components::user_interface::{SelectStarshipSpawnButton, SelectStarshipSpawnMenuButton, SpawnSubMenu};
+use crate::components::user_interface::{
+    SelectStarshipSpawnButton, SelectStarshipSpawnMenuButton, SpawnSubMenu,
+};
 
 #[derive(QueryData)]
 pub struct SpawnSubMenuQuery {

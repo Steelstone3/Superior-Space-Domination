@@ -10,9 +10,7 @@ use crate::{
     components::user_interface::SelectStarshipSpawnButton,
 };
 
-pub fn create_starship_button_bundle(
-    icon: AtarkIcon,
-) -> (ButtonBundle, SelectStarshipSpawnButton) {
+pub fn create_starship_button_bundle(icon: AtarkIcon) -> (ButtonBundle, SelectStarshipSpawnButton) {
     (
         ButtonBundle {
             style: Style {

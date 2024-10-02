@@ -1,6 +1,8 @@
 use bevy::app::{Plugin, Startup, Update};
 
-use crate::systems::user_interface::layouts::{spawn_menu::spawn_menu, spawn_starship::spawn_starship};
+use crate::systems::user_interface::layouts::{
+    spawn_menu::spawn_menu, spawn_starship::spawn_starship,
+};
 
 pub struct UserInterfacePlugin;
 
