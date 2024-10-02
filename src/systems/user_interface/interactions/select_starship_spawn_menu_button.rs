@@ -34,7 +34,7 @@ pub fn select_starship_spawn_menu_button(
 
             SpawnMenuSelection::reset(&mut selected_item);
 
-            selected_item.selection = SpawnSelection::Ships;
+            selected_item.selection = SpawnSelection::Starships;
 
             *select_starship_spawn_menu_button_query.border_color = YELLOW.into();
 

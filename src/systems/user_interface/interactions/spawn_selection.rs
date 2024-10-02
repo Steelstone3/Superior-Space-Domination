@@ -2,6 +2,6 @@
 #[derive(PartialEq)]
 pub enum SpawnSelection {
     None,
-    Ships,
+    Starships,
     Facilities,
 }
