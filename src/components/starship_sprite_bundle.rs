@@ -184,6 +184,13 @@ impl StarshipSpriteBundle {
                 firing_sprite: FiringSprite::NoozlerTorpedoShip,
                 destruction_sprite: DestructionSprite::NoozlerTorpedoShip,
             },
+            StarshipSprite::None => Self {
+                starship_sprite,
+                shield_sprite: ShieldSprite::None,
+                engine_sprite: EngineSprite::None,
+                firing_sprite: FiringSprite::None,
+                destruction_sprite: DestructionSprite::None,
+            },
         }
     }
 }

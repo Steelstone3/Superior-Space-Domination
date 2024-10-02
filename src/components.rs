@@ -8,4 +8,5 @@ pub mod space_station;
 pub mod starship;
 pub mod starship_sprite_bundle;
 pub mod sun;
+pub mod user_interface;
 pub mod weapon;

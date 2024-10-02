@@ -26,6 +26,7 @@ pub enum EngineSprite {
     NoozlerScout,
     NoozlerSupportShip,
     NoozlerTorpedoShip,
+    None,
 }
 
 impl Display for EngineSprite {
@@ -127,6 +128,7 @@ impl Display for EngineSprite {
                 formatter,
                 "images/factions/noozler/starships/battlecruiser/noozler_torpedo_ship_engines.png"
             ),
+            EngineSprite::None => write!(formatter, ""),
         }
     }
 }

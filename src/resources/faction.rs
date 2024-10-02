@@ -4,6 +4,7 @@ pub enum Faction {
     Atark,
     Karcan,
     Noozler,
+    None,
 }
 
 impl Faction {
@@ -33,6 +34,7 @@ impl Faction {
             StarshipSprite::NoozlerScout => Faction::Noozler,
             StarshipSprite::NoozlerSupportShip => Faction::Noozler,
             StarshipSprite::NoozlerTorpedoShip => Faction::Noozler,
+            StarshipSprite::None => Faction::None,
         }
     }
 }
