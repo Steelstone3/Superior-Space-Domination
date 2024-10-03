@@ -12,8 +12,8 @@ use rand::{random, Rng};
 use crate::{
     components::planet::Planet,
     events::{
-        spawn_planet_event::SpawnPlanetEvent,
         spawn_sprite_event::{SpawnAnimatedSprite, SpawnSprite, SpawnSpriteEvent},
+        spawn_transform_dependent_sprite_events::SpawnPlanetEvent,
     },
     resources::constants::PLANET_CLOSEST_DISTANCE_TO_SUN,
 };

@@ -8,8 +8,8 @@ use rand::{random, Rng};
 use crate::{
     components::sun::Sun,
     events::{
-        spawn_planet_event::SpawnPlanetEvent,
         spawn_sprite_event::{SpawnAnimatedSprite, SpawnSprite, SpawnSpriteEvent},
+        spawn_transform_dependent_sprite_events::SpawnPlanetEvent,
     },
     resources::constants::{NUMBER_OF_TILES, SPACE_TILE_SIZE},
 };

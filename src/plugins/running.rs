@@ -4,7 +4,9 @@ use bevy::{
 };
 
 use crate::{
-    events::{event_handlers::select::select, spawn_planet_event::SpawnPlanetEvent},
+    events::{
+        event_handlers::select::select, spawn_transform_dependent_sprite_events::SpawnPlanetEvent,
+    },
     systems::{
         animation::animate::animate_sprites,
         camera::{
