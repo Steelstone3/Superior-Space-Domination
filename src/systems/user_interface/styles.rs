@@ -6,11 +6,13 @@ use bevy::{
 };
 
 use crate::{
-
-    assets::user_interace::icons::starship_icons::StarshipIcon, components::user_interface::SelectStarshipSpawnButton
+    assets::user_interace::icons::starship_icons::StarshipIcon,
+    components::user_interface::SelectStarshipSpawnButton,
 };
 
-pub fn create_starship_button_bundle(icon: StarshipIcon) -> (ButtonBundle, SelectStarshipSpawnButton) {
+pub fn create_starship_button_bundle(
+    icon: StarshipIcon,
+) -> (ButtonBundle, SelectStarshipSpawnButton) {
     (
         ButtonBundle {
             style: Style {

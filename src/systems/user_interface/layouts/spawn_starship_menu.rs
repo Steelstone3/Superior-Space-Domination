@@ -10,10 +10,15 @@ use bevy::{
 };
 
 use crate::{
-    assets::user_interace::icons::starship_icons::StarshipIcon, components::user_interface::SpawnSubMenu, events::user_interface_event::UserInterfaceEvent, queries::user_interface_queries::SpawnSubMenuQuery, resources::spawn_menu_selection::SpawnMenuSelection, systems::user_interface::{
+    assets::user_interace::icons::starship_icons::StarshipIcon,
+    components::user_interface::SpawnSubMenu,
+    events::user_interface_event::UserInterfaceEvent,
+    queries::user_interface_queries::SpawnSubMenuQuery,
+    resources::spawn_menu_selection::SpawnMenuSelection,
+    systems::user_interface::{
         interactions::spawn_selection::SpawnSelection,
         styles::{create_starship_button_bundle, create_starship_button_icon},
-    }
+    },
 };
 
 pub fn spawn_starship_sub_menu(
@@ -56,7 +61,9 @@ pub fn spawn_starship_sub_menu(
                 // Support Ship
                 .with_children(|parent| {
                     parent
-                        .spawn(create_starship_button_bundle(StarshipIcon::AtarkSupportShip))
+                        .spawn(create_starship_button_bundle(
+                            StarshipIcon::AtarkSupportShip,
+                        ))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
@@ -89,7 +96,9 @@ pub fn spawn_starship_sub_menu(
                 // Torpedo Ship
                 .with_children(|parent| {
                     parent
-                        .spawn(create_starship_button_bundle(StarshipIcon::AtarkTorpedoShip))
+                        .spawn(create_starship_button_bundle(
+                            StarshipIcon::AtarkTorpedoShip,
+                        ))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
@@ -122,7 +131,9 @@ pub fn spawn_starship_sub_menu(
                 // Battlecruiser
                 .with_children(|parent| {
                     parent
-                        .spawn(create_starship_button_bundle(StarshipIcon::AtarkBattlecruiser))
+                        .spawn(create_starship_button_bundle(
+                            StarshipIcon::AtarkBattlecruiser,
+                        ))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
@@ -133,7 +144,9 @@ pub fn spawn_starship_sub_menu(
                 // Dreadnought
                 .with_children(|parent| {
                     parent
-                        .spawn(create_starship_button_bundle(StarshipIcon::AtarkDreadnought))
+                        .spawn(create_starship_button_bundle(
+                            StarshipIcon::AtarkDreadnought,
+                        ))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,

@@ -1,10 +1,15 @@
 use crate::{
-    assets::user_interace::icons::starship_icons::StarshipIcon, components::{selectable::Selectable, starship::Starship}, events::spawn_sprite_event::SpawnSpriteEvent, queries::{
+    assets::user_interace::icons::starship_icons::StarshipIcon,
+    components::{selectable::Selectable, starship::Starship},
+    events::spawn_sprite_event::SpawnSpriteEvent,
+    queries::{
         camera_queries::CameraTransformOrthographicProjectionQuery, window_queries::WindowQuery,
-    }, resources::spawn_menu_selection::SpawnMenuSelection, systems::{
+    },
+    resources::spawn_menu_selection::SpawnMenuSelection,
+    systems::{
         controller::get_location::get_cursor_location,
         user_interface::interactions::spawn_selection::SpawnSelection,
-    }
+    },
 };
 use bevy::{
     ecs::{
