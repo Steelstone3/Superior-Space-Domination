@@ -22,8 +22,6 @@ pub fn select_starship_spawn_button(
     mut selected_item: ResMut<SpawnMenuSelection>,
     mut user_interface_event: EventWriter<UserInterfaceEvent>,
 ) {
-    // TODO Check "Spawn Starship Menu" has spawned
-
     let Ok(mut select_starship_spawn_menu_button_query) =
         select_starship_spawn_menu_button_queries.get_single_mut()
     else {

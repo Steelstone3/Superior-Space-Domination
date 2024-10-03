@@ -2,7 +2,7 @@ use bevy::app::{Plugin, Startup, Update};
 
 use crate::systems::user_interface::{
     interactions::{
-        select_starship_spawn_button::select_starship_spawn_button,
+        deselect_all::deselect_all, select_starship_spawn_button::select_starship_spawn_button,
         select_starship_spawn_menu_button::select_starship_spawn_menu_button,
     },
     layouts::{
@@ -23,6 +23,7 @@ impl Plugin for UserInterfacePlugin {
                 select_starship_spawn_menu_button,
                 select_starship_spawn_button,
                 despawn_sub_menus,
+                deselect_all,
             ),
         );
     }
