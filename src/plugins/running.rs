@@ -5,7 +5,7 @@ use bevy::{
 
 use crate::{
     events::{
-        event_handlers::select::select, spawn_transform_dependent_sprite_events::SpawnPlanetEvent,
+        event_handlers::select::select, spawn_transform_dependent_sprite_events::SpawnedSunEvent,
     },
     systems::{
         animation::animate::animate_sprites,
@@ -39,7 +39,7 @@ impl Plugin for RunningPlugin {
         )
         .add_systems(
             Update,
-            spawn_resource_planets.run_if(event_called::<SpawnPlanetEvent>),
+            spawn_resource_planets.run_if(event_called::<SpawnedSunEvent>),
         );
     }
 }

@@ -13,7 +13,7 @@ use crate::{
     components::planet::Planet,
     events::{
         spawn_sprite_event::{SpawnAnimatedSprite, SpawnSprite, SpawnSpriteEvent},
-        spawn_transform_dependent_sprite_events::SpawnPlanetEvent,
+        spawn_transform_dependent_sprite_events::SpawnedSunEvent,
     },
     resources::constants::PLANET_CLOSEST_DISTANCE_TO_SUN,
 };
@@ -21,7 +21,7 @@ use crate::{
 pub fn spawn_resource_planets(
     mut commands: Commands,
     mut spawn_animated_sprite_event: EventWriter<SpawnSpriteEvent>,
-    mut spawn_planet_event_reader: EventReader<SpawnPlanetEvent>,
+    mut spawn_planet_event_reader: EventReader<SpawnedSunEvent>,
 ) {
     for spawn_planet_event in spawn_planet_event_reader.read() {
         let mut rng = rand::thread_rng();

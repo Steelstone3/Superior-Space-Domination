@@ -1,11 +1,11 @@
 use bevy::{ecs::event::Event, transform::components::Transform};
 
 #[derive(Event)]
-pub struct SpawnPlanetEvent {
+pub struct SpawnedSunEvent {
     pub sun_transform: Transform,
 }
 
 #[derive(Event)]
-pub struct SpawnStarterSpaceshipEvent {
+pub struct SpawnedStarbaseEvent {
     pub starbase_transform: Transform,
 }

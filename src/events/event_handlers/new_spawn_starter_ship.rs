@@ -5,14 +5,14 @@ use crate::{
     components::{selectable::Selectable, starship::Starship},
     events::{
         spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
-        spawn_transform_dependent_sprite_events::SpawnStarterSpaceshipEvent,
+        spawn_transform_dependent_sprite_events::SpawnedStarbaseEvent,
     },
 };
 
 pub fn new_spawn_starter_ship(
     mut commands: Commands,
     mut spawn_sprite_event: EventWriter<SpawnSpriteEvent>,
-    mut spawn_starter_spaceship_event_reader: EventReader<SpawnStarterSpaceshipEvent>,
+    mut spawn_starter_spaceship_event_reader: EventReader<SpawnedStarbaseEvent>,
 ) {
     for event in spawn_starter_spaceship_event_reader.read() {
         let starship = Starship::new(StarshipSprite::AtarkBattleCruiser);

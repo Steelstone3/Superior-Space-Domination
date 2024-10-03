@@ -9,7 +9,7 @@ use crate::{
     components::sun::Sun,
     events::{
         spawn_sprite_event::{SpawnAnimatedSprite, SpawnSprite, SpawnSpriteEvent},
-        spawn_transform_dependent_sprite_events::SpawnPlanetEvent,
+        spawn_transform_dependent_sprite_events::SpawnedSunEvent,
     },
     resources::constants::{NUMBER_OF_TILES, SPACE_TILE_SIZE},
 };
@@ -17,7 +17,7 @@ use crate::{
 pub fn spawn_sun(
     mut commands: Commands,
     mut spawn_sprite_event: EventWriter<SpawnSpriteEvent>,
-    mut spawn_planet_event: EventWriter<SpawnPlanetEvent>,
+    mut spawn_planet_event: EventWriter<SpawnedSunEvent>,
 ) {
     let mut rng = rand::thread_rng();
     let none_player_owned_stars: usize = rng.gen_range(1..3);
@@ -44,7 +44,7 @@ pub fn spawn_sun(
         let number_of_planets: usize = rng.gen_range(1..5);
 
         for _ in 0..number_of_planets {
-            spawn_planet_event.send(SpawnPlanetEvent { sun_transform });
+            spawn_planet_event.send(SpawnedSunEvent { sun_transform });
         }
 
         spawn_sprite_event.send(SpawnSpriteEvent::spawn_animated_sprite(
