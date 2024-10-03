@@ -12,15 +12,15 @@ use rand::{random, Rng};
 use crate::{
     components::planet::Planet,
     events::{
-        spawn_animated_sprite_event::SpawnAnimatedSpriteEvent,
-        spawn_planet_event::SpawnPlanetEvent, spawn_sprite_event::SpawnSpriteEvent,
+        spawn_planet_event::SpawnPlanetEvent,
+        spawn_sprite_event_2::{SpawnAnimatedSprite, SpawnSprite, SpawnSpriteEvent2},
     },
     resources::constants::PLANET_CLOSEST_DISTANCE_TO_SUN,
 };
 
 pub fn spawn_resource_planets(
     mut commands: Commands,
-    mut spawn_animated_sprite_event: EventWriter<SpawnAnimatedSpriteEvent>,
+    mut spawn_animated_sprite_event: EventWriter<SpawnSpriteEvent2>,
     mut spawn_planet_event_reader: EventReader<SpawnPlanetEvent>,
 ) {
     for spawn_planet_event in spawn_planet_event_reader.read() {
@@ -38,16 +38,18 @@ pub fn spawn_resource_planets(
                     planet.size_component.size.y as u32,
                 ) * 2) as f32;
 
-        spawn_animated_sprite_event.send(SpawnAnimatedSpriteEvent {
-            sprite_tile_size: 100,
-            frame_timing: 0.1,
-            frame_count: 50,
-            spawn_sprite_event: SpawnSpriteEvent {
+        spawn_animated_sprite_event.send(SpawnSpriteEvent2::spawn_animated_sprite(
+            SpawnSprite {
                 sprite_path: planet.sprite_path.to_string(),
                 size: planet.size_component.size,
                 transform,
                 entity: commands.spawn(planet).id(),
             },
-        });
+            SpawnAnimatedSprite {
+                sprite_tile_size: 100,
+                frame_timing: 0.1,
+                frame_count: 50,
+            },
+        ));
     }
 }

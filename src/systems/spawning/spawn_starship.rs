@@ -1,7 +1,7 @@
 use crate::{
     assets::user_interace::icons::starship_icons::StarshipIcon,
     components::{selectable::Selectable, starship::Starship},
-    events::spawn_sprite_event::SpawnSpriteEvent,
+    events::spawn_sprite_event_2::{SpawnSprite, SpawnSpriteEvent2},
     queries::{
         camera_queries::CameraTransformOrthographicProjectionQuery, window_queries::WindowQuery,
     },
@@ -25,7 +25,7 @@ pub fn spawn_starship(
     mut commands: Commands,
     selected_item: ResMut<SpawnMenuSelection>,
     mut mouse_button_input: ResMut<ButtonInput<MouseButton>>,
-    mut spawn_sprite_event: EventWriter<SpawnSpriteEvent>,
+    mut spawn_sprite_event: EventWriter<SpawnSpriteEvent2>,
     windows_query: Query<WindowQuery>,
     camera_queries: Query<CameraTransformOrthographicProjectionQuery>,
 ) {
@@ -59,11 +59,11 @@ pub fn spawn_starship(
     if selected_item.starship_selection != StarshipIcon::None {
         let starship = Starship::new_from_icon(selected_item.starship_selection);
 
-        spawn_sprite_event.send(SpawnSpriteEvent {
+        spawn_sprite_event.send(SpawnSpriteEvent2::spawn_sprite(SpawnSprite {
             sprite_path: starship.starship_sprite_bundle.starship_sprite.to_string(),
             size: starship.size_component.size,
             transform,
             entity: commands.spawn(starship).insert(Selectable).id(),
-        });
+        }));
     }
 }

@@ -1,12 +1,9 @@
 use bevy::{
     ecs::{entity::Entity, event::Event},
     math::Vec2,
-    sprite::Sprite,
     transform::components::Transform,
     utils::default,
 };
-
-use super::event_handlers::spawn_animated_sprite;
 
 #[derive(PartialEq)]
 pub enum SpriteType {
