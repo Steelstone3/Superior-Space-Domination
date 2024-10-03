@@ -15,14 +15,14 @@ use crate::{
     components::{selectable::Selectable, selection::Selection},
     events::{
         mouse_click_event::MouseClickEvent,
-        spawn_sprite_event_2::{SpawnSprite, SpawnSpriteEvent2},
+        spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
     },
 };
 
 pub fn select_selectable(
     mut select_event_reader: EventReader<MouseClickEvent>,
     selectable_query: Query<(&Transform, &Selectable, &Sprite)>,
-    mut spawn_sprite_writer: EventWriter<SpawnSpriteEvent2>,
+    mut spawn_sprite_writer: EventWriter<SpawnSpriteEvent>,
     mut commands: Commands,
     selection_query: Query<Entity, With<Selection>>,
 ) {
@@ -84,7 +84,7 @@ pub fn select_selectable(
             return;
         };
 
-        spawn_sprite_writer.send(SpawnSpriteEvent2::spawn_sprite(SpawnSprite {
+        spawn_sprite_writer.send(SpawnSpriteEvent::spawn_sprite(SpawnSprite {
             sprite_path: selection.sprite_path.to_string(),
             size,
             transform: *closest.0,

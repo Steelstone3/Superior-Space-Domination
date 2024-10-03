@@ -12,14 +12,14 @@ pub enum SpriteType {
 }
 
 #[derive(Event)]
-pub struct SpawnSpriteEvent2 {
+pub struct SpawnSpriteEvent {
     pub sprite_type: SpriteType,
     pub spawn_sprite: SpawnSprite,
     pub spawn_animated_sprite: SpawnAnimatedSprite,
     // pub transform_dependent: TransformDependency,
 }
 
-impl SpawnSpriteEvent2 {
+impl SpawnSpriteEvent {
     pub fn spawn_sprite(spawn_sprite: SpawnSprite) -> Self {
         // let transform = spawn_sprite.transform;
 
@@ -47,7 +47,7 @@ impl SpawnSpriteEvent2 {
 
     #[allow(dead_code)]
     pub fn add_transform_dependency(
-        spawn_sprite_event: SpawnSpriteEvent2,
+        spawn_sprite_event: SpawnSpriteEvent,
         // transform: Transform,
     ) -> Self {
         Self {

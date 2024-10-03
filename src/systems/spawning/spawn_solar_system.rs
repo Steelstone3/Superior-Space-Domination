@@ -9,14 +9,14 @@ use crate::{
     components::sun::Sun,
     events::{
         spawn_planet_event::SpawnPlanetEvent,
-        spawn_sprite_event_2::{SpawnAnimatedSprite, SpawnSprite, SpawnSpriteEvent2},
+        spawn_sprite_event::{SpawnAnimatedSprite, SpawnSprite, SpawnSpriteEvent},
     },
     resources::constants::{NUMBER_OF_TILES, SPACE_TILE_SIZE},
 };
 
 pub fn spawn_sun(
     mut commands: Commands,
-    mut spawn_sprite_event: EventWriter<SpawnSpriteEvent2>,
+    mut spawn_sprite_event: EventWriter<SpawnSpriteEvent>,
     mut spawn_planet_event: EventWriter<SpawnPlanetEvent>,
 ) {
     let mut rng = rand::thread_rng();
@@ -47,7 +47,7 @@ pub fn spawn_sun(
             spawn_planet_event.send(SpawnPlanetEvent { sun_transform });
         }
 
-        spawn_sprite_event.send(SpawnSpriteEvent2::spawn_animated_sprite(
+        spawn_sprite_event.send(SpawnSpriteEvent::spawn_animated_sprite(
             SpawnSprite {
                 sprite_path: sun.sprite_path.to_string(),
                 size: sun.size_component.size,

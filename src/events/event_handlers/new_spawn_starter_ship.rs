@@ -4,14 +4,14 @@ use crate::{
     assets::images::faction_starships::starships::StarshipSprite,
     components::{selectable::Selectable, starship::Starship},
     events::{
-        spawn_sprite_event_2::{SpawnSprite, SpawnSpriteEvent2},
+        spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
         spawn_startership_event::SpawnStarterShipEvent,
     },
 };
 
 pub fn new_spawn_starter_ship(
     mut commands: Commands,
-    mut spawn_sprite_event: EventWriter<SpawnSpriteEvent2>,
+    mut spawn_sprite_event: EventWriter<SpawnSpriteEvent>,
     mut spawn_startership_eventreader: EventReader<SpawnStarterShipEvent>,
 ) {
     for event in spawn_startership_eventreader.read() {
@@ -24,7 +24,7 @@ pub fn new_spawn_starter_ship(
         let size = starship.size_component.size;
         let entity = commands.spawn(starship).insert(Selectable).id();
 
-        spawn_sprite_event.send(SpawnSpriteEvent2::spawn_sprite(SpawnSprite {
+        spawn_sprite_event.send(SpawnSpriteEvent::spawn_sprite(SpawnSprite {
             sprite_path: sprite,
             size,
             transform: starship_transform,
