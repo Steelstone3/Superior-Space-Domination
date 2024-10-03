@@ -1,9 +1,6 @@
 use crate::{
     assets::user_interace::icons::starships::atark_icons::AtarkIcon,
-    components::{
-        selectable::Selectable,
-        starship::Starship,
-    },
+    components::{selectable::Selectable, starship::Starship},
     events::spawn_sprite_event::SpawnSpriteEvent,
     queries::{
         camera_queries::CameraTransformOrthographicProjectionQuery, window_queries::WindowQuery,

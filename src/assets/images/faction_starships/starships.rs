@@ -40,31 +40,31 @@ impl Display for StarshipSprite {
             ),
             StarshipSprite::AtarkBomber => write!(
                 formatter,
-                "images/factions/atark/starships/battlecruiser/atark_bomber.png"
+                "images/factions/atark/starships/bomber/atark_bomber.png"
             ),
             StarshipSprite::AtarkDreadnought => write!(
                 formatter,
-                "images/factions/atark/starships/battlecruiser/atark_dreadnought.png"
+                "images/factions/atark/starships/dreadnought/atark_dreadnought.png"
             ),
             StarshipSprite::AtarkFighter => write!(
                 formatter,
-                "images/factions/atark/starships/battlecruiser/atark_fighter.png"
+                "images/factions/atark/starships/fighter/atark_fighter.png"
             ),
             StarshipSprite::AtarkFrigate => write!(
                 formatter,
-                "images/factions/atark/starships/battlecruiser/atark_frigate.png"
+                "images/factions/atark/starships/frigate/atark_frigate.png"
             ),
             StarshipSprite::AtarkScout => write!(
                 formatter,
-                "images/factions/atark/starships/battlecruiser/atark_scout.png"
+                "images/factions/atark/starships/scout/atark_scout.png"
             ),
             StarshipSprite::AtarkSupportShip => write!(
                 formatter,
-                "images/factions/atark/starships/battlecruiser/atark_support_ship.png"
+                "images/factions/atark/starships/support_ship/atark_support_ship.png"
             ),
             StarshipSprite::AtarkTorpedoShip => write!(
                 formatter,
-                "images/factions/atark/starships/battlecruiser/atark_torpedo_ship.png"
+                "images/factions/atark/starships/torpedo_ship/atark_torpedo_ship.png"
             ),
             StarshipSprite::KarcanBattleCruiser => write!(
                 formatter,
