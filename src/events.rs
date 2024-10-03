@@ -9,3 +9,4 @@ pub mod spawn_planet_event;
 pub mod spawn_sprite_event;
 pub mod spawn_startership_event;
 pub mod user_interface_event;
+pub mod spawn_sprite_event_2;

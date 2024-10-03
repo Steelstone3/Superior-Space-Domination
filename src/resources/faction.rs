@@ -7,7 +7,7 @@ pub enum Faction {
 }
 
 impl Faction {
-    pub fn new(starship_sprite: StarshipSprite) -> Faction {
+    pub fn determine_faction(starship_sprite: StarshipSprite) -> Faction {
         match starship_sprite {
             StarshipSprite::AtarkBattleCruiser => Faction::Atark,
             StarshipSprite::AtarkBomber => Faction::Atark,
