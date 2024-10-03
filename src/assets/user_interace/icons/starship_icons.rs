@@ -1,7 +1,3 @@
-// pub mod atark_icons;
-// pub mod karcan_icons;
-// pub mod noozler_icons;
-
 use bevy::reflect::Reflect;
 use rand_derive2::RandGen;
 use std::fmt::Display;
@@ -86,122 +82,103 @@ impl Display for StarshipIcon {
                     "user_interface/icons/starships/atark/atark_dreadnought_icon.png"
                 )
             }
-            StarshipIcon::KarcanSupportShip => todo!(),
-            StarshipIcon::KarcanScout => todo!(),
-            StarshipIcon::KarcanFighter => todo!(),
-            StarshipIcon::KarcanTorpedoShip => todo!(),
-            StarshipIcon::KarcanBomber => todo!(),
-            StarshipIcon::KarcanFrigate => todo!(),
-            StarshipIcon::KarcanBattlecruiser => todo!(),
-            StarshipIcon::KarcanDreadnought => todo!(),
-            StarshipIcon::NoozlerSupportShip => todo!(),
-            StarshipIcon::NoozlerScout => todo!(),
-            StarshipIcon::NoozlerFighter => todo!(),
-            StarshipIcon::NoozlerTorpedoShip => todo!(),
-            StarshipIcon::NoozlerBomber => todo!(),
-            StarshipIcon::NoozlerFrigate => todo!(),
-            StarshipIcon::NoozlerBattlecruiser => todo!(),
-            StarshipIcon::NoozlerDreadnought => todo!(),
+            StarshipIcon::KarcanSupportShip => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/karcan/karcan_support_ship_icon.png"
+                )
+            }
+            StarshipIcon::KarcanScout => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/karcan/karcan_scout_icon.png"
+                )
+            }
+            StarshipIcon::KarcanFighter => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/karcan/karcan_fighter_icon.png"
+                )
+            }
+            StarshipIcon::KarcanTorpedoShip => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/karcan/karcan_torpedo_ship_icon.png"
+                )
+            }
+            StarshipIcon::KarcanBomber => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/karcan/karcan_bomber_icon.png"
+                )
+            }
+            StarshipIcon::KarcanFrigate => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/karcan/karcan_frigate_icon.png"
+                )
+            }
+            StarshipIcon::KarcanBattlecruiser => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/karcan/karcan_battlecruiser_icon.png"
+                )
+            }
+            StarshipIcon::KarcanDreadnought => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/karcan/karcan_dreadnought_icon.png"
+                )
+            }
+            StarshipIcon::NoozlerSupportShip => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/noozler/noozler_support_ship_icon.png"
+                )
+            }
+            StarshipIcon::NoozlerScout => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/noozler/noozler_scout_icon.png"
+                )
+            }
+            StarshipIcon::NoozlerFighter => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/noozler/noozler_fighter_icon.png"
+                )
+            }
+            StarshipIcon::NoozlerTorpedoShip => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/noozler/noozler_torpedo_ship_icon.png"
+                )
+            }
+            StarshipIcon::NoozlerBomber => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/noozler/noozler_bomber_icon.png"
+                )
+            }
+            StarshipIcon::NoozlerFrigate => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/noozler/noozler_frigate_icon.png"
+                )
+            }
+            StarshipIcon::NoozlerBattlecruiser => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/noozler/noozler_battlecruiser_icon.png"
+                )
+            }
+            StarshipIcon::NoozlerDreadnought => {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/noozler/noozler_dreadnought_icon.png"
+                )
+            }
             StarshipIcon::None => write!(formatter, ""),
         }
     }
 }
-
-
-// KarcanIcon::Battlecruiser => {
-    //     write!(
-        //         formatter,
-        //         "user_interface/icons/starships/karcan/karcan_battlecruiser_icon.png"
-        //     )
-// }
-// KarcanIcon::Bomber => {
-//     write!(
-//         formatter,
-//         "user_interface/icons/starships/karcan/karcan_bomber_icon.png"
-//     )
-// }
-// KarcanIcon::Dreadnought => {
-//     write!(
-//         formatter,
-//         "user_interface/icons/starships/karcan/karcan_dreadnought_icon.png"
-//     )
-// }
-// KarcanIcon::Fighter => {
-//     write!(
-//         formatter,
-//         "user_interface/icons/starships/karcan/karcan_fighter_icon.png"
-//     )
-// }
-// KarcanIcon::Frigate => {
-//     write!(
-//         formatter,
-//         "user_interface/icons/starships/karcan/karcan_frigate_icon.png"
-//     )
-// }
-// KarcanIcon::Scout => {
-//     write!(
-//         formatter,
-//         "user_interface/icons/starships/karcan/karcan_scout_icon.png"
-//     )
-// }
-// KarcanIcon::SupportShip => {
-//     write!(
-//         formatter,
-//         "user_interface/icons/starships/karcan/karcan_support_ship_icon.png"
-//     )
-// }
-// KarcanIcon::TorpedoShip => {
-//     write!(
-//         formatter,
-//         "user_interface/icons/starships/karcan/karcan_torpedo_ship_icon.png"
-//     )
-// }
-
-// NoozlerIcon::Battlecruiser => {
-//     write!(
-//         formatter,
-//         "user_interface/icons/starships/noozler/noozler_battlecruiser_icon.png"
-//     )
-// }
-// NoozlerIcon::Bomber => {
-//     write!(
-//         formatter,
-//         "user_interface/icons/starships/noozler/noozler_bomber_icon.png"
-//     )
-// }
-// NoozlerIcon::Dreadnought => {
-//     write!(
-//         formatter,
-//         "user_interface/icons/starships/noozler/noozler_dreadnought_icon.png"
-//     )
-// }
-// NoozlerIcon::Fighter => {
-//     write!(
-//         formatter,
-//         "user_interface/icons/starships/noozler/noozler_fighter_icon.png"
-//     )
-// }
-// NoozlerIcon::Frigate => {
-//     write!(
-//         formatter,
-//         "user_interface/icons/starships/noozler/noozler_frigate_icon.png"
-//     )
-// }
-// NoozlerIcon::Scout => {
-//     write!(
-//         formatter,
-//         "user_interface/icons/starships/noozler/noozler_scout_icon.png"
-//     )
-// }
-// NoozlerIcon::SupportShip => {
-//     write!(
-//         formatter,
-//         "user_interface/icons/starships/noozler/noozler_support_ship_icon.png"
-//     )
-// }
-// NoozlerIcon::TorpedoShip => {
-//     write!(
-//         formatter,
-//         "user_interface/icons/starships/noozler/noozler_torpedo_ship_icon.png"
-//     )
-// }
