@@ -9,7 +9,7 @@ use crate::{
     components::{selectable::Selectable, space_station::SpaceStation},
     events::{
         spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
-        spawn_startership_event::SpawnStarterShipEvent,
+        spawn_transform_dependent_sprite_events::SpawnStarterSpaceshipEvent,
     },
     resources::constants::SPACE_STATION_DISTANCE_FROM_CENTRE,
 };
@@ -17,7 +17,7 @@ use crate::{
 pub fn spawn_space_stations(
     mut commands: Commands,
     mut spawn_sprite_event: EventWriter<SpawnSpriteEvent>,
-    mut spawn_startership_event: EventWriter<SpawnStarterShipEvent>,
+    mut spawn_startership_event: EventWriter<SpawnStarterSpaceshipEvent>,
 ) {
     let angle = 360.0 / rand::thread_rng().gen_range(1.0..4.0) as f32;
 
@@ -34,6 +34,7 @@ pub fn spawn_space_stations(
         entity: commands.spawn(space_station).insert(Selectable).id(),
     }));
 
-    // TODO AH Spawn Events Part 2
-    spawn_startership_event.send(SpawnStarterShipEvent { transform });
+    spawn_startership_event.send(SpawnStarterSpaceshipEvent {
+        starbase_transform: transform,
+    });
 }

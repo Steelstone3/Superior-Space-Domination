@@ -12,7 +12,7 @@ use bevy::{
     sprite::{Sprite, SpriteBundle, TextureAtlas, TextureAtlasLayout},
 };
 
-pub fn spawn_sprite_2(
+pub fn spawn_sprite(
     mut commands: Commands,
     asset_server: Res<AssetServer>,
     mut texture_atlas_layouts: ResMut<Assets<TextureAtlasLayout>>,
