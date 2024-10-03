@@ -5,7 +5,7 @@ use bevy::{
 };
 
 use crate::{
-    assets::user_interace::icons::starships::atark_icons::AtarkIcon,
+    assets::user_interace::icons::starship_icons::StarshipIcon,
     events::user_interface_event::UserInterfaceEvent,
     resources::spawn_menu_selection::SpawnMenuSelection,
 };
@@ -21,7 +21,7 @@ pub fn deselect_all(
         tracing::info!("All De-Selected");
 
         selected_item.selection = SpawnSelection::None;
-        selected_item.starship_selection = AtarkIcon::None;
+        selected_item.starship_selection = StarshipIcon::None;
 
         user_interface_event.send(UserInterfaceEvent {});
     }

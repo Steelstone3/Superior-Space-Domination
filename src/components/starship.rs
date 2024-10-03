@@ -4,7 +4,7 @@ use super::{
 use crate::{
     assets::{
         images::faction_starships::starships::StarshipSprite,
-        user_interace::icons::starships::atark_icons::AtarkIcon,
+        user_interace::icons::starship_icons::StarshipIcon,
     },
     resources::{constants::TILE_SIZE, faction::Faction},
 };
@@ -33,8 +33,8 @@ impl Starship {
         }
     }
 
-    pub fn new_atark(atark_icon: AtarkIcon) -> Starship {
-        let starship_sprite = StarshipSprite::convert_from(atark_icon);
+    pub fn new_from_icon(starship_icon: StarshipIcon) -> Starship {
+        let starship_sprite = StarshipSprite::convert_from(starship_icon);
 
         Self {
             starship_sprite_bundle: StarshipSpriteBundle::new(starship_sprite),

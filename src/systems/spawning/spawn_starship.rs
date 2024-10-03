@@ -1,15 +1,10 @@
 use crate::{
-    assets::user_interace::icons::starships::atark_icons::AtarkIcon,
-    components::{selectable::Selectable, starship::Starship},
-    events::spawn_sprite_event::SpawnSpriteEvent,
-    queries::{
+    assets::user_interace::icons::starship_icons::StarshipIcon, components::{selectable::Selectable, starship::Starship}, events::spawn_sprite_event::SpawnSpriteEvent, queries::{
         camera_queries::CameraTransformOrthographicProjectionQuery, window_queries::WindowQuery,
-    },
-    resources::spawn_menu_selection::SpawnMenuSelection,
-    systems::{
+    }, resources::spawn_menu_selection::SpawnMenuSelection, systems::{
         controller::get_location::get_cursor_location,
         user_interface::interactions::spawn_selection::SpawnSelection,
-    },
+    }
 };
 use bevy::{
     ecs::{
@@ -56,8 +51,8 @@ pub fn spawn_starship(
 
     tracing::info!("starship at {:?}", transform.translation);
 
-    if selected_item.starship_selection != AtarkIcon::None {
-        let starship = Starship::new_atark(selected_item.starship_selection);
+    if selected_item.starship_selection != StarshipIcon::None {
+        let starship = Starship::new_from_icon(selected_item.starship_selection);
 
         spawn_sprite_event.send(SpawnSpriteEvent {
             sprite_path: starship.starship_sprite_bundle.starship_sprite.to_string(),

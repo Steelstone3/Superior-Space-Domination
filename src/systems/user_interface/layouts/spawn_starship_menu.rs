@@ -10,15 +10,10 @@ use bevy::{
 };
 
 use crate::{
-    assets::user_interace::icons::starships::atark_icons::AtarkIcon,
-    components::user_interface::SpawnSubMenu,
-    events::user_interface_event::UserInterfaceEvent,
-    queries::user_interface_queries::SpawnSubMenuQuery,
-    resources::spawn_menu_selection::SpawnMenuSelection,
-    systems::user_interface::{
+    assets::user_interace::icons::starship_icons::StarshipIcon, components::user_interface::SpawnSubMenu, events::user_interface_event::UserInterfaceEvent, queries::user_interface_queries::SpawnSubMenuQuery, resources::spawn_menu_selection::SpawnMenuSelection, systems::user_interface::{
         interactions::spawn_selection::SpawnSelection,
         styles::{create_starship_button_bundle, create_starship_button_icon},
-    },
+    }
 };
 
 pub fn spawn_starship_sub_menu(
@@ -61,88 +56,88 @@ pub fn spawn_starship_sub_menu(
                 // Support Ship
                 .with_children(|parent| {
                     parent
-                        .spawn(create_starship_button_bundle(AtarkIcon::SupportShip))
+                        .spawn(create_starship_button_bundle(StarshipIcon::AtarkSupportShip))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
-                                AtarkIcon::SupportShip,
+                                StarshipIcon::AtarkSupportShip,
                             ));
                         });
                 })
                 // Scout
                 .with_children(|parent| {
                     parent
-                        .spawn(create_starship_button_bundle(AtarkIcon::Scout))
+                        .spawn(create_starship_button_bundle(StarshipIcon::AtarkScout))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
-                                AtarkIcon::Scout,
+                                StarshipIcon::AtarkScout,
                             ));
                         });
                 })
                 // Fighter
                 .with_children(|parent| {
                     parent
-                        .spawn(create_starship_button_bundle(AtarkIcon::Fighter))
+                        .spawn(create_starship_button_bundle(StarshipIcon::AtarkFighter))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
-                                AtarkIcon::Fighter,
+                                StarshipIcon::AtarkFighter,
                             ));
                         });
                 })
                 // Torpedo Ship
                 .with_children(|parent| {
                     parent
-                        .spawn(create_starship_button_bundle(AtarkIcon::TorpedoShip))
+                        .spawn(create_starship_button_bundle(StarshipIcon::AtarkTorpedoShip))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
-                                AtarkIcon::TorpedoShip,
+                                StarshipIcon::AtarkTorpedoShip,
                             ));
                         });
                 })
                 // Bomber
                 .with_children(|parent| {
                     parent
-                        .spawn(create_starship_button_bundle(AtarkIcon::Bomber))
+                        .spawn(create_starship_button_bundle(StarshipIcon::AtarkBomber))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
-                                AtarkIcon::Bomber,
+                                StarshipIcon::AtarkBomber,
                             ));
                         });
                 })
                 // Frigate
                 .with_children(|parent| {
                     parent
-                        .spawn(create_starship_button_bundle(AtarkIcon::Frigate))
+                        .spawn(create_starship_button_bundle(StarshipIcon::AtarkFrigate))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
-                                AtarkIcon::Frigate,
+                                StarshipIcon::AtarkFrigate,
                             ));
                         });
                 })
                 // Battlecruiser
                 .with_children(|parent| {
                     parent
-                        .spawn(create_starship_button_bundle(AtarkIcon::Battlecruiser))
+                        .spawn(create_starship_button_bundle(StarshipIcon::AtarkBattlecruiser))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
-                                AtarkIcon::Battlecruiser,
+                                StarshipIcon::AtarkBattlecruiser,
                             ));
                         });
                 })
                 // Dreadnought
                 .with_children(|parent| {
                     parent
-                        .spawn(create_starship_button_bundle(AtarkIcon::Dreadnought))
+                        .spawn(create_starship_button_bundle(StarshipIcon::AtarkDreadnought))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
-                                AtarkIcon::Dreadnought,
+                                StarshipIcon::AtarkDreadnought,
                             ));
                         });
                 });

@@ -6,11 +6,11 @@ use bevy::{
 };
 
 use crate::{
-    assets::user_interace::icons::starships::atark_icons::AtarkIcon,
-    components::user_interface::SelectStarshipSpawnButton,
+
+    assets::user_interace::icons::starship_icons::StarshipIcon, components::user_interface::SelectStarshipSpawnButton
 };
 
-pub fn create_starship_button_bundle(icon: AtarkIcon) -> (ButtonBundle, SelectStarshipSpawnButton) {
+pub fn create_starship_button_bundle(icon: StarshipIcon) -> (ButtonBundle, SelectStarshipSpawnButton) {
     (
         ButtonBundle {
             style: Style {
@@ -28,10 +28,10 @@ pub fn create_starship_button_bundle(icon: AtarkIcon) -> (ButtonBundle, SelectSt
 
 pub fn create_starship_button_icon(
     asset_server: &Res<AssetServer>,
-    animal_sub_menu: AtarkIcon,
+    sub_menu: StarshipIcon,
 ) -> ImageBundle {
     ImageBundle {
-        image: UiImage::new(asset_server.load(animal_sub_menu.to_string())),
+        image: UiImage::new(asset_server.load(sub_menu.to_string())),
         background_color: WHITE.into(),
         ..Default::default()
     }

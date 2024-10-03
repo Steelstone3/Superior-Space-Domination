@@ -1,6 +1,6 @@
 use std::fmt::Display;
 
-use crate::assets::user_interace::icons::starships::atark_icons::AtarkIcon;
+use crate::assets::user_interace::icons::starship_icons::StarshipIcon;
 
 #[allow(dead_code)]
 #[derive(PartialEq, Clone, Copy)]
@@ -135,18 +135,33 @@ impl Display for StarshipSprite {
 }
 
 impl StarshipSprite {
-    pub fn convert_from(atark_icon: AtarkIcon) -> StarshipSprite {
-        match atark_icon {
-            AtarkIcon::Commander => panic!("No Commander Option"),
-            AtarkIcon::Battlecruiser => StarshipSprite::AtarkBattleCruiser,
-            AtarkIcon::Bomber => StarshipSprite::AtarkBomber,
-            AtarkIcon::Dreadnought => StarshipSprite::AtarkDreadnought,
-            AtarkIcon::Fighter => StarshipSprite::AtarkFighter,
-            AtarkIcon::Frigate => StarshipSprite::AtarkFrigate,
-            AtarkIcon::Scout => StarshipSprite::AtarkScout,
-            AtarkIcon::SupportShip => StarshipSprite::AtarkScout,
-            AtarkIcon::TorpedoShip => StarshipSprite::AtarkTorpedoShip,
-            AtarkIcon::None => panic!("Must have an atark icon to convert"),
+    pub fn convert_from(starship_icon: StarshipIcon) -> StarshipSprite {
+        match starship_icon {
+            StarshipIcon::AtarkSupportShip => StarshipSprite::AtarkSupportShip,
+            StarshipIcon::AtarkScout => StarshipSprite::AtarkScout,
+            StarshipIcon::AtarkFighter => StarshipSprite::AtarkFighter,
+            StarshipIcon::AtarkTorpedoShip => StarshipSprite::AtarkTorpedoShip,
+            StarshipIcon::AtarkBomber => StarshipSprite::AtarkBomber,
+            StarshipIcon::AtarkFrigate => StarshipSprite::AtarkFrigate,
+            StarshipIcon::AtarkBattlecruiser => StarshipSprite::AtarkBattleCruiser,
+            StarshipIcon::AtarkDreadnought => StarshipSprite::AtarkDreadnought,
+            StarshipIcon::KarcanSupportShip => StarshipSprite::KarcanSupportShip,
+            StarshipIcon::KarcanScout => StarshipSprite::KarcanScout,
+            StarshipIcon::KarcanFighter => StarshipSprite::KarcanFighter,
+            StarshipIcon::KarcanTorpedoShip => StarshipSprite::KarcanTorpedoShip,
+            StarshipIcon::KarcanBomber => StarshipSprite::KarcanBomber,
+            StarshipIcon::KarcanFrigate => StarshipSprite::KarcanFrigate,
+            StarshipIcon::KarcanBattlecruiser => StarshipSprite::KarcanBattleCruiser,
+            StarshipIcon::KarcanDreadnought => StarshipSprite::KarcanDreadnought,
+            StarshipIcon::NoozlerSupportShip => StarshipSprite::NoozlerSupportShip,
+            StarshipIcon::NoozlerScout => StarshipSprite::NoozlerScout,
+            StarshipIcon::NoozlerFighter => StarshipSprite::NoozlerFighter,
+            StarshipIcon::NoozlerTorpedoShip => StarshipSprite::NoozlerTorpedoShip,
+            StarshipIcon::NoozlerBomber => StarshipSprite::NoozlerBomber,
+            StarshipIcon::NoozlerFrigate => StarshipSprite::NoozlerFrigate,
+            StarshipIcon::NoozlerBattlecruiser => StarshipSprite::NoozlerBattleCruiser,
+            StarshipIcon::NoozlerDreadnought => StarshipSprite::NoozlerDreadnought,
+            StarshipIcon::None => panic!("Must have an icon to convert"),
         }
     }
 }
