@@ -9,6 +9,6 @@ pub struct EventHandlersPlugin;
 
 impl Plugin for EventHandlersPlugin {
     fn build(&self, app: &mut App) {
-        app.add_systems(Update, (spawn_sprite_2));
+        app.add_systems(Update, spawn_sprite_2);
     }
 }
