@@ -7,7 +7,10 @@ use bevy::{
 };
 
 use crate::{
-    events::user_interface_event::UserInterfaceEvent, queries::user_interface_queries::SpawnSubMenuQuery, resources::spawn_menu_selection::SpawnMenuSelection, systems::user_interface::interactions::spawn_selection::SpawnSelection
+    events::user_interface_event::UserInterfaceEvent,
+    queries::user_interface_queries::SpawnSubMenuQuery,
+    resources::spawn_menu_selection::SpawnMenuSelection,
+    systems::user_interface::interactions::spawn_selection::SpawnSelection,
 };
 
 pub fn despawn_sub_menus(

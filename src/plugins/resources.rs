@@ -1,7 +1,8 @@
 use bevy::app::Plugin;
 
 use crate::resources::{
-    camera_settings::CameraSettings, game_settings::GameSettings, keybindings::KeyBindings, spawn_menu_selection::SpawnMenuSelection,
+    camera_settings::CameraSettings, game_settings::GameSettings, keybindings::KeyBindings,
+    spawn_menu_selection::SpawnMenuSelection,
 };
 
 pub struct ResourcesPlugin;
