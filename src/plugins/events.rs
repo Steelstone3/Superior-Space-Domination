@@ -3,7 +3,7 @@ use bevy::prelude::{App, Plugin};
 use crate::events::{
     mouse_click_event::MouseClickEvent,
     spawn_sprite_event::SpawnSpriteEvent,
-    spawn_transform_dependent_sprite_events::{SpawnedSunEvent, SpawnedStarbaseEvent},
+    spawn_transform_dependent_sprite_events::{SpawnedStarbaseEvent, SpawnedSunEvent},
     user_interface_event::UserInterfaceEvent,
 };
 
