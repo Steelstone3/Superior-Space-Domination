@@ -30,7 +30,7 @@ pub fn select_starship_spawn_menu_button(
 
     match *select_starship_spawn_menu_button_query.interaction {
         Interaction::Pressed => {
-            tracing::info!("Pressed Ships");
+            tracing::info!("Pressed Spawn Ship Menu Button");
 
             SpawnMenuSelection::reset(&mut selected_item);
 
@@ -41,7 +41,7 @@ pub fn select_starship_spawn_menu_button(
             user_interface_event.send(UserInterfaceEvent {});
         }
         Interaction::Hovered => {
-            tracing::info!("Hovered Ships");
+            tracing::info!("Hovered Over Spawn Ship Menu Button");
 
             *select_starship_spawn_menu_button_query.border_color = YELLOW.into();
         }

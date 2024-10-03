@@ -21,7 +21,6 @@ use crate::{
     },
 };
 
-#[allow(dead_code)]
 pub fn spawn_starship_sub_menu(
     selected_item: Res<SpawnMenuSelection>,
     mut user_interface_events: EventReader<UserInterfaceEvent>,
@@ -41,10 +40,10 @@ pub fn spawn_starship_sub_menu(
                 .spawn(NodeBundle {
                     style: Style {
                         display: Display::Grid,
-                        grid_template_columns: vec![GridTrack::flex(1.0)],
+                        grid_template_columns: vec![GridTrack::flex(1.0), GridTrack::flex(1.0)],
                         grid_template_rows: vec![GridTrack::flex(1.0)],
-                        width: Val::Px(64.0 * 1.0 * 1.0),
-                        height: Val::Px(64.0 * 1.0 * 1.0),
+                        width: Val::Px(64.0 * 2.0),
+                        height: Val::Px(64.0 * 1.0),
                         position_type: PositionType::Absolute,
                         left: Val::Px(64.0),
                         top: Val::Percent(0.0),
@@ -62,6 +61,17 @@ pub fn spawn_starship_sub_menu(
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
                                 AtarkIcon::Battlecruiser,
+                            ));
+                        });
+                })
+                // Frigate
+                .with_children(|parent| {
+                    parent
+                        .spawn(create_starship_button_bundle(AtarkIcon::Frigate))
+                        .with_children(|parent| {
+                            parent.spawn(create_starship_button_icon(
+                                &asset_server,
+                                AtarkIcon::Frigate,
                             ));
                         });
                 });
