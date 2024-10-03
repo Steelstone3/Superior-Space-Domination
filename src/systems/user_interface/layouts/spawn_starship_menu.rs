@@ -41,21 +41,10 @@ pub fn spawn_starship_sub_menu(
                 .spawn(NodeBundle {
                     style: Style {
                         display: Display::Grid,
-                        grid_template_columns: vec![
-                            GridTrack::flex(1.0),
-                            GridTrack::flex(1.0),
-                            GridTrack::flex(1.0),
-                            GridTrack::flex(1.0),
-                        ],
-                        grid_template_rows: vec![
-                            GridTrack::flex(1.0),
-                            GridTrack::flex(1.0),
-                            GridTrack::flex(1.0),
-                            GridTrack::flex(1.0),
-                            GridTrack::flex(1.0),
-                        ],
-                        width: Val::Px(32.0 * 1.5 * 4.0),
-                        height: Val::Px(32.0 * 1.5 * 5.0),
+                        grid_template_columns: vec![GridTrack::flex(1.0)],
+                        grid_template_rows: vec![GridTrack::flex(1.0)],
+                        width: Val::Px(64.0 * 1.0 * 1.0),
+                        height: Val::Px(64.0 * 1.0 * 1.0),
                         position_type: PositionType::Absolute,
                         left: Val::Px(64.0),
                         top: Val::Percent(0.0),
