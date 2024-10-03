@@ -1,6 +1,5 @@
 use crate::{
-    components::animation_timer::AnimationTimer,
-    events::spawn_sprite_event_2::SpawnSpriteEvent2,
+    components::animation_timer::AnimationTimer, events::spawn_sprite_event_2::SpawnSpriteEvent2,
 };
 use bevy::{
     asset::{AssetServer, Assets},
