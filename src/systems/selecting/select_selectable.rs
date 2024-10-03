@@ -13,7 +13,10 @@ use rand::random;
 
 use crate::{
     components::{selectable::Selectable, selection::Selection},
-    events::{mouse_click_event::MouseClickEvent, spawn_sprite_event::SpawnSpriteEvent},
+    events::{
+        mouse_click_event::MouseClickEvent,
+        spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
+    },
 };
 
 pub fn select_selectable(
@@ -81,11 +84,11 @@ pub fn select_selectable(
             return;
         };
 
-        spawn_sprite_writer.send(SpawnSpriteEvent {
+        spawn_sprite_writer.send(SpawnSpriteEvent::spawn_sprite(SpawnSprite {
             sprite_path: selection.sprite_path.to_string(),
             size,
             transform: *closest.0,
             entity: selection_entity,
-        });
+        }));
     }
 }

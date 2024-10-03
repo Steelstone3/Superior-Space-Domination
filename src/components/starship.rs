@@ -24,7 +24,7 @@ impl Starship {
     pub fn new(starship_sprite: StarshipSprite) -> Starship {
         Self {
             starship_sprite_bundle: StarshipSpriteBundle::new(starship_sprite),
-            faction: Faction::new(starship_sprite),
+            faction: Faction::determine_faction(starship_sprite),
             size_component: SizeComponent {
                 size: Vec2::new(TILE_SIZE, TILE_SIZE),
                 z_index: 5.0,
@@ -38,7 +38,7 @@ impl Starship {
 
         Self {
             starship_sprite_bundle: StarshipSpriteBundle::new(starship_sprite),
-            faction: Faction::new(starship_sprite),
+            faction: Faction::determine_faction(starship_sprite),
             size_component: SizeComponent {
                 size: Vec2::new(TILE_SIZE, TILE_SIZE),
                 z_index: 5.0,
