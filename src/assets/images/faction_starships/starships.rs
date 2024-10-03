@@ -1,5 +1,7 @@
 use std::fmt::Display;
 
+use crate::assets::user_interace::icons::starships::atark_icons::AtarkIcon;
+
 #[allow(dead_code)]
 #[derive(PartialEq, Clone, Copy)]
 pub enum StarshipSprite {
@@ -128,6 +130,23 @@ impl Display for StarshipSprite {
                 formatter,
                 "images/factions/noozler/starships/battlecruiser/noozler_torpedo_ship.png"
             ),
+        }
+    }
+}
+
+impl StarshipSprite {
+    pub fn convert_from(atark_icon: AtarkIcon) -> StarshipSprite {
+        match atark_icon {
+            AtarkIcon::Commander => panic!("No Commander Option"),
+            AtarkIcon::Battlecruiser => StarshipSprite::AtarkBattleCruiser,
+            AtarkIcon::Bomber => StarshipSprite::AtarkBomber,
+            AtarkIcon::Dreadnought => StarshipSprite::AtarkDreadnought,
+            AtarkIcon::Fighter => StarshipSprite::AtarkFighter,
+            AtarkIcon::Frigate => StarshipSprite::AtarkFrigate,
+            AtarkIcon::Scout => StarshipSprite::AtarkScout,
+            AtarkIcon::SupportShip => StarshipSprite::AtarkScout,
+            AtarkIcon::TorpedoShip => StarshipSprite::AtarkTorpedoShip,
+            AtarkIcon::None => panic!("Must have an atark icon to convert"),
         }
     }
 }
