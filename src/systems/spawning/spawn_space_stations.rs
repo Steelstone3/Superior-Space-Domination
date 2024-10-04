@@ -4,7 +4,7 @@ use bevy::{
     prelude::Res,
     transform::components::Transform,
 };
-use rand::{random, Rng};
+use rand::Rng;
 
 use crate::{
     components::{space_station::SpaceStation, user_interface::Selectable},
