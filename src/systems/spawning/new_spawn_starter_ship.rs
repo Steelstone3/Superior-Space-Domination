@@ -6,7 +6,7 @@ use crate::{
     events::spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
 };
 
-pub fn new_spawn_starter_ship(
+pub fn spawn_starter_spaceship(
     mut commands: Commands,
     mut spawn_sprite_event: EventWriter<SpawnSpriteEvent>,
     space_station_query: Query<&Transform, With<SpaceStation>>,
