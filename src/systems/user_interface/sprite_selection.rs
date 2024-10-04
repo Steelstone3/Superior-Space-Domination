@@ -1,5 +1,5 @@
 use crate::{
-    components::user_interface::{Selectable, Selection},
+    components::user_interface::{Selectable, SelectedSprite},
     events::{
         mouse_click_event::MouseClickEvent,
         spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
@@ -23,7 +23,7 @@ pub fn sprite_selection(
     selectable_query: Query<(&Transform, &Selectable, &Sprite)>,
     mut spawn_sprite_writer: EventWriter<SpawnSpriteEvent>,
     mut commands: Commands,
-    selection_queries: Query<Entity, With<Selection>>,
+    selection_queries: Query<Entity, With<SelectedSprite>>,
 ) {
     let Some(event) = select_event_reader.read().last() else {
         return;
@@ -76,7 +76,7 @@ pub fn sprite_selection(
 
     //if valid selection found then spawn selection
     if closest.2 != -1.0 {
-        let selection = Selection::new(random());
+        let selection = SelectedSprite::new(random());
         let selection_entity = commands.spawn(selection).id();
 
         let Some(size) = closest.1.custom_size else {
