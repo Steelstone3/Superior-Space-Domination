@@ -31,6 +31,16 @@ pub fn spawn_starship_sub_menu(
     asset_server: Res<AssetServer>,
     faction: Res<PlayerFaction>,
 ) {
+    // TODO AH What to spawn in each case
+    // match selected_item.selection {
+    //     SpawnSelection::None => todo!(),
+    //     SpawnSelection::Other => todo!(),
+    //     SpawnSelection::MultiSelection => todo!(),
+    //     SpawnSelection::StarshipConstructionYard => todo!(),
+    //     SpawnSelection::SupportShip => todo!(),
+    //     SpawnSelection::Starbase => todo!(),
+    // }
+
     if selected_item.selection == SpawnSelection::StarshipConstructionYard {
         for _ in user_interface_events.read() {
             // Remove UI
