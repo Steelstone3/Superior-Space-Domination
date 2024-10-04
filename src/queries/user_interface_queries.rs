@@ -5,7 +5,7 @@ use bevy::{
 };
 
 use crate::components::user_interface::{
-    SelectStarshipSpawnButton, SelectStarshipSpawnMenuButton, SpawnSubMenu,
+    SelectStarshipSpawnButton, SpawnMenuButton, SpawnSubMenu,
 };
 
 #[derive(QueryData)]
@@ -19,7 +19,7 @@ pub struct SpawnSubMenuQuery {
 pub struct SelectStarshipSpawnMenuButtonQuery {
     pub interaction: &'static Interaction,
     pub border_color: &'static mut BorderColor,
-    pub button: &'static SelectStarshipSpawnMenuButton,
+    pub button: &'static SpawnMenuButton,
 }
 
 #[derive(QueryData)]

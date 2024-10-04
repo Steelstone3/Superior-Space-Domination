@@ -8,7 +8,7 @@ pub struct SpawnMenu;
 pub struct SpawnSubMenu;
 
 #[derive(Component)]
-pub struct SelectStarshipSpawnMenuButton;
+pub struct SpawnMenuButton;
 
 #[allow(dead_code)]
 #[derive(Component)]

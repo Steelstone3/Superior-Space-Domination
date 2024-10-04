@@ -1,5 +1,6 @@
 use crate::assets::images::faction_starships::starships::StarshipSprite;
 
+#[derive(PartialEq)]
 pub enum Faction {
     Atark,
     Karcan,
