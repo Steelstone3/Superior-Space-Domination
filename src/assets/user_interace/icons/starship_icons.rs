@@ -182,3 +182,6 @@ impl Display for StarshipIcon {
         }
     }
 }
+
+#[allow(dead_code)]
+pub enum StarshipType {}

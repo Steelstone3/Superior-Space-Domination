@@ -1,7 +1,16 @@
-use crate::assets::images::faction_starships::starships::StarshipSprite;
+use bevy::prelude::Resource;
 
-#[derive(PartialEq)]
+use crate::assets::images::faction_starships::starship_sprite::StarshipSprite;
+
+#[derive(Resource, Default)]
+pub struct PlayerFaction {
+    #[allow(dead_code)]
+    pub player_faction: Faction,
+}
+
+#[derive(Default, PartialEq)]
 pub enum Faction {
+    #[default]
     Atark,
     Karcan,
     Noozler,

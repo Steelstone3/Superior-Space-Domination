@@ -1,5 +1,5 @@
 use crate::{
-    assets::images::faction_starships::starships::StarshipSprite,
+    assets::images::faction_starships::starship_sprite::StarshipSprite,
     components::{selectable::Selectable, starship::Starship},
     events::spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
     queries::faction_queries::SpaceStationQuery,

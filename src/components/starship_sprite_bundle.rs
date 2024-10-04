@@ -1,6 +1,6 @@
 use crate::assets::images::faction_starships::{
-    destruction::DestructionSprite, engines::EngineSprite, firing::FiringSprite,
-    shields::ShieldSprite, starships::StarshipSprite,
+    destruction_sprite::DestructionSprite, engine_sprite::EngineSprite,
+    firing_sprite::FiringSprite, shield_sprite::ShieldSprite, starship_sprite::StarshipSprite,
 };
 
 // TODO AH Implement

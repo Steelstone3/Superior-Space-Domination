@@ -2,6 +2,7 @@ use bevy::reflect::Reflect;
 use rand_derive2::RandGen;
 use std::fmt::Display;
 
+#[allow(clippy::enum_variant_names)]
 #[derive(RandGen, Debug, PartialEq, Reflect, Clone, Copy)]
 pub enum SpaceStationSprite {
     AtarkSpaceStation,
@@ -34,6 +35,7 @@ impl Display for SpaceStationSprite {
     }
 }
 
+#[allow(clippy::enum_variant_names)]
 #[derive(RandGen, Debug, PartialEq, Reflect, Clone, Copy)]
 pub enum SpaceFacilitySprite {
     AtarkSpaceShipConstructionYard,
