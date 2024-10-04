@@ -9,7 +9,7 @@ use crate::systems::{
         },
         layouts::{
             despawn_spawn_sub_menu::despawn_sub_menus, spawn_menu::spawn_menu,
-            spawn_starship_menu::spawn_starship_sub_menu,
+            spawn_sub_menu::spawn_starship_sub_menu,
         },
     },
 };
