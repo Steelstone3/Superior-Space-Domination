@@ -46,7 +46,7 @@ pub fn spawn_starship(
     }
 
     let mut transform = Transform::default();
-    transform.translation.z = 999.0;
+    transform.translation.z = 5.0;
 
     if let Some(position) = window_query.window.cursor_position() {
         get_cursor_location(&mut transform, position, window_query, camera_query);
