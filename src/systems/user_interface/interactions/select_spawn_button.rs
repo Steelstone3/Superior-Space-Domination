@@ -7,16 +7,16 @@ use bevy::{
 
 use crate::{
     events::user_interface_event::UserInterfaceEvent,
-    queries::user_interface_queries::{ButtonFilters, SelectStarshipSpawnMenuButtonQuery},
+    queries::user_interface_queries::{ButtonFilters, SelectStarshipSpawnButtonQuery},
     resources::spawn_menu_selection::SpawnMenuSelection,
-    systems::user_interface::interactions::spawn_selection::Selection,
+    systems::user_interface::interactions::spawn_selection::SpawnSelection,
 };
 
 // TODO AH This is just for the atark faction not sure how to handle this in future
 #[allow(dead_code)]
-pub fn select_starship_spawn_menu_button(
+pub fn select_spawn_button(
     mut select_starship_spawn_menu_button_queries: Query<
-        SelectStarshipSpawnMenuButtonQuery,
+        SelectStarshipSpawnButtonQuery,
         ButtonFilters,
     >,
     mut selected_item: ResMut<SpawnMenuSelection>,
@@ -30,20 +30,20 @@ pub fn select_starship_spawn_menu_button(
 
     match *select_starship_spawn_menu_button_query.interaction {
         Interaction::Pressed => {
-            tracing::info!("Pressed Spawn Ship Menu Button");
+            tracing::info!("Pressed Spawn Ship Button");
 
             SpawnMenuSelection::reset(&mut selected_item);
 
-            selected_item.selection = Selection::StarshipConstructionYard;
+            selected_item.selection = SpawnSelection::StarshipConstructionYard;
+
+            selected_item.starship_selection = select_starship_spawn_menu_button_query.button.icon;
 
             *select_starship_spawn_menu_button_query.border_color = YELLOW.into();
 
             user_interface_event.send(UserInterfaceEvent {});
         }
         Interaction::Hovered => {
-            tracing::info!("Hovered Over Spawn Ship Menu Button");
-
-            *select_starship_spawn_menu_button_query.border_color = YELLOW.into();
+            tracing::info!("Hovered Over Spawn Ship Button");
         }
         Interaction::None => {
             *select_starship_spawn_menu_button_query.border_color = GREY.into();

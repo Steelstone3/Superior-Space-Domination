@@ -18,7 +18,7 @@ use crate::{
         spawn_menu_selection::SpawnMenuSelection,
     },
     systems::user_interface::{
-        interactions::spawn_selection::Selection,
+        interactions::spawn_selection::SpawnSelection,
         styles::{create_starship_button_bundle, create_starship_button_icon},
     },
 };
@@ -31,7 +31,7 @@ pub fn spawn_starship_sub_menu(
     asset_server: Res<AssetServer>,
     faction: Res<PlayerFaction>,
 ) {
-    if selected_item.selection == Selection::StarshipConstructionYard {
+    if selected_item.selection == SpawnSelection::StarshipConstructionYard {
         for _ in user_interface_events.read() {
             // Remove UI
             if let Ok(sub_menu_query) = sub_menu_queries.get_single() {

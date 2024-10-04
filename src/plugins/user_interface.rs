@@ -4,8 +4,8 @@ use crate::systems::{
     spawning::spawn_starship::spawn_starship,
     user_interface::{
         interactions::{
-            deselect_all::deselect_all, select_starship_spawn_button::select_starship_spawn_button,
-            select_starship_spawn_menu_button::select_starship_spawn_menu_button,
+            deselect_all::deselect_all, select_spawn_button::select_spawn_button,
+            select_spawn_menu_button::select_starship_spawn_menu_button,
         },
         layouts::{
             despawn_spawn_sub_menu::despawn_sub_menus, spawn_menu::spawn_menu,
@@ -25,7 +25,7 @@ impl Plugin for UserInterfacePlugin {
             Update,
             (
                 select_starship_spawn_menu_button,
-                select_starship_spawn_button,
+                select_spawn_button,
                 despawn_sub_menus,
                 deselect_all,
             ),

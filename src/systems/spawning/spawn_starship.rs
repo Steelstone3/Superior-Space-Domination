@@ -8,7 +8,7 @@ use crate::{
     resources::spawn_menu_selection::SpawnMenuSelection,
     systems::{
         controller::get_location::get_cursor_location,
-        user_interface::interactions::spawn_selection::Selection,
+        user_interface::interactions::spawn_selection::SpawnSelection,
     },
 };
 use bevy::{
@@ -29,7 +29,7 @@ pub fn spawn_starship(
     windows_query: Query<WindowQuery>,
     camera_queries: Query<CameraTransformOrthographicProjectionQuery>,
 ) {
-    if selected_item.selection == Selection::None {
+    if selected_item.selection == SpawnSelection::None {
         return;
     }
 

@@ -4,6 +4,7 @@ use crate::{
         mouse_click_event::MouseClickEvent,
         spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
     },
+    resources::spawn_menu_selection::SpawnMenuSelection,
 };
 use bevy::{
     ecs::{
@@ -13,10 +14,13 @@ use bevy::{
         system::{Commands, Query},
     },
     math::Vec3Swizzles,
+    prelude::ResMut,
     sprite::Sprite,
     transform::components::Transform,
 };
 use rand::random;
+
+use super::interactions::spawn_selection::SpawnSelection;
 
 pub fn sprite_selection(
     mut select_event_reader: EventReader<MouseClickEvent>,
@@ -24,6 +28,7 @@ pub fn sprite_selection(
     mut spawn_sprite_writer: EventWriter<SpawnSpriteEvent>,
     mut commands: Commands,
     selection_queries: Query<Entity, With<SelectedSprite>>,
+    mut spawn_menu_selection: ResMut<SpawnMenuSelection>,
 ) {
     let Some(event) = select_event_reader.read().last() else {
         return;
@@ -92,4 +97,8 @@ pub fn sprite_selection(
             entity: selection_entity,
         }));
     }
+
+    // TODO MG Find the type and convert it to the is enum
+    // For example say the entity was a construction yard kachow there you go
+    spawn_menu_selection.selection = SpawnSelection::StarshipConstructionYard
 }
