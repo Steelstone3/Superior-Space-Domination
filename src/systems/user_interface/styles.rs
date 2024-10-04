@@ -6,13 +6,16 @@ use bevy::{
 };
 
 use crate::{
-    assets::user_interace::icons::starship_icons::StarshipIcon,
     components::user_interface::SelectStarshipSpawnButton,
+    resources::faction::{Faction, StarshipType},
 };
 
 pub fn create_starship_button_bundle(
-    icon: StarshipIcon,
+    starship_type: StarshipType,
+    faction: Faction,
 ) -> (ButtonBundle, SelectStarshipSpawnButton) {
+    let icon = starship_type.convert_from(faction);
+
     (
         ButtonBundle {
             style: Style {
@@ -30,10 +33,13 @@ pub fn create_starship_button_bundle(
 
 pub fn create_starship_button_icon(
     asset_server: &Res<AssetServer>,
-    sub_menu: StarshipIcon,
+    starship_type: StarshipType,
+    faction: Faction,
 ) -> ImageBundle {
+    let icon = starship_type.convert_from(faction);
+
     ImageBundle {
-        image: UiImage::new(asset_server.load(sub_menu.to_string())),
+        image: UiImage::new(asset_server.load(icon.to_string())),
         background_color: WHITE.into(),
         ..Default::default()
     }

@@ -10,11 +10,13 @@ use bevy::{
 };
 
 use crate::{
-    assets::user_interace::icons::starship_icons::StarshipIcon,
     components::user_interface::SpawnSubMenuButton,
     events::user_interface_event::UserInterfaceEvent,
     queries::user_interface_queries::SpawnSubMenuQuery,
-    resources::spawn_menu_selection::SpawnMenuSelection,
+    resources::{
+        faction::{PlayerFaction, StarshipType},
+        spawn_menu_selection::SpawnMenuSelection,
+    },
     systems::user_interface::{
         interactions::spawn_selection::Selection,
         styles::{create_starship_button_bundle, create_starship_button_icon},
@@ -27,6 +29,7 @@ pub fn spawn_starship_sub_menu(
     sub_menu_queries: Query<SpawnSubMenuQuery>,
     mut commands: Commands,
     asset_server: Res<AssetServer>,
+    faction: Res<PlayerFaction>,
 ) {
     if selected_item.selection == Selection::StarshipConstructionYard {
         for _ in user_interface_events.read() {
@@ -61,34 +64,44 @@ pub fn spawn_starship_sub_menu(
                 // .with_children(|parent| {
                 //     parent
                 //         .spawn(create_starship_button_bundle(
-                //             StarshipIcon::AtarkSupportShip,
+                //             StarshipType::SupportShip,
+                //             faction.player_faction,
                 //         ))
                 //         .with_children(|parent| {
                 //             parent.spawn(create_starship_button_icon(
                 //                 &asset_server,
-                //                 StarshipIcon::AtarkSupportShip,
+                //                 StarshipType::SupportShip,
+                //                 faction.player_faction,
                 //             ));
                 //         });
                 // })
                 // // Scout
                 // .with_children(|parent| {
                 //     parent
-                //         .spawn(create_starship_button_bundle(StarshipIcon::AtarkScout))
+                //         .spawn(create_starship_button_bundle(
+                //             StarshipType::Scout,
+                //             faction.player_faction,
+                //         ))
                 //         .with_children(|parent| {
                 //             parent.spawn(create_starship_button_icon(
                 //                 &asset_server,
-                //                 StarshipIcon::AtarkScout,
+                //                 StarshipType::Scout,
+                //                 faction.player_faction,
                 //             ));
                 //         });
                 // })
                 // Fighter
                 .with_children(|parent| {
                     parent
-                        .spawn(create_starship_button_bundle(StarshipIcon::AtarkFighter))
+                        .spawn(create_starship_button_bundle(
+                            StarshipType::Fighter,
+                            faction.player_faction,
+                        ))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
-                                StarshipIcon::AtarkFighter,
+                                StarshipType::Fighter,
+                                faction.player_faction,
                             ));
                         });
                 })
@@ -96,34 +109,44 @@ pub fn spawn_starship_sub_menu(
                 .with_children(|parent| {
                     parent
                         .spawn(create_starship_button_bundle(
-                            StarshipIcon::AtarkTorpedoShip,
+                            StarshipType::TorpedoShip,
+                            faction.player_faction,
                         ))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
-                                StarshipIcon::AtarkTorpedoShip,
+                                StarshipType::TorpedoShip,
+                                faction.player_faction,
                             ));
                         });
                 })
                 // Bomber
                 .with_children(|parent| {
                     parent
-                        .spawn(create_starship_button_bundle(StarshipIcon::AtarkBomber))
+                        .spawn(create_starship_button_bundle(
+                            StarshipType::Bomber,
+                            faction.player_faction,
+                        ))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
-                                StarshipIcon::AtarkBomber,
+                                StarshipType::Bomber,
+                                faction.player_faction,
                             ));
                         });
                 })
                 // Frigate
                 .with_children(|parent| {
                     parent
-                        .spawn(create_starship_button_bundle(StarshipIcon::AtarkFrigate))
+                        .spawn(create_starship_button_bundle(
+                            StarshipType::Frigate,
+                            faction.player_faction,
+                        ))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
-                                StarshipIcon::AtarkFrigate,
+                                StarshipType::Frigate,
+                                faction.player_faction,
                             ));
                         });
                 })
@@ -131,12 +154,14 @@ pub fn spawn_starship_sub_menu(
                 .with_children(|parent| {
                     parent
                         .spawn(create_starship_button_bundle(
-                            StarshipIcon::AtarkBattlecruiser,
+                            StarshipType::Battlecruiser,
+                            faction.player_faction,
                         ))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
-                                StarshipIcon::AtarkBattlecruiser,
+                                StarshipType::Battlecruiser,
+                                faction.player_faction,
                             ));
                         });
                 })
@@ -144,12 +169,14 @@ pub fn spawn_starship_sub_menu(
                 .with_children(|parent| {
                     parent
                         .spawn(create_starship_button_bundle(
-                            StarshipIcon::AtarkDreadnought,
+                            StarshipType::Dreadnought,
+                            faction.player_faction,
                         ))
                         .with_children(|parent| {
                             parent.spawn(create_starship_button_icon(
                                 &asset_server,
-                                StarshipIcon::AtarkDreadnought,
+                                StarshipType::Dreadnought,
+                                faction.player_faction,
                             ));
                         });
                 });
