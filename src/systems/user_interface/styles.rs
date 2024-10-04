@@ -14,7 +14,7 @@ pub fn create_starship_button_bundle(
     starship_type: StarshipType,
     faction: Faction,
 ) -> (ButtonBundle, SelectStarshipSpawnButton) {
-    let icon = starship_type.convert_from(faction);
+    let icon = starship_type.icon_convert_from(faction);
 
     (
         ButtonBundle {
@@ -36,7 +36,7 @@ pub fn create_starship_button_icon(
     starship_type: StarshipType,
     faction: Faction,
 ) -> ImageBundle {
-    let icon = starship_type.convert_from(faction);
+    let icon = starship_type.icon_convert_from(faction);
 
     ImageBundle {
         image: UiImage::new(asset_server.load(icon.to_string())),

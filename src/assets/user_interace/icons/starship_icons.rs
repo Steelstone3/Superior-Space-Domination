@@ -10,7 +10,7 @@ pub enum StarshipIcon {
     AtarkTorpedoShip,
     AtarkBomber,
     AtarkFrigate,
-    AtarkBattlecruiser,
+    AtarkBattleCruiser,
     AtarkDreadnought,
     KarcanSupportShip,
     KarcanScout,
@@ -18,7 +18,7 @@ pub enum StarshipIcon {
     KarcanTorpedoShip,
     KarcanBomber,
     KarcanFrigate,
-    KarcanBattlecruiser,
+    KarcanBattleCruiser,
     KarcanDreadnought,
     NoozlerSupportShip,
     NoozlerScout,
@@ -26,7 +26,7 @@ pub enum StarshipIcon {
     NoozlerTorpedoShip,
     NoozlerBomber,
     NoozlerFrigate,
-    NoozlerBattlecruiser,
+    NoozlerBattleCruiser,
     NoozlerDreadnought,
     None,
 }
@@ -70,7 +70,7 @@ impl Display for StarshipIcon {
                     "user_interface/icons/starships/atark/atark_frigate_icon.png"
                 )
             }
-            StarshipIcon::AtarkBattlecruiser => {
+            StarshipIcon::AtarkBattleCruiser => {
                 write!(
                     formatter,
                     "user_interface/icons/starships/atark/atark_battlecruiser_icon.png"
@@ -118,7 +118,7 @@ impl Display for StarshipIcon {
                     "user_interface/icons/starships/karcan/karcan_frigate_icon.png"
                 )
             }
-            StarshipIcon::KarcanBattlecruiser => {
+            StarshipIcon::KarcanBattleCruiser => {
                 write!(
                     formatter,
                     "user_interface/icons/starships/karcan/karcan_battlecruiser_icon.png"
@@ -166,7 +166,7 @@ impl Display for StarshipIcon {
                     "user_interface/icons/starships/noozler/noozler_frigate_icon.png"
                 )
             }
-            StarshipIcon::NoozlerBattlecruiser => {
+            StarshipIcon::NoozlerBattleCruiser => {
                 write!(
                     formatter,
                     "user_interface/icons/starships/noozler/noozler_battlecruiser_icon.png"

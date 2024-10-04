@@ -1,7 +1,10 @@
 use bevy::prelude::Resource;
 
 use crate::assets::{
-    images::faction_starships::starship_sprite::StarshipSprite,
+    images::{
+        faction_starships::starship_sprite::StarshipSprite,
+        space_facility_sprite::{SpaceFacilitySprite, SpaceStationSprite},
+    },
     user_interace::icons::starship_icons::StarshipIcon,
 };
 
@@ -63,7 +66,7 @@ pub enum StarshipType {
 }
 
 impl StarshipType {
-    pub fn convert_from(&self, faction: Faction) -> StarshipIcon {
+    pub fn icon_convert_from(&self, faction: Faction) -> StarshipIcon {
         match faction {
             Faction::Atark => match self {
                 StarshipType::SupportShip => StarshipIcon::AtarkSupportShip,
@@ -72,7 +75,7 @@ impl StarshipType {
                 StarshipType::TorpedoShip => StarshipIcon::AtarkTorpedoShip,
                 StarshipType::Bomber => StarshipIcon::AtarkBomber,
                 StarshipType::Frigate => StarshipIcon::AtarkFrigate,
-                StarshipType::Battlecruiser => StarshipIcon::AtarkBattlecruiser,
+                StarshipType::Battlecruiser => StarshipIcon::AtarkBattleCruiser,
                 StarshipType::Dreadnought => StarshipIcon::AtarkDreadnought,
             },
             Faction::Karcan => match self {
@@ -82,7 +85,7 @@ impl StarshipType {
                 StarshipType::TorpedoShip => StarshipIcon::KarcanTorpedoShip,
                 StarshipType::Bomber => StarshipIcon::KarcanBomber,
                 StarshipType::Frigate => StarshipIcon::KarcanFrigate,
-                StarshipType::Battlecruiser => StarshipIcon::KarcanBattlecruiser,
+                StarshipType::Battlecruiser => StarshipIcon::KarcanBattleCruiser,
                 StarshipType::Dreadnought => StarshipIcon::KarcanDreadnought,
             },
             Faction::Noozler => match self {
@@ -92,8 +95,91 @@ impl StarshipType {
                 StarshipType::TorpedoShip => StarshipIcon::NoozlerTorpedoShip,
                 StarshipType::Bomber => StarshipIcon::NoozlerBomber,
                 StarshipType::Frigate => StarshipIcon::NoozlerFrigate,
-                StarshipType::Battlecruiser => StarshipIcon::NoozlerBattlecruiser,
+                StarshipType::Battlecruiser => StarshipIcon::NoozlerBattleCruiser,
                 StarshipType::Dreadnought => StarshipIcon::NoozlerDreadnought,
+            },
+        }
+    }
+
+    pub fn sprite_convert_from(&self, faction: Faction) -> StarshipSprite {
+        match faction {
+            Faction::Atark => match self {
+                StarshipType::SupportShip => StarshipSprite::AtarkSupportShip,
+                StarshipType::Scout => StarshipSprite::AtarkScout,
+                StarshipType::Fighter => StarshipSprite::AtarkFighter,
+                StarshipType::TorpedoShip => StarshipSprite::AtarkTorpedoShip,
+                StarshipType::Bomber => StarshipSprite::AtarkBomber,
+                StarshipType::Frigate => StarshipSprite::AtarkFrigate,
+                StarshipType::Battlecruiser => StarshipSprite::AtarkBattleCruiser,
+                StarshipType::Dreadnought => StarshipSprite::AtarkDreadnought,
+            },
+            Faction::Karcan => match self {
+                StarshipType::SupportShip => StarshipSprite::KarcanSupportShip,
+                StarshipType::Scout => StarshipSprite::KarcanScout,
+                StarshipType::Fighter => StarshipSprite::KarcanFighter,
+                StarshipType::TorpedoShip => StarshipSprite::KarcanTorpedoShip,
+                StarshipType::Bomber => StarshipSprite::KarcanBomber,
+                StarshipType::Frigate => StarshipSprite::KarcanFrigate,
+                StarshipType::Battlecruiser => StarshipSprite::KarcanBattleCruiser,
+                StarshipType::Dreadnought => StarshipSprite::KarcanDreadnought,
+            },
+            Faction::Noozler => match self {
+                StarshipType::SupportShip => StarshipSprite::NoozlerSupportShip,
+                StarshipType::Scout => StarshipSprite::NoozlerScout,
+                StarshipType::Fighter => StarshipSprite::NoozlerFighter,
+                StarshipType::TorpedoShip => StarshipSprite::NoozlerTorpedoShip,
+                StarshipType::Bomber => StarshipSprite::NoozlerBomber,
+                StarshipType::Frigate => StarshipSprite::NoozlerFrigate,
+                StarshipType::Battlecruiser => StarshipSprite::NoozlerBattleCruiser,
+                StarshipType::Dreadnought => StarshipSprite::NoozlerDreadnought,
+            },
+        }
+    }
+}
+
+#[allow(dead_code)]
+pub enum StarBaseType {
+    SpaceStation,
+}
+
+impl StarBaseType {
+    pub fn sprite_convert_from(&self, faction: Faction) -> SpaceStationSprite {
+        match faction {
+            Faction::Atark => match self {
+                StarBaseType::SpaceStation => SpaceStationSprite::AtarkSpaceStation,
+            },
+            Faction::Karcan => match self {
+                StarBaseType::SpaceStation => SpaceStationSprite::KarcanSpaceStation,
+            },
+            Faction::Noozler => match self {
+                StarBaseType::SpaceStation => SpaceStationSprite::NoozlerSpaceStation,
+            },
+        }
+    }
+}
+
+#[allow(dead_code)]
+pub enum SpaceFacilityType {
+    SpaceShipConstructionYard,
+}
+
+impl SpaceFacilityType {
+    pub fn sprite_convert_from(&self, faction: Faction) -> SpaceFacilitySprite {
+        match faction {
+            Faction::Atark => match self {
+                SpaceFacilityType::SpaceShipConstructionYard => {
+                    SpaceFacilitySprite::AtarkSpaceShipConstructionYard
+                }
+            },
+            Faction::Karcan => match self {
+                SpaceFacilityType::SpaceShipConstructionYard => {
+                    SpaceFacilitySprite::KarcanSpaceShipConstructionYard
+                }
+            },
+            Faction::Noozler => match self {
+                SpaceFacilityType::SpaceShipConstructionYard => {
+                    SpaceFacilitySprite::NoozlerSpaceShipConstructionYard
+                }
             },
         }
     }
