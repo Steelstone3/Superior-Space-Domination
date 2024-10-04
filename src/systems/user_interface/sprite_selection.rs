@@ -34,6 +34,8 @@ pub fn sprite_selection(
 
     //get list of selectables that are in range of mouse cursor
     for selectable in selectable_query.iter() {
+        // TODO MG Consider storing the previous position and comparing the closeness to the new position to find the closest
+
         let Some(size) = selectable.2.custom_size else {
             return;
         };
