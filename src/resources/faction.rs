@@ -164,6 +164,7 @@ pub enum SpaceFacilityType {
 }
 
 impl SpaceFacilityType {
+    #[allow(dead_code)]
     pub fn sprite_convert_from(&self, faction: Faction) -> SpaceFacilitySprite {
         match faction {
             Faction::Atark => match self {
