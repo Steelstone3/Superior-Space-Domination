@@ -5,6 +5,7 @@ use bevy::{
         query::With,
         system::{Commands, Query},
     },
+    math::Vec3Swizzles,
     sprite::Sprite,
     transform::components::Transform,
 };
@@ -12,7 +13,10 @@ use rand::random;
 
 use crate::{
     components::{selectable::Selectable, selection::Selection},
-    events::{mouse_click_event::MouseClickEvent, spawn_sprite_event::SpawnSpriteEvent},
+    events::{
+        mouse_click_event::MouseClickEvent,
+        spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
+    },
 };
 
 pub fn select_selectable(
@@ -26,13 +30,16 @@ pub fn select_selectable(
         return;
     };
 
-    for space_station in selectable_query.iter() {
-        let cursor_position = event.cursor_world_position;
-        let Some(size) = space_station.2.custom_size else {
+    let cursor_position = event.cursor_world_position;
+    let mut selectables: Vec<(&Transform, &Selectable, &Sprite)> = Vec::new();
+
+    //get list of selectables that are in range of mouse cursor
+    for selectable in selectable_query.iter() {
+        let Some(size) = selectable.2.custom_size else {
             return;
         };
 
-        let mut transform = space_station.0.to_owned();
+        let mut transform = selectable.0.to_owned();
         let x_min = transform.translation.x - size.x / 2.0;
         let x_max = transform.translation.x + size.x / 2.0;
         let y_min = transform.translation.y - size.y / 2.0;
@@ -45,23 +52,43 @@ pub fn select_selectable(
             && cursor_position.y >= y_min
             && cursor_position.y <= y_max
         {
-            let selection = Selection::new(random());
-            let selection_entity = commands.spawn(selection).id();
-
-            spawn_sprite_writer.send(SpawnSpriteEvent {
-                sprite_path: selection.sprite_path.to_string(),
-                size,
-                transform,
-                entity: selection_entity,
-            });
-
-            for selection in selection_query.iter() {
-                commands.entity(selection).despawn();
-            }
-        } else {
-            for selection in selection_query.iter() {
-                commands.entity(selection).despawn();
-            }
+            selectables.push(selectable);
         }
+    }
+
+    let mut closest = (
+        &Transform::from_xyz(0.0, 0.0, 0.0),
+        &Sprite::default(),
+        -1.0,
+    );
+
+    //get the closest selectable
+    for selectable in selectables {
+        let distance = selectable.0.translation.xy().distance(cursor_position);
+        if distance <= closest.2 || closest.2 == -1.0 {
+            closest = (selectable.0, selectable.2, distance);
+        }
+    }
+
+    //Clear selection before makeing new selection
+    for selection in selection_query.iter() {
+        commands.entity(selection).despawn();
+    }
+
+    //if valid selection found then spawn selection
+    if closest.2 != -1.0 {
+        let selection = Selection::new(random());
+        let selection_entity = commands.spawn(selection).id();
+
+        let Some(size) = closest.1.custom_size else {
+            return;
+        };
+
+        spawn_sprite_writer.send(SpawnSpriteEvent::spawn_sprite(SpawnSprite {
+            sprite_path: selection.sprite_path.to_string(),
+            size,
+            transform: *closest.0,
+            entity: selection_entity,
+        }));
     }
 }

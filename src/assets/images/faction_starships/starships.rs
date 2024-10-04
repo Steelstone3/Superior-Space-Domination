@@ -1,7 +1,9 @@
 use std::fmt::Display;
 
+use crate::assets::user_interace::icons::starship_icons::StarshipIcon;
+
 #[allow(dead_code)]
-#[derive(Clone, Copy)]
+#[derive(PartialEq, Clone, Copy)]
 pub enum StarshipSprite {
     AtarkBattleCruiser,
     AtarkBomber,
@@ -38,31 +40,31 @@ impl Display for StarshipSprite {
             ),
             StarshipSprite::AtarkBomber => write!(
                 formatter,
-                "images/factions/atark/starships/battlecruiser/atark_bomber.png"
+                "images/factions/atark/starships/bomber/atark_bomber.png"
             ),
             StarshipSprite::AtarkDreadnought => write!(
                 formatter,
-                "images/factions/atark/starships/battlecruiser/atark_dreadnought.png"
+                "images/factions/atark/starships/dreadnought/atark_dreadnought.png"
             ),
             StarshipSprite::AtarkFighter => write!(
                 formatter,
-                "images/factions/atark/starships/battlecruiser/atark_fighter.png"
+                "images/factions/atark/starships/fighter/atark_fighter.png"
             ),
             StarshipSprite::AtarkFrigate => write!(
                 formatter,
-                "images/factions/atark/starships/battlecruiser/atark_frigate.png"
+                "images/factions/atark/starships/frigate/atark_frigate.png"
             ),
             StarshipSprite::AtarkScout => write!(
                 formatter,
-                "images/factions/atark/starships/battlecruiser/atark_scout.png"
+                "images/factions/atark/starships/scout/atark_scout.png"
             ),
             StarshipSprite::AtarkSupportShip => write!(
                 formatter,
-                "images/factions/atark/starships/battlecruiser/atark_support_ship.png"
+                "images/factions/atark/starships/support_ship/atark_support_ship.png"
             ),
             StarshipSprite::AtarkTorpedoShip => write!(
                 formatter,
-                "images/factions/atark/starships/battlecruiser/atark_torpedo_ship.png"
+                "images/factions/atark/starships/torpedo_ship/atark_torpedo_ship.png"
             ),
             StarshipSprite::KarcanBattleCruiser => write!(
                 formatter,
@@ -128,6 +130,38 @@ impl Display for StarshipSprite {
                 formatter,
                 "images/factions/noozler/starships/battlecruiser/noozler_torpedo_ship.png"
             ),
+        }
+    }
+}
+
+impl StarshipSprite {
+    pub fn convert_from(starship_icon: StarshipIcon) -> StarshipSprite {
+        match starship_icon {
+            StarshipIcon::AtarkSupportShip => StarshipSprite::AtarkSupportShip,
+            StarshipIcon::AtarkScout => StarshipSprite::AtarkScout,
+            StarshipIcon::AtarkFighter => StarshipSprite::AtarkFighter,
+            StarshipIcon::AtarkTorpedoShip => StarshipSprite::AtarkTorpedoShip,
+            StarshipIcon::AtarkBomber => StarshipSprite::AtarkBomber,
+            StarshipIcon::AtarkFrigate => StarshipSprite::AtarkFrigate,
+            StarshipIcon::AtarkBattlecruiser => StarshipSprite::AtarkBattleCruiser,
+            StarshipIcon::AtarkDreadnought => StarshipSprite::AtarkDreadnought,
+            StarshipIcon::KarcanSupportShip => StarshipSprite::KarcanSupportShip,
+            StarshipIcon::KarcanScout => StarshipSprite::KarcanScout,
+            StarshipIcon::KarcanFighter => StarshipSprite::KarcanFighter,
+            StarshipIcon::KarcanTorpedoShip => StarshipSprite::KarcanTorpedoShip,
+            StarshipIcon::KarcanBomber => StarshipSprite::KarcanBomber,
+            StarshipIcon::KarcanFrigate => StarshipSprite::KarcanFrigate,
+            StarshipIcon::KarcanBattlecruiser => StarshipSprite::KarcanBattleCruiser,
+            StarshipIcon::KarcanDreadnought => StarshipSprite::KarcanDreadnought,
+            StarshipIcon::NoozlerSupportShip => StarshipSprite::NoozlerSupportShip,
+            StarshipIcon::NoozlerScout => StarshipSprite::NoozlerScout,
+            StarshipIcon::NoozlerFighter => StarshipSprite::NoozlerFighter,
+            StarshipIcon::NoozlerTorpedoShip => StarshipSprite::NoozlerTorpedoShip,
+            StarshipIcon::NoozlerBomber => StarshipSprite::NoozlerBomber,
+            StarshipIcon::NoozlerFrigate => StarshipSprite::NoozlerFrigate,
+            StarshipIcon::NoozlerBattlecruiser => StarshipSprite::NoozlerBattleCruiser,
+            StarshipIcon::NoozlerDreadnought => StarshipSprite::NoozlerDreadnought,
+            StarshipIcon::None => panic!("Must have an icon to convert"),
         }
     }
 }
