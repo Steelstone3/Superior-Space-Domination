@@ -1,35 +1,29 @@
-use std::cmp;
-
+use crate::{
+    components::planet::Planet,
+    events::spawn_sprite_event::{SpawnAnimatedSprite, SpawnSprite, SpawnSpriteEvent},
+    queries::space_queries::SunQuery,
+    resources::constants::PLANET_CLOSEST_DISTANCE_TO_SUN,
+};
 use bevy::{
     ecs::{event::EventWriter, system::Commands},
     math::Quat,
-    prelude::{Query, Transform, With},
+    prelude::Query,
 };
 use rand::{random, Rng};
-
-use crate::{
-    components::{planet::Planet, sun::Sun},
-    events::spawn_sprite_event::{SpawnAnimatedSprite, SpawnSprite, SpawnSpriteEvent},
-    resources::constants::PLANET_CLOSEST_DISTANCE_TO_SUN,
-};
+use std::cmp;
 
 pub fn spawn_resource_planets(
     mut commands: Commands,
     mut spawn_animated_sprite_event: EventWriter<SpawnSpriteEvent>,
-    sun_transform_query: Query<&Transform, With<Sun>>,
+    sun_queries: Query<SunQuery>,
 ) {
-    let Ok(sun_transform) = sun_transform_query.get_single() else {
-        return;
-    };
-
-    let mut rng = rand::thread_rng();
-    let number_of_planets: usize = rng.gen_range(3..6);
-
-    for _ in 0..number_of_planets {
+    for sun_query in sun_queries.iter() {
         let mut rng = rand::thread_rng();
         let angle: f32 = rng.gen_range(0.0..360.0);
         let planet = Planet::new(random());
-        let mut transform = sun_transform.with_rotation(Quat::from_rotation_z(angle.to_radians()));
+        let mut transform = sun_query
+            .transform
+            .with_rotation(Quat::from_rotation_z(angle.to_radians()));
 
         transform.translation +=
             transform.up() * PLANET_CLOSEST_DISTANCE_TO_SUN * rng.gen_range(1.0..3.0)

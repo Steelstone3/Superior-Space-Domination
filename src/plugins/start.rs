@@ -6,7 +6,7 @@ use bevy::{
 use crate::systems::{
     camera::spawn_camera::spawn_camera,
     spawning::{
-        new_new_spawn_resource_planets::new_new_spawn_resource_planets,
+        spawn_resource_planets::spawn_resource_planets,
         spawn_player_base::spawn_space_stations, spawn_solar_system::spawn_sun,
         spawn_space::spawn_space, spawn_starter_spaceship::spawn_starter_spaceship,
     },
@@ -23,7 +23,7 @@ impl Plugin for StartPlugin {
                 spawn_camera,
                 spawn_sun,
                 spawn_space_stations,
-                new_new_spawn_resource_planets.after(spawn_sun),
+                spawn_resource_planets.after(spawn_sun),
                 spawn_starter_spaceship.after(spawn_space_stations),
             ),
         );
