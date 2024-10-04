@@ -7,17 +7,13 @@ use rand::{random, Rng};
 
 use crate::{
     components::{selectable::Selectable, space_station::SpaceStation},
-    events::{
-        spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
-        spawn_transform_dependent_sprite_events::SpawnedStarbaseEvent,
-    },
+    events::spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
     resources::constants::SPACE_STATION_DISTANCE_FROM_CENTRE,
 };
 
 pub fn spawn_space_stations(
     mut commands: Commands,
     mut spawn_sprite_event: EventWriter<SpawnSpriteEvent>,
-    mut spawn_startership_event: EventWriter<SpawnedStarbaseEvent>,
 ) {
     let angle = 360.0 / rand::thread_rng().gen_range(1.0..4.0) as f32;
 
@@ -31,10 +27,10 @@ pub fn spawn_space_stations(
         sprite_path: space_station.sprite_path.to_string(),
         size: space_station.size_component.size,
         transform,
-        entity: commands.spawn(space_station).insert(Selectable).id(),
+        entity: commands
+            .spawn(space_station)
+            .insert(Selectable)
+            .insert(transform)
+            .id(),
     }));
-
-    spawn_startership_event.send(SpawnedStarbaseEvent {
-        starbase_transform: transform,
-    });
 }
