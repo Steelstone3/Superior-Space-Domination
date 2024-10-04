@@ -2,6 +2,8 @@ use bevy::reflect::Reflect;
 use rand_derive2::RandGen;
 use std::fmt::Display;
 
+use crate::resources::faction::Faction;
+
 #[derive(RandGen, Debug, PartialEq, Reflect, Clone, Copy)]
 pub enum CommanderIcon {
     AtarkCommander,
@@ -34,6 +36,16 @@ impl Display for CommanderIcon {
             CommanderIcon::None => {
                 write!(formatter, "")
             }
+        }
+    }
+}
+
+impl CommanderIcon {
+    pub fn convert_from(faction: Faction) -> CommanderIcon {
+        match faction {
+            Faction::Atark => CommanderIcon::AtarkCommander,
+            Faction::Karcan => CommanderIcon::KaranCommander,
+            Faction::Noozler => CommanderIcon::NoozlerCommander,
         }
     }
 }

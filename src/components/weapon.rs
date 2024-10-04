@@ -1,7 +1,9 @@
 use bevy::{ecs::component::Component, math::Vec2};
 
 use crate::{
-    assets::images::faction_starships::{starships::StarshipSprite, weapon::WeaponSprite},
+    assets::images::faction_starships::{
+        starship_sprite::StarshipSprite, weapon_sprite::WeaponSprite,
+    },
     resources::{constants::TILE_SIZE, faction::Faction},
 };
 

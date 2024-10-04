@@ -3,7 +3,7 @@ use super::{
 };
 use crate::{
     assets::{
-        images::faction_starships::starships::StarshipSprite,
+        images::faction_starships::starship_sprite::StarshipSprite,
         user_interace::icons::starship_icons::StarshipIcon,
     },
     resources::{constants::TILE_SIZE, faction::Faction},

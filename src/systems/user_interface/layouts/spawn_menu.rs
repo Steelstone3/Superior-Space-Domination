@@ -10,8 +10,9 @@ use bevy::{
 };
 
 use crate::{
-    assets::user_interace::icons::starship_icons::StarshipIcon,
-    components::user_interface::{SelectStarshipSpawnMenuButton, SpawnMenu},
+    assets::user_interace::icons::commander_icons::CommanderIcon,
+    components::user_interface::{SpawnMenu, SpawnMenuButton},
+    resources::faction::Faction,
 };
 
 pub fn spawn_menu(mut commands: Commands, asset_server: Res<AssetServer>) {
@@ -60,12 +61,13 @@ pub fn spawn_menu(mut commands: Commands, asset_server: Res<AssetServer>) {
                         border_color: Color::srgb(189.0, 189.0, 189.0).into(),
                         ..Default::default()
                     },
-                    SelectStarshipSpawnMenuButton {},
+                    SpawnMenuButton {},
                 ))
                 .with_children(|parent| {
                     parent.spawn(ImageBundle {
                         image: UiImage::new(
-                            asset_server.load(StarshipIcon::AtarkBattlecruiser.to_string()),
+                            asset_server
+                                .load(CommanderIcon::convert_from(Faction::Atark).to_string()),
                         ),
                         background_color: Color::WHITE.into(),
                         ..Default::default()

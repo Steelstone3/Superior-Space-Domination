@@ -10,7 +10,7 @@ use crate::{
     resources::spawn_menu_selection::SpawnMenuSelection,
 };
 
-use super::spawn_selection::SpawnSelection;
+use super::spawn_selection::Selection;
 
 pub fn deselect_all(
     mut input: ResMut<ButtonInput<KeyCode>>,
@@ -20,7 +20,7 @@ pub fn deselect_all(
     if input.clear_just_pressed(KeyCode::Escape) {
         tracing::info!("All De-Selected");
 
-        selected_item.selection = SpawnSelection::None;
+        selected_item.selection = Selection::None;
         selected_item.starship_selection = StarshipIcon::None;
 
         user_interface_event.send(UserInterfaceEvent {});

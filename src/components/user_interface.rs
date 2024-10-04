@@ -5,10 +5,10 @@ use bevy::prelude::Component;
 pub struct SpawnMenu;
 
 #[derive(Component)]
-pub struct SpawnSubMenu;
+pub struct SpawnSubMenuButton;
 
 #[derive(Component)]
-pub struct SelectStarshipSpawnMenuButton;
+pub struct SpawnMenuButton;
 
 #[allow(dead_code)]
 #[derive(Component)]

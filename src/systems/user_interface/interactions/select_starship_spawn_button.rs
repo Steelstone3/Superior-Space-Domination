@@ -9,7 +9,7 @@ use crate::{
     events::user_interface_event::UserInterfaceEvent,
     queries::user_interface_queries::{ButtonFilters, SelectStarshipSpawnButtonQuery},
     resources::spawn_menu_selection::SpawnMenuSelection,
-    systems::user_interface::interactions::spawn_selection::SpawnSelection,
+    systems::user_interface::interactions::spawn_selection::Selection,
 };
 
 // TODO AH This is just for the atark faction not sure how to handle this in future
@@ -34,7 +34,7 @@ pub fn select_starship_spawn_button(
 
             SpawnMenuSelection::reset(&mut selected_item);
 
-            selected_item.selection = SpawnSelection::Starships;
+            selected_item.selection = Selection::StarshipConstructionYard;
 
             selected_item.starship_selection = select_starship_spawn_menu_button_query.button.icon;
 

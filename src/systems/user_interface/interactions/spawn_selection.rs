@@ -1,7 +1,8 @@
 #[allow(dead_code)]
 #[derive(PartialEq)]
-pub enum SpawnSelection {
+pub enum Selection {
     None,
-    Starships,
-    Facilities,
+    StarshipConstructionYard,
+    SupportShip,
+    Starbase,
 }
