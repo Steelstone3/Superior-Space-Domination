@@ -17,6 +17,7 @@ pub fn spawn_space_stations(
 ) {
     let angle = 360.0 / rand::thread_rng().gen_range(1.0..4.0) as f32;
 
+    // TODO Find three space station assets that spawn based on faction chosen
     let space_station = SpaceStation::new(random());
     let mut transform = Transform::from_xyz(0.0, 0.0, space_station.size_component.z_index)
         .with_rotation(Quat::from_rotation_z(angle.to_radians()));
