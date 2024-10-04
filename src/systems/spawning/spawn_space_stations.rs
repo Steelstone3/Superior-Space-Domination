@@ -6,7 +6,7 @@ use bevy::{
 use rand::{random, Rng};
 
 use crate::{
-    components::{selectable::Selectable, space_station::SpaceStation},
+    components::{space_station::SpaceStation, user_interface::Selectable},
     events::spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
     resources::constants::SPACE_STATION_DISTANCE_FROM_CENTRE,
 };

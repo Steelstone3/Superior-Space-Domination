@@ -1,6 +1,6 @@
 use crate::{
     assets::images::faction_starships::starship_sprite::StarshipSprite,
-    components::{selectable::Selectable, starship::Starship},
+    components::{starship::Starship, user_interface::Selectable},
     events::spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
     queries::faction_queries::SpaceStationQuery,
 };

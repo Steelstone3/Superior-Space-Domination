@@ -1,3 +1,10 @@
+use crate::{
+    components::user_interface::{Selectable, Selection},
+    events::{
+        mouse_click_event::MouseClickEvent,
+        spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
+    },
+};
 use bevy::{
     ecs::{
         entity::Entity,
@@ -11,15 +18,7 @@ use bevy::{
 };
 use rand::random;
 
-use crate::{
-    components::{selectable::Selectable, selection::Selection},
-    events::{
-        mouse_click_event::MouseClickEvent,
-        spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
-    },
-};
-
-pub fn selection(
+pub fn sprite_selection(
     mut select_event_reader: EventReader<MouseClickEvent>,
     selectable_query: Query<(&Transform, &Selectable, &Sprite)>,
     mut spawn_sprite_writer: EventWriter<SpawnSpriteEvent>,

@@ -1,4 +1,6 @@
-use crate::assets::user_interace::icons::starship_icons::StarshipIcon;
+use crate::assets::user_interace::{
+    icons::starship_icons::StarshipIcon, team::TeamSelectionSprite,
+};
 use bevy::prelude::Component;
 
 #[derive(Component)]
@@ -24,4 +26,20 @@ pub struct SelectFacilitySpawnMenuButton;
 #[derive(Component)]
 pub struct SelectFacilitySpawnButton {
     pub icon: StarshipIcon, // TODO AH Change to facility later
+}
+
+// In Game Selection
+
+#[derive(Component, Clone, Copy)]
+pub struct Selectable;
+
+#[derive(Component, Clone, Copy)]
+pub struct Selection {
+    pub sprite_path: TeamSelectionSprite,
+}
+
+impl Selection {
+    pub fn new(sprite_path: TeamSelectionSprite) -> Self {
+        Self { sprite_path }
+    }
 }
