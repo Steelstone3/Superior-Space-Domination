@@ -19,12 +19,12 @@ pub fn spawn_suns(mut commands: Commands, mut spawn_sprite_event: EventWriter<Sp
         let sun = Sun::new(random());
 
         let x: f32 = rng.gen_range(
-            -SPACE_TILE_SIZE * ((NUMBER_OF_TILES - 3) as f32)
-                ..SPACE_TILE_SIZE * ((NUMBER_OF_TILES - 3) as f32),
+            -SPACE_TILE_SIZE * ((NUMBER_OF_TILES - 1) as f32)
+                ..SPACE_TILE_SIZE * ((NUMBER_OF_TILES - 1) as f32),
         );
         let y: f32 = rng.gen_range(
-            -SPACE_TILE_SIZE * ((NUMBER_OF_TILES - 3) as f32)
-                ..SPACE_TILE_SIZE * ((NUMBER_OF_TILES - 3) as f32),
+            -SPACE_TILE_SIZE * ((NUMBER_OF_TILES - 1) as f32)
+                ..SPACE_TILE_SIZE * ((NUMBER_OF_TILES - 1) as f32),
         );
 
         let sun_transform = Transform {
