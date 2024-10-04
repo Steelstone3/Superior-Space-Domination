@@ -1,20 +1,20 @@
-use bevy::prelude::{Commands, EventWriter, Query, Transform, With};
-
 use crate::{
     assets::images::faction_starships::starships::StarshipSprite,
-    components::{selectable::Selectable, space_station::SpaceStation, starship::Starship},
+    components::{selectable::Selectable, starship::Starship},
     events::spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
+    queries::faction_queries::SpaceStationQuery,
 };
+use bevy::prelude::{Commands, EventWriter, Query};
 
 pub fn spawn_starter_spaceship(
     mut commands: Commands,
     mut spawn_sprite_event: EventWriter<SpawnSpriteEvent>,
-    space_station_query: Query<&Transform, With<SpaceStation>>,
+    space_station_queries: Query<SpaceStationQuery>,
 ) {
-    for transform in space_station_query.iter() {
+    for space_station_query in space_station_queries.iter() {
         let starship = Starship::new(StarshipSprite::AtarkBattleCruiser);
 
-        let mut starship_transform = *transform;
+        let mut starship_transform = *space_station_query.transform;
         starship_transform.translation.z = starship.size_component.z_index;
 
         spawn_sprite_event.send(SpawnSpriteEvent::spawn_sprite(SpawnSprite {

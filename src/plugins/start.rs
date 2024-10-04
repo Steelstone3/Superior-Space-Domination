@@ -6,8 +6,8 @@ use bevy::{
 use crate::systems::{
     camera::spawn_camera::spawn_camera,
     spawning::{
-        new_spawn_starter_ship::spawn_starter_spaceship, spawn_player_base::spawn_space_stations,
-        spawn_solar_system::spawn_sun, spawn_space::spawn_space,
+        spawn_player_base::spawn_space_stations, spawn_solar_system::spawn_sun,
+        spawn_space::spawn_space, spawn_starter_spaceship::spawn_starter_spaceship,
     },
 };
 
