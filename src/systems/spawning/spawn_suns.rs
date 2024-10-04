@@ -3,18 +3,28 @@ use bevy::{
     math::Vec3,
     transform::components::Transform,
 };
-use rand::random;
+use rand::{random, Rng};
 
 use crate::{
     components::sun::Sun,
-    events::spawn_sprite_event::{SpawnAnimatedSprite, SpawnSprite, SpawnSpriteEvent},
+    events::spawn_sprite_event::{SpawnAnimatedSprite, SpawnSprite, SpawnSpriteEvent}, resources::constants::{NUMBER_OF_TILES, SPACE_TILE_SIZE},
 };
 
 pub fn spawn_suns(mut commands: Commands, mut spawn_sprite_event: EventWriter<SpawnSpriteEvent>) {
     let sun = Sun::new(random());
 
+    let mut rng = rand::thread_rng();
+    let x: f32 = rng.gen_range(
+        -SPACE_TILE_SIZE * ((NUMBER_OF_TILES - 3) as f32)
+            ..SPACE_TILE_SIZE * ((NUMBER_OF_TILES - 3) as f32),
+    );
+    let y: f32 = rng.gen_range(
+        -SPACE_TILE_SIZE * ((NUMBER_OF_TILES - 3) as f32)
+            ..SPACE_TILE_SIZE * ((NUMBER_OF_TILES - 3) as f32),
+    );
+
     let sun_transform = Transform {
-        translation: Vec3::new(0.0, 0.0, sun.size_component.z_index),
+        translation: Vec3::new(x, y, sun.size_component.z_index),
         ..Default::default()
     };
 

@@ -1,5 +1,3 @@
-use bevy::app::{Plugin, Update};
-
 use crate::{
     events::event_handlers::select::select,
     systems::{
@@ -12,6 +10,7 @@ use crate::{
         selecting::select_selectable::select_selectable,
     },
 };
+use bevy::app::{Plugin, Update};
 
 pub struct RunningPlugin;
 
