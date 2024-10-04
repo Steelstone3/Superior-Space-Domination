@@ -1,7 +1,7 @@
 use bevy::{ecs::component::Component, math::Vec2};
 
 use crate::{
-    assets::images::space_stations::SpaceStationSprite, resources::constants::STATION_SIZE,
+    assets::images::space_facilities::SpaceStationSprite, resources::constants::STATION_SIZE,
 };
 
 use super::size_component::SizeComponent;
