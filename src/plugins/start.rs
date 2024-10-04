@@ -24,7 +24,7 @@ impl Plugin for StartPlugin {
                 spawn_suns,
                 spawn_space_stations,
                 spawn_resource_planets.after(spawn_suns),
-                spawn_starter_spaceship.after(spawn_space_stations),
+                (spawn_starter_spaceship, spawn_camera).after(spawn_space_stations),
             ),
         );
     }
