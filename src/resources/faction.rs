@@ -13,8 +13,8 @@ pub struct PlayerFaction {
 
 #[derive(Default, PartialEq, Clone, Copy)]
 pub enum Faction {
-    #[default]
     Atark,
+    #[default]
     Karcan,
     Noozler,
 }
@@ -50,6 +50,7 @@ impl Faction {
     }
 }
 
+#[allow(dead_code)]
 pub enum StarshipType {
     SupportShip,
     Scout,
