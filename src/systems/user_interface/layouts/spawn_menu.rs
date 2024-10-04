@@ -11,11 +11,12 @@ use bevy::{
 
 use crate::{
     assets::user_interace::icons::commander_icons::CommanderIcon,
-    components::user_interface::{SpawnMenuButton, SpawnMenu}, resources::faction::Faction,
+    components::user_interface::{SpawnMenu, SpawnMenuButton},
+    resources::faction::Faction,
 };
 
 pub fn spawn_menu(mut commands: Commands, asset_server: Res<AssetServer>) {
-       commands
+    commands
         .spawn(NodeBundle {
             style: Style {
                 display: Display::Grid,
@@ -65,7 +66,8 @@ pub fn spawn_menu(mut commands: Commands, asset_server: Res<AssetServer>) {
                 .with_children(|parent| {
                     parent.spawn(ImageBundle {
                         image: UiImage::new(
-                            asset_server.load(CommanderIcon::convert_from(Faction::Atark).to_string()),
+                            asset_server
+                                .load(CommanderIcon::convert_from(Faction::Atark).to_string()),
                         ),
                         background_color: Color::WHITE.into(),
                         ..Default::default()
