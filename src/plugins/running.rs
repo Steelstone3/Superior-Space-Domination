@@ -6,8 +6,7 @@ use crate::{
             camera_movement::camera_movement, camera_position_reset::camera_position_reset,
             camera_zoom_keyboard::camera_zoom_keyboard,
             camera_zoom_mouse_and_touchpad::camera_zoom_mouse_and_touchpad,
-        },
-        selecting::select_selectable::select_selectable,
+        }, user_interface::selection::selection,
     },
 };
 use bevy::app::{Plugin, Update};
@@ -24,7 +23,7 @@ impl Plugin for RunningPlugin {
                 camera_movement,
                 camera_position_reset,
                 select,
-                select_selectable,
+                selection,
                 animate_sprites,
             ),
         );

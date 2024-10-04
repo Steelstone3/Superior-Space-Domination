@@ -19,12 +19,12 @@ use crate::{
     },
 };
 
-pub fn select_selectable(
+pub fn selection(
     mut select_event_reader: EventReader<MouseClickEvent>,
     selectable_query: Query<(&Transform, &Selectable, &Sprite)>,
     mut spawn_sprite_writer: EventWriter<SpawnSpriteEvent>,
     mut commands: Commands,
-    selection_query: Query<Entity, With<Selection>>,
+    selection_queries: Query<Entity, With<Selection>>,
 ) {
     let Some(event) = select_event_reader.read().last() else {
         return;
@@ -71,7 +71,7 @@ pub fn select_selectable(
     }
 
     //Clear selection before makeing new selection
-    for selection in selection_query.iter() {
+    for selection in selection_queries.iter() {
         commands.entity(selection).despawn();
     }
 
