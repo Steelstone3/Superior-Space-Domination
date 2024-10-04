@@ -10,7 +10,7 @@ use crate::{
     events::spawn_sprite_event::{SpawnAnimatedSprite, SpawnSprite, SpawnSpriteEvent},
 };
 
-pub fn spawn_sun(mut commands: Commands, mut spawn_sprite_event: EventWriter<SpawnSpriteEvent>) {
+pub fn spawn_suns(mut commands: Commands, mut spawn_sprite_event: EventWriter<SpawnSpriteEvent>) {
     let sun = Sun::new(random());
 
     let sun_transform = Transform {

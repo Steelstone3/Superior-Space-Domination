@@ -7,7 +7,7 @@ use crate::systems::{
     camera::spawn_camera::spawn_camera,
     spawning::{
         spawn_resource_planets::spawn_resource_planets,
-        spawn_player_base::spawn_space_stations, spawn_solar_system::spawn_sun,
+        spawn_player_base::spawn_space_stations, spawn_suns::spawn_suns,
         spawn_space::spawn_space, spawn_starter_spaceship::spawn_starter_spaceship,
     },
 };
@@ -21,9 +21,9 @@ impl Plugin for StartPlugin {
             (
                 spawn_space,
                 spawn_camera,
-                spawn_sun,
+                spawn_suns,
                 spawn_space_stations,
-                spawn_resource_planets.after(spawn_sun),
+                spawn_resource_planets.after(spawn_suns),
                 spawn_starter_spaceship.after(spawn_space_stations),
             ),
         );
