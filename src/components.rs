@@ -1,4 +1,5 @@
 pub mod animation_timer;
+pub mod controllable;
 pub mod planet;
 pub mod size_component;
 pub mod space;
@@ -7,5 +8,6 @@ pub mod space_station;
 pub mod starship;
 pub mod starship_sprite_bundle;
 pub mod sun;
+pub mod tracking;
 pub mod user_interface;
 pub mod weapon;

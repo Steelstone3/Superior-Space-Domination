@@ -3,6 +3,7 @@ use crate::{
     components::{
         space_station::SpaceStation,
         starship::Starship,
+        tracking::Tracking,
         user_interface::{Selectable, SelectedSprite},
     },
     events::{
@@ -88,7 +89,12 @@ pub fn sprite_selection(
         }
 
         let selection = SelectedSprite::new(random());
-        let selection_entity = commands.spawn(selection).id();
+        let selection_entity = commands
+            .spawn(selection)
+            .insert(Tracking {
+                entity_to_follow: closest.3,
+            })
+            .id();
 
         let Some(size) = closest.1.custom_size else {
             return;
@@ -121,6 +127,8 @@ pub fn sprite_selection(
                 spawn_menu_selection.selection = SpawnSelection::Other;
                 info!("Other Selected");
             }
+
+            spawn_menu_selection.selected_entity = closest.3;
         };
     }
 }

@@ -1,5 +1,5 @@
 use crate::{
-    components::{starship::Starship, user_interface::Selectable},
+    components::{controllable::Movement, starship::Starship, user_interface::Selectable},
     events::spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
     queries::faction_queries::SpaceStationQuery,
     resources::faction::{PlayerFaction, StarshipType},
@@ -24,7 +24,13 @@ pub fn spawn_starter_spaceship(
             sprite_path: starship.starship_sprite_bundle.starship_sprite.to_string(),
             size: starship.size_component.size,
             transform: starship_transform,
-            entity: commands.spawn(starship).insert(Selectable).id(),
+            entity: commands
+                .spawn(starship)
+                .insert(Selectable)
+                .insert(Movement {
+                    target_location: starship_transform.translation,
+                })
+                .id(),
         }));
     }
 }
