@@ -64,7 +64,7 @@ pub fn sprite_selection(
         let y_max = transform.translation.y + size.y / 2.0;
 
         //set transform to be one higher than selected so it appears above it
-        transform.translation.z += 1.0;
+        transform.translation.z = 6.0;
 
         //if cursor is inside of the sprite bounds
         if cursor_position.x >= x_min

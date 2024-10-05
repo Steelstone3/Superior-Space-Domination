@@ -7,12 +7,11 @@ use crate::assets::{
         faction_starships::starship_sprite::StarshipSprite,
         space_facility_sprite::{SpaceFacilitySprite, SpaceStationSprite},
     },
-    user_interace::icons::starship_icons::StarshipIcon,
+    user_interace::icons::{space_facility_icons::SpaceFacilityIcon, starship_icons::StarshipIcon},
 };
 
 #[derive(Resource, Default, Clone, Copy)]
 pub struct PlayerFaction {
-    #[allow(dead_code)]
     pub player_faction: Faction,
 }
 
@@ -156,21 +155,21 @@ impl StarshipType {
 }
 
 #[allow(dead_code)]
-pub enum StarBaseType {
+pub enum StarStationType {
     SpaceStation,
 }
 
-impl StarBaseType {
+impl StarStationType {
     pub fn sprite_convert_from(&self, faction: Faction) -> SpaceStationSprite {
         match faction {
             Faction::Atark => match self {
-                StarBaseType::SpaceStation => SpaceStationSprite::AtarkSpaceStation,
+                StarStationType::SpaceStation => SpaceStationSprite::AtarkSpaceStation,
             },
             Faction::Karcan => match self {
-                StarBaseType::SpaceStation => SpaceStationSprite::KarcanSpaceStation,
+                StarStationType::SpaceStation => SpaceStationSprite::KarcanSpaceStation,
             },
             Faction::Noozler => match self {
-                StarBaseType::SpaceStation => SpaceStationSprite::NoozlerSpaceStation,
+                StarStationType::SpaceStation => SpaceStationSprite::NoozlerSpaceStation,
             },
         }
     }
@@ -182,6 +181,27 @@ pub enum SpaceFacilityType {
 }
 
 impl SpaceFacilityType {
+    #[allow(dead_code)]
+    pub fn icon_convert_from(&self, faction: Faction) -> SpaceFacilityIcon {
+        match faction {
+            Faction::Atark => match self {
+                SpaceFacilityType::SpaceShipConstructionYard => {
+                    SpaceFacilityIcon::AtarkSpaceShipConstructionYard
+                }
+            },
+            Faction::Karcan => match self {
+                SpaceFacilityType::SpaceShipConstructionYard => {
+                    SpaceFacilityIcon::KarcanSpaceShipConstructionYard
+                }
+            },
+            Faction::Noozler => match self {
+                SpaceFacilityType::SpaceShipConstructionYard => {
+                    SpaceFacilityIcon::NoozlerSpaceShipConstructionYard
+                }
+            },
+        }
+    }
+
     #[allow(dead_code)]
     pub fn sprite_convert_from(&self, faction: Faction) -> SpaceFacilitySprite {
         match faction {

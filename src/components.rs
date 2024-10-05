@@ -2,6 +2,7 @@ pub mod animation_timer;
 pub mod planet;
 pub mod size_component;
 pub mod space;
+pub mod space_facility;
 pub mod space_station;
 pub mod starship;
 pub mod starship_sprite_bundle;

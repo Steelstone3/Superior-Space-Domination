@@ -11,7 +11,7 @@ use crate::{
     events::spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
     resources::{
         constants::SPACE_STATION_DISTANCE_FROM_CENTRE,
-        faction::{PlayerFaction, StarBaseType},
+        faction::{PlayerFaction, StarStationType},
     },
 };
 
@@ -23,7 +23,7 @@ pub fn spawn_space_stations(
     let mut rng = rand::thread_rng();
     let angle = 360.0 / rng.gen_range(1.0..4.0) as f32;
     let space_station = SpaceStation::new(
-        StarBaseType::SpaceStation.sprite_convert_from(player_faction.player_faction),
+        StarStationType::SpaceStation.sprite_convert_from(player_faction.player_faction),
     );
     let mut transform = Transform::from_xyz(0.0, 0.0, space_station.size_component.z_index)
         .with_rotation(Quat::from_rotation_z(angle.to_radians()));
