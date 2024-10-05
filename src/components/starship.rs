@@ -34,7 +34,7 @@ impl Starship {
     }
 
     pub fn new_from_icon(starship_icon: StarshipIcon) -> Starship {
-        let starship_sprite = StarshipSprite::convert_from(starship_icon);
+        let starship_sprite = StarshipSprite::sprite_convert_from(starship_icon);
 
         Self {
             starship_sprite_bundle: StarshipSpriteBundle::new(starship_sprite),

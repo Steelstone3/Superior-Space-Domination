@@ -1,3 +1,5 @@
+use std::fmt::Display;
+
 use bevy::prelude::Resource;
 
 use crate::assets::{
@@ -54,6 +56,7 @@ impl Faction {
 }
 
 #[allow(dead_code)]
+#[derive(PartialEq)]
 pub enum StarshipType {
     SupportShip,
     Scout,
@@ -63,6 +66,21 @@ pub enum StarshipType {
     Frigate,
     Battlecruiser,
     Dreadnought,
+}
+
+impl Display for StarshipType {
+    fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            StarshipType::SupportShip => write!(formatter, "Support"),
+            StarshipType::Scout => write!(formatter, "Scout"),
+            StarshipType::Fighter => write!(formatter, "Fighter"),
+            StarshipType::TorpedoShip => write!(formatter, "Torpedo"),
+            StarshipType::Bomber => write!(formatter, "Bomber"),
+            StarshipType::Frigate => write!(formatter, "Frigate"),
+            StarshipType::Battlecruiser => write!(formatter, "BattleCruiser"),
+            StarshipType::Dreadnought => write!(formatter, "Dreadnought"),
+        }
+    }
 }
 
 impl StarshipType {

@@ -1,28 +1,31 @@
 use bevy::{
     ecs::{event::EventWriter, system::ResMut},
     input::{keyboard::KeyCode, ButtonInput},
+    prelude::{Commands, Entity, Query, With},
     utils::tracing,
 };
 
 use crate::{
-    assets::user_interace::icons::starship_icons::StarshipIcon,
-    events::user_interface_event::UserInterfaceEvent,
+    components::user_interface::SelectedSprite, events::user_interface_event::UserInterfaceEvent,
     resources::spawn_menu_selection::SpawnMenuSelection,
 };
-
-use super::spawn_selection::SpawnSelection;
 
 pub fn deselect_all(
     mut input: ResMut<ButtonInput<KeyCode>>,
     mut selected_item: ResMut<SpawnMenuSelection>,
     mut user_interface_event: EventWriter<UserInterfaceEvent>,
+    selection_query: Query<Entity, With<SelectedSprite>>,
+    mut commands: Commands,
 ) {
     if input.clear_just_pressed(KeyCode::Escape) {
         tracing::info!("All De-Selected");
 
-        selected_item.selection = SpawnSelection::None;
-        selected_item.starship_selection = StarshipIcon::None;
+        SpawnMenuSelection::reset(&mut selected_item);
 
         user_interface_event.send(UserInterfaceEvent {});
+
+        for selection in selection_query.iter() {
+            commands.entity(selection).despawn();
+        }
     }
 }

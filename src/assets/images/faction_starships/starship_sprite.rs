@@ -1,6 +1,8 @@
 use std::fmt::Display;
 
-use crate::assets::user_interace::icons::starship_icons::StarshipIcon;
+use crate::{
+    assets::user_interace::icons::starship_icons::StarshipIcon, resources::faction::StarshipType,
+};
 
 #[allow(dead_code)]
 #[derive(PartialEq, Clone, Copy)]
@@ -135,7 +137,7 @@ impl Display for StarshipSprite {
 }
 
 impl StarshipSprite {
-    pub fn convert_from(starship_icon: StarshipIcon) -> StarshipSprite {
+    pub fn sprite_convert_from(starship_icon: StarshipIcon) -> StarshipSprite {
         match starship_icon {
             StarshipIcon::AtarkSupportShip => StarshipSprite::AtarkSupportShip,
             StarshipIcon::AtarkScout => StarshipSprite::AtarkScout,
@@ -162,6 +164,35 @@ impl StarshipSprite {
             StarshipIcon::NoozlerBattleCruiser => StarshipSprite::NoozlerBattleCruiser,
             StarshipIcon::NoozlerDreadnought => StarshipSprite::NoozlerDreadnought,
             StarshipIcon::None => panic!("Must have an icon to convert"),
+        }
+    }
+
+    pub fn starship_type_convert_from(starship_sprite: StarshipSprite) -> StarshipType {
+        match starship_sprite {
+            StarshipSprite::AtarkBattleCruiser
+            | StarshipSprite::KarcanBattleCruiser
+            | StarshipSprite::NoozlerBattleCruiser => StarshipType::Battlecruiser,
+            StarshipSprite::AtarkBomber
+            | StarshipSprite::KarcanBomber
+            | StarshipSprite::NoozlerBomber => StarshipType::Bomber,
+            StarshipSprite::AtarkDreadnought
+            | StarshipSprite::KarcanDreadnought
+            | StarshipSprite::NoozlerDreadnought => StarshipType::Dreadnought,
+            StarshipSprite::AtarkFighter
+            | StarshipSprite::KarcanFighter
+            | StarshipSprite::NoozlerFighter => StarshipType::Fighter,
+            StarshipSprite::AtarkFrigate
+            | StarshipSprite::KarcanFrigate
+            | StarshipSprite::NoozlerFrigate => StarshipType::Frigate,
+            StarshipSprite::AtarkScout
+            | StarshipSprite::KarcanScout
+            | StarshipSprite::NoozlerScout => StarshipType::Scout,
+            StarshipSprite::AtarkSupportShip
+            | StarshipSprite::KarcanSupportShip
+            | StarshipSprite::NoozlerSupportShip => StarshipType::SupportShip,
+            StarshipSprite::AtarkTorpedoShip
+            | StarshipSprite::KarcanTorpedoShip
+            | StarshipSprite::NoozlerTorpedoShip => StarshipType::TorpedoShip,
         }
     }
 }

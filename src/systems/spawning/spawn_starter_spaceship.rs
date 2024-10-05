@@ -13,8 +13,9 @@ pub fn spawn_starter_spaceship(
     player_faction: Res<PlayerFaction>,
 ) {
     for space_station_query in space_station_queries.iter() {
-        let starship =
-            Starship::new(StarshipType::Scout.sprite_convert_from(player_faction.player_faction));
+        let starship = Starship::new(
+            StarshipType::SupportShip.sprite_convert_from(player_faction.player_faction),
+        );
 
         let mut starship_transform = *space_station_query.transform;
         starship_transform.translation.z = starship.size_component.z_index;
