@@ -1,1 +1,1 @@
-sudo nice --adjustment=1 | cargo b
+sudo nice -n 1 | cargo b
