@@ -100,5 +100,6 @@ pub fn sprite_selection(
 
     // TODO MG Find the type and convert it to the is enum
     // For example say the entity was a construction yard kachow there you go
-    spawn_menu_selection.selection = SpawnSelection::StarshipConstructionYard
+    // spawn_menu_selection.selection = SpawnSelection::Starbase;
+    spawn_menu_selection.selection = SpawnSelection::StarshipConstructionYard;
 }

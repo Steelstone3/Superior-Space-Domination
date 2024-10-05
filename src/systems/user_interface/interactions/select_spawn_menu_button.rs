@@ -1,6 +1,6 @@
 use bevy::{
     color::palettes::css::{GREY, YELLOW},
-    prelude::{EventWriter, Query, ResMut},
+    prelude::{EventWriter, Query},
     ui::Interaction,
     utils::tracing,
 };
@@ -8,18 +8,14 @@ use bevy::{
 use crate::{
     events::user_interface_event::UserInterfaceEvent,
     queries::user_interface_queries::{ButtonFilters, SelectStarshipSpawnMenuButtonQuery},
-    resources::spawn_menu_selection::SpawnMenuSelection,
-    systems::user_interface::interactions::spawn_selection::SpawnSelection,
 };
 
-// TODO AH This is just for the atark faction not sure how to handle this in future
 #[allow(dead_code)]
 pub fn select_starship_spawn_menu_button(
     mut select_starship_spawn_menu_button_queries: Query<
         SelectStarshipSpawnMenuButtonQuery,
         ButtonFilters,
     >,
-    mut selected_item: ResMut<SpawnMenuSelection>,
     mut user_interface_event: EventWriter<UserInterfaceEvent>,
 ) {
     let Ok(mut select_starship_spawn_menu_button_query) =
@@ -31,10 +27,6 @@ pub fn select_starship_spawn_menu_button(
     match *select_starship_spawn_menu_button_query.interaction {
         Interaction::Pressed => {
             tracing::info!("Pressed Spawn Ship Menu Button");
-
-            SpawnMenuSelection::reset(&mut selected_item);
-
-            selected_item.selection = SpawnSelection::StarshipConstructionYard;
 
             *select_starship_spawn_menu_button_query.border_color = YELLOW.into();
 

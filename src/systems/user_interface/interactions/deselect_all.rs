@@ -5,12 +5,9 @@ use bevy::{
 };
 
 use crate::{
-    assets::user_interace::icons::starship_icons::StarshipIcon,
     events::user_interface_event::UserInterfaceEvent,
     resources::spawn_menu_selection::SpawnMenuSelection,
 };
-
-use super::spawn_selection::SpawnSelection;
 
 pub fn deselect_all(
     mut input: ResMut<ButtonInput<KeyCode>>,
@@ -20,8 +17,7 @@ pub fn deselect_all(
     if input.clear_just_pressed(KeyCode::Escape) {
         tracing::info!("All De-Selected");
 
-        selected_item.selection = SpawnSelection::None;
-        selected_item.starship_selection = StarshipIcon::None;
+        SpawnMenuSelection::reset(&mut selected_item);
 
         user_interface_event.send(UserInterfaceEvent {});
     }

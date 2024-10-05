@@ -9,11 +9,8 @@ use crate::{
     events::user_interface_event::UserInterfaceEvent,
     queries::user_interface_queries::{ButtonFilters, SelectStarshipSpawnButtonQuery},
     resources::spawn_menu_selection::SpawnMenuSelection,
-    systems::user_interface::interactions::spawn_selection::SpawnSelection,
 };
 
-// TODO AH This is just for the atark faction not sure how to handle this in future
-#[allow(dead_code)]
 pub fn select_spawn_button(
     mut select_starship_spawn_menu_button_queries: Query<
         SelectStarshipSpawnButtonQuery,
@@ -31,10 +28,6 @@ pub fn select_spawn_button(
     match *select_starship_spawn_menu_button_query.interaction {
         Interaction::Pressed => {
             tracing::info!("Pressed Spawn Ship Button");
-
-            SpawnMenuSelection::reset(&mut selected_item);
-
-            selected_item.selection = SpawnSelection::StarshipConstructionYard;
 
             selected_item.starship_selection = select_starship_spawn_menu_button_query.button.icon;
 
