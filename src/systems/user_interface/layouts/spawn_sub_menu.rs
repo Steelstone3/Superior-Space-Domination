@@ -152,13 +152,13 @@ pub fn spawn_starship_sub_menu(
                     .with_children(|parent| {
                         parent
                             .spawn(create_starship_button_bundle(
-                                StarshipType::Battlecruiser,
+                                StarshipType::BattleCruiser,
                                 faction.player_faction,
                             ))
                             .with_children(|parent| {
                                 parent.spawn(create_starship_button_icon(
                                     &asset_server,
-                                    StarshipType::Battlecruiser,
+                                    StarshipType::BattleCruiser,
                                     faction.player_faction,
                                 ));
                             });

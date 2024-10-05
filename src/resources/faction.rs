@@ -64,7 +64,7 @@ pub enum StarshipType {
     TorpedoShip,
     Bomber,
     Frigate,
-    Battlecruiser,
+    BattleCruiser,
     Dreadnought,
 }
 
@@ -77,7 +77,7 @@ impl Display for StarshipType {
             StarshipType::TorpedoShip => write!(formatter, "Torpedo"),
             StarshipType::Bomber => write!(formatter, "Bomber"),
             StarshipType::Frigate => write!(formatter, "Frigate"),
-            StarshipType::Battlecruiser => write!(formatter, "BattleCruiser"),
+            StarshipType::BattleCruiser => write!(formatter, "BattleCruiser"),
             StarshipType::Dreadnought => write!(formatter, "Dreadnought"),
         }
     }
@@ -93,7 +93,7 @@ impl StarshipType {
                 StarshipType::TorpedoShip => StarshipIcon::AtarkTorpedoShip,
                 StarshipType::Bomber => StarshipIcon::AtarkBomber,
                 StarshipType::Frigate => StarshipIcon::AtarkFrigate,
-                StarshipType::Battlecruiser => StarshipIcon::AtarkBattleCruiser,
+                StarshipType::BattleCruiser => StarshipIcon::AtarkBattleCruiser,
                 StarshipType::Dreadnought => StarshipIcon::AtarkDreadnought,
             },
             Faction::Karcan => match self {
@@ -103,7 +103,7 @@ impl StarshipType {
                 StarshipType::TorpedoShip => StarshipIcon::KarcanTorpedoShip,
                 StarshipType::Bomber => StarshipIcon::KarcanBomber,
                 StarshipType::Frigate => StarshipIcon::KarcanFrigate,
-                StarshipType::Battlecruiser => StarshipIcon::KarcanBattleCruiser,
+                StarshipType::BattleCruiser => StarshipIcon::KarcanBattleCruiser,
                 StarshipType::Dreadnought => StarshipIcon::KarcanDreadnought,
             },
             Faction::Noozler => match self {
@@ -113,7 +113,7 @@ impl StarshipType {
                 StarshipType::TorpedoShip => StarshipIcon::NoozlerTorpedoShip,
                 StarshipType::Bomber => StarshipIcon::NoozlerBomber,
                 StarshipType::Frigate => StarshipIcon::NoozlerFrigate,
-                StarshipType::Battlecruiser => StarshipIcon::NoozlerBattleCruiser,
+                StarshipType::BattleCruiser => StarshipIcon::NoozlerBattleCruiser,
                 StarshipType::Dreadnought => StarshipIcon::NoozlerDreadnought,
             },
         }
@@ -128,7 +128,7 @@ impl StarshipType {
                 StarshipType::TorpedoShip => StarshipSprite::AtarkTorpedoShip,
                 StarshipType::Bomber => StarshipSprite::AtarkBomber,
                 StarshipType::Frigate => StarshipSprite::AtarkFrigate,
-                StarshipType::Battlecruiser => StarshipSprite::AtarkBattleCruiser,
+                StarshipType::BattleCruiser => StarshipSprite::AtarkBattleCruiser,
                 StarshipType::Dreadnought => StarshipSprite::AtarkDreadnought,
             },
             Faction::Karcan => match self {
@@ -138,7 +138,7 @@ impl StarshipType {
                 StarshipType::TorpedoShip => StarshipSprite::KarcanTorpedoShip,
                 StarshipType::Bomber => StarshipSprite::KarcanBomber,
                 StarshipType::Frigate => StarshipSprite::KarcanFrigate,
-                StarshipType::Battlecruiser => StarshipSprite::KarcanBattleCruiser,
+                StarshipType::BattleCruiser => StarshipSprite::KarcanBattleCruiser,
                 StarshipType::Dreadnought => StarshipSprite::KarcanDreadnought,
             },
             Faction::Noozler => match self {
@@ -148,7 +148,7 @@ impl StarshipType {
                 StarshipType::TorpedoShip => StarshipSprite::NoozlerTorpedoShip,
                 StarshipType::Bomber => StarshipSprite::NoozlerBomber,
                 StarshipType::Frigate => StarshipSprite::NoozlerFrigate,
-                StarshipType::Battlecruiser => StarshipSprite::NoozlerBattleCruiser,
+                StarshipType::BattleCruiser => StarshipSprite::NoozlerBattleCruiser,
                 StarshipType::Dreadnought => StarshipSprite::NoozlerDreadnought,
             },
         }

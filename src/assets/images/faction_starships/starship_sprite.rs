@@ -171,7 +171,7 @@ impl StarshipSprite {
         match starship_sprite {
             StarshipSprite::AtarkBattleCruiser
             | StarshipSprite::KarcanBattleCruiser
-            | StarshipSprite::NoozlerBattleCruiser => StarshipType::Battlecruiser,
+            | StarshipSprite::NoozlerBattleCruiser => StarshipType::BattleCruiser,
             StarshipSprite::AtarkBomber
             | StarshipSprite::KarcanBomber
             | StarshipSprite::NoozlerBomber => StarshipType::Bomber,
