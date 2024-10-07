@@ -7,7 +7,8 @@ pub fn update_selected_sprite_location(
     mut entity_to_follow_queries: Query<&mut Transform, Without<Tracking>>,
 ) {
     for mut selection_sprite_query in selected_sprite_queries.iter_mut() {
-        let Ok(entity_to_follow_transform) = entity_to_follow_queries.get_mut(selection_sprite_query.0.entity_to_follow)
+        let Ok(entity_to_follow_transform) =
+            entity_to_follow_queries.get_mut(selection_sprite_query.0.entity_to_follow)
         else {
             return;
         };
