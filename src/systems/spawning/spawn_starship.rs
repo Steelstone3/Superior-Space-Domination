@@ -1,6 +1,6 @@
 use crate::{
     assets::user_interace::icons::starship_icons::StarshipIcon,
-    components::{starship::Starship, user_interface::Selectable},
+    components::{controllable::Movement, starship::Starship, user_interface::Selectable},
     events::spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
     queries::{
         camera_queries::CameraTransformOrthographicProjectionQuery, window_queries::WindowQuery,
@@ -46,7 +46,6 @@ pub fn spawn_starship(
     }
 
     let mut transform = Transform::default();
-    transform.translation.z = 5.0;
 
     if let Some(position) = window_query.window.cursor_position() {
         get_cursor_location(&mut transform, position, window_query, camera_query);
@@ -58,12 +57,19 @@ pub fn spawn_starship(
 
     if selected_item.starship_selection != StarshipIcon::None {
         let starship = Starship::new_from_icon(selected_item.starship_selection);
+        transform.translation.z = starship.size_component.z_index;
 
         spawn_sprite_event.send(SpawnSpriteEvent::spawn_sprite(SpawnSprite {
             sprite_path: starship.starship_sprite_bundle.starship_sprite.to_string(),
             size: starship.size_component.size,
             transform,
-            entity: commands.spawn(starship).insert(Selectable).id(),
+            entity: commands
+                .spawn(starship)
+                .insert(Selectable)
+                .insert(Movement {
+                    target_location: transform.translation,
+                })
+                .id(),
         }));
     }
 }

@@ -7,10 +7,10 @@ use crate::{
             camera_zoom_keyboard::camera_zoom_keyboard,
             camera_zoom_mouse_and_touchpad::camera_zoom_mouse_and_touchpad,
         },
-        controller::new_set_controllable_target::new_set_controllable_target,
+        controller::set_controllable_target::set_controllable_target,
         movement::{
-            new_controllable_move_to_target::new_controllable_move_to_target,
-            new_update_selection_sprite_location::new_update_selection_sprite_location,
+            controllable_move_to_target::controllable_move_to_target,
+            update_selected_sprite_location::update_selected_sprite_location,
         },
         user_interface::sprite_selection::sprite_selection,
     },
@@ -31,9 +31,9 @@ impl Plugin for RunningPlugin {
                 handle_mouse_input,
                 sprite_selection,
                 animate_sprites,
-                new_set_controllable_target,
-                new_controllable_move_to_target,
-                new_update_selection_sprite_location,
+                set_controllable_target,
+                controllable_move_to_target,
+                update_selected_sprite_location,
             ),
         );
     }

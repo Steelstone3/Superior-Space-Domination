@@ -1,2 +1,2 @@
-pub mod new_controllable_move_to_target;
-pub mod new_update_selection_sprite_location;
+pub mod controllable_move_to_target;
+pub mod update_selected_sprite_location;

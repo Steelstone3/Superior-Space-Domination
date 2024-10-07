@@ -10,7 +10,7 @@ use crate::{
 };
 
 //sets the selected controllable target location to where the player right clicked
-pub fn new_set_controllable_target(
+pub fn set_controllable_target(
     mut right_mouse_event_reader: EventReader<MouseRightClickEvent>,
     selection_resource: Res<SpawnMenuSelection>,
     mut selected_moveable_query: Query<(&mut Movement, &Transform)>,
