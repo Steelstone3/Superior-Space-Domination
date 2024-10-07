@@ -163,7 +163,7 @@ impl StarshipSprite {
             StarshipIcon::NoozlerFrigate => StarshipSprite::NoozlerFrigate,
             StarshipIcon::NoozlerBattleCruiser => StarshipSprite::NoozlerBattleCruiser,
             StarshipIcon::NoozlerDreadnought => StarshipSprite::NoozlerDreadnought,
-            StarshipIcon::None => panic!("Must have an icon to convert"),
+            StarshipIcon::None => panic!("Spaceship Sprite: Must have an icon to convert"),
         }
     }
 

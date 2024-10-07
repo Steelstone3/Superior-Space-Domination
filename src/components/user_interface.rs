@@ -1,5 +1,6 @@
 use crate::assets::user_interace::{
-    icons::starship_icons::StarshipIcon, team::TeamSelectionSprite,
+    icons::{space_facility_icons::SpaceFacilityIcon, starship_icons::StarshipIcon},
+    team::TeamSelectionSprite,
 };
 use bevy::prelude::Component;
 
@@ -12,7 +13,6 @@ pub struct SpawnSubMenuButton;
 #[derive(Component)]
 pub struct SpawnMenuButton;
 
-#[allow(dead_code)]
 #[derive(Component)]
 pub struct SelectStarshipSpawnButton {
     pub icon: StarshipIcon,
@@ -25,7 +25,7 @@ pub struct SelectFacilitySpawnMenuButton;
 #[allow(dead_code)]
 #[derive(Component)]
 pub struct SelectFacilitySpawnButton {
-    pub icon: StarshipIcon, // TODO AH Change to facility later
+    pub icon: SpaceFacilityIcon,
 }
 
 // In Game Selection

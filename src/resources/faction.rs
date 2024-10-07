@@ -175,13 +175,11 @@ impl StarStationType {
     }
 }
 
-#[allow(dead_code)]
 pub enum SpaceFacilityType {
     SpaceShipConstructionYard,
 }
 
 impl SpaceFacilityType {
-    #[allow(dead_code)]
     pub fn icon_convert_from(&self, faction: Faction) -> SpaceFacilityIcon {
         match faction {
             Faction::Atark => match self {

@@ -20,7 +20,6 @@ pub struct Starship {
 }
 
 impl Starship {
-    #[allow(dead_code)]
     pub fn new(starship_sprite: StarshipSprite) -> Starship {
         Self {
             starship_sprite_bundle: StarshipSpriteBundle::new(starship_sprite),

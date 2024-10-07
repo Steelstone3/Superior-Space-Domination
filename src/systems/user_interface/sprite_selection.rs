@@ -1,6 +1,7 @@
 use crate::{
     assets::images::faction_starships::starship_sprite::StarshipSprite,
     components::{
+        space_facility::SpaceFacility,
         space_station::SpaceStation,
         starship::Starship,
         tracking::Tracking,
@@ -36,7 +37,11 @@ pub fn sprite_selection(
     mut commands: Commands,
     selection_queries: Query<Entity, With<SelectedSprite>>,
     mut spawn_menu_selection: ResMut<SpawnMenuSelection>,
-    type_check_query: Query<(Option<&SpaceStation>, Option<&Starship>)>,
+    type_check_query: Query<(
+        Option<&SpaceStation>,
+        Option<&SpaceFacility>,
+        Option<&Starship>,
+    )>,
 ) {
     let Some(event) = select_event_reader.read().last() else {
         return;
@@ -112,7 +117,10 @@ pub fn sprite_selection(
             if let Some(_space_station) = selection_type.0 {
                 spawn_menu_selection.selection = SpawnSelection::Starbase;
                 info!("Starbase Selected");
-            } else if let Some(spaceship) = selection_type.1 {
+            } else if let Some(_space_facility) = selection_type.1 {
+                spawn_menu_selection.selection = SpawnSelection::StarshipConstructionYard;
+                info!("Starship Construction Yard Selected");
+            } else if let Some(spaceship) = selection_type.2 {
                 let spaceship_type = StarshipSprite::starship_type_convert_from(
                     spaceship.starship_sprite_bundle.starship_sprite,
                 );

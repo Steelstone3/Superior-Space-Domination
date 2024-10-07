@@ -2,6 +2,8 @@ use bevy::reflect::Reflect;
 use rand_derive2::RandGen;
 use std::fmt::Display;
 
+use crate::assets::user_interace::icons::space_facility_icons::SpaceFacilityIcon;
+
 #[allow(clippy::enum_variant_names)]
 #[derive(RandGen, Debug, PartialEq, Reflect, Clone, Copy)]
 pub enum SpaceStationSprite {
@@ -63,6 +65,25 @@ impl Display for SpaceFacilitySprite {
                     formatter,
                     "images/factions/noozler/space_facilities/noozler_spaceship_construction_yard.png"
                 )
+            }
+        }
+    }
+}
+
+impl SpaceFacilitySprite {
+    pub fn sprite_convert_from(space_facility_icon: SpaceFacilityIcon) -> SpaceFacilitySprite {
+        match space_facility_icon {
+            SpaceFacilityIcon::AtarkSpaceShipConstructionYard => {
+                SpaceFacilitySprite::AtarkSpaceShipConstructionYard
+            }
+            SpaceFacilityIcon::KarcanSpaceShipConstructionYard => {
+                SpaceFacilitySprite::KarcanSpaceShipConstructionYard
+            }
+            SpaceFacilityIcon::NoozlerSpaceShipConstructionYard => {
+                SpaceFacilitySprite::NoozlerSpaceShipConstructionYard
+            }
+            SpaceFacilityIcon::None => {
+                panic!("Space Facility Sprite: Must have an icon to convert")
             }
         }
     }

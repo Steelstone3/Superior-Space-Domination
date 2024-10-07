@@ -7,15 +7,12 @@ use bevy::{
 
 use crate::{
     events::user_interface_event::UserInterfaceEvent,
-    queries::user_interface_queries::{ButtonFilters, SelectStarshipSpawnMenuButtonQuery},
+    queries::user_interface_queries::{ButtonFilters, SelectSpawnMenuButtonQuery},
 };
 
 #[allow(dead_code)]
 pub fn select_starship_spawn_menu_button(
-    mut select_starship_spawn_menu_button_queries: Query<
-        SelectStarshipSpawnMenuButtonQuery,
-        ButtonFilters,
-    >,
+    mut select_starship_spawn_menu_button_queries: Query<SelectSpawnMenuButtonQuery, ButtonFilters>,
     mut user_interface_event: EventWriter<UserInterfaceEvent>,
 ) {
     let Ok(mut select_starship_spawn_menu_button_query) =
@@ -26,14 +23,14 @@ pub fn select_starship_spawn_menu_button(
 
     match *select_starship_spawn_menu_button_query.interaction {
         Interaction::Pressed => {
-            tracing::info!("Pressed Spawn Ship Menu Button");
+            tracing::info!("Pressed Spawn Menu Button");
 
             *select_starship_spawn_menu_button_query.border_color = YELLOW.into();
 
             user_interface_event.send(UserInterfaceEvent {});
         }
         Interaction::Hovered => {
-            tracing::info!("Hovered Over Spawn Ship Menu Button");
+            tracing::info!("Hovered Over Spawn Menu Button");
 
             *select_starship_spawn_menu_button_query.border_color = YELLOW.into();
         }

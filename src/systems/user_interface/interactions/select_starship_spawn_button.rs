@@ -11,7 +11,7 @@ use crate::{
     resources::spawn_menu_selection::SpawnMenuSelection,
 };
 
-pub fn select_spawn_button(
+pub fn select_starship_spawn_button(
     mut select_starship_spawn_menu_button_queries: Query<
         SelectStarshipSpawnButtonQuery,
         ButtonFilters,
@@ -27,7 +27,7 @@ pub fn select_spawn_button(
 
     match *select_starship_spawn_menu_button_query.interaction {
         Interaction::Pressed => {
-            tracing::info!("Pressed Spawn Ship Button");
+            tracing::info!("Pressed Starship Spawn Button");
 
             selected_item.starship_selection = select_starship_spawn_menu_button_query.button.icon;
 
@@ -36,7 +36,7 @@ pub fn select_spawn_button(
             user_interface_event.send(UserInterfaceEvent {});
         }
         Interaction::Hovered => {
-            tracing::info!("Hovered Over Spawn Ship Button");
+            tracing::info!("Hovered Over Starship Spawn Button");
         }
         Interaction::None => {
             *select_starship_spawn_menu_button_query.border_color = GREY.into();
