@@ -10,6 +10,7 @@ use crate::{
     events::{
         mouse_click_event::MouseClickEvent,
         spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
+        user_interface_event::UserInterfaceEvent,
     },
     resources::{faction::StarshipType, spawn_menu_selection::SpawnMenuSelection},
 };
@@ -42,6 +43,7 @@ pub fn sprite_selection(
         Option<&SpaceFacility>,
         Option<&Starship>,
     )>,
+    mut user_interface_event: EventWriter<UserInterfaceEvent>,
 ) {
     let Some(event) = select_event_reader.read().last() else {
         return;
@@ -137,6 +139,8 @@ pub fn sprite_selection(
             }
 
             spawn_menu_selection.selected_entity = closest.3;
+
+            user_interface_event.send(UserInterfaceEvent {});
         };
     }
 }
