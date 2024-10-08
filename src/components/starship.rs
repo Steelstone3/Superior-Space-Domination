@@ -3,7 +3,7 @@ use super::{
 };
 use crate::{
     assets::{
-        images::faction_starships::starship_sprite::StarshipSprite,
+        images::faction_starship_sprite::starship_sprite::StarshipSprite,
         user_interace::icons::starship_icons::StarshipIcon,
     },
     resources::{constants::TILE_SIZE, faction::Faction},
@@ -11,10 +11,11 @@ use crate::{
 use bevy::{ecs::component::Component, math::Vec2};
 
 #[derive(Component)]
-#[allow(dead_code)]
 pub struct Starship {
     pub starship_sprite_bundle: StarshipSpriteBundle,
+    #[allow(dead_code)]
     pub weapon: Weapon,
+    #[allow(dead_code)]
     pub faction: Faction,
     pub size_component: SizeComponent,
 }

@@ -10,7 +10,6 @@ use crate::{
     queries::user_interface_queries::{ButtonFilters, SelectSpawnMenuButtonQuery},
 };
 
-#[allow(dead_code)]
 pub fn select_starship_spawn_menu_button(
     mut select_starship_spawn_menu_button_queries: Query<SelectSpawnMenuButtonQuery, ButtonFilters>,
     mut user_interface_event: EventWriter<UserInterfaceEvent>,

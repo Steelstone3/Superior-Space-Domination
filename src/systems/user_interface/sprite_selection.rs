@@ -1,5 +1,5 @@
 use crate::{
-    assets::images::faction_starships::starship_sprite::StarshipSprite,
+    assets::images::faction_starship_sprite::starship_sprite::StarshipSprite,
     components::{
         space_facility::SpaceFacility,
         space_station::SpaceStation,

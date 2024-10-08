@@ -1,4 +1,3 @@
-// TODO rename file faction_starship_sprites
 pub mod destruction_sprite;
 pub mod engine_sprite;
 pub mod firing_sprite;

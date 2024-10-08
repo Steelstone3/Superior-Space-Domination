@@ -4,8 +4,8 @@ use bevy::prelude::Resource;
 
 use crate::assets::{
     images::{
-        faction_starships::starship_sprite::StarshipSprite,
-        space_facility_sprite::{SpaceFacilitySprite, SpaceStationSprite},
+        faction_starship_sprite::starship_sprite::StarshipSprite,
+        space_facility_sprite::SpaceStationSprite,
     },
     user_interace::icons::{space_facility_icons::SpaceFacilityIcon, starship_icons::StarshipIcon},
 };
@@ -54,7 +54,6 @@ impl Faction {
     }
 }
 
-#[allow(dead_code)]
 #[derive(PartialEq)]
 pub enum StarshipType {
     SupportShip,
@@ -154,7 +153,6 @@ impl StarshipType {
     }
 }
 
-#[allow(dead_code)]
 pub enum StarStationType {
     SpaceStation,
 }
@@ -195,27 +193,6 @@ impl SpaceFacilityType {
             Faction::Noozler => match self {
                 SpaceFacilityType::SpaceShipConstructionYard => {
                     SpaceFacilityIcon::NoozlerSpaceShipConstructionYard
-                }
-            },
-        }
-    }
-
-    #[allow(dead_code)]
-    pub fn sprite_convert_from(&self, faction: Faction) -> SpaceFacilitySprite {
-        match faction {
-            Faction::Atark => match self {
-                SpaceFacilityType::SpaceShipConstructionYard => {
-                    SpaceFacilitySprite::AtarkSpaceShipConstructionYard
-                }
-            },
-            Faction::Karcan => match self {
-                SpaceFacilityType::SpaceShipConstructionYard => {
-                    SpaceFacilitySprite::KarcanSpaceShipConstructionYard
-                }
-            },
-            Faction::Noozler => match self {
-                SpaceFacilityType::SpaceShipConstructionYard => {
-                    SpaceFacilitySprite::NoozlerSpaceShipConstructionYard
                 }
             },
         }

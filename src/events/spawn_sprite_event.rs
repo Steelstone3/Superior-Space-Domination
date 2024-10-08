@@ -37,15 +37,6 @@ impl SpawnSpriteEvent {
             spawn_animated_sprite,
         }
     }
-
-    #[allow(dead_code)]
-    pub fn add_transform_dependency(spawn_sprite_event: SpawnSpriteEvent) -> Self {
-        Self {
-            sprite_type: spawn_sprite_event.sprite_type,
-            spawn_sprite: spawn_sprite_event.spawn_sprite,
-            spawn_animated_sprite: spawn_sprite_event.spawn_animated_sprite,
-        }
-    }
 }
 
 pub struct SpawnSprite {

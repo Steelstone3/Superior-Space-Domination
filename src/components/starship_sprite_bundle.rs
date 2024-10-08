@@ -1,9 +1,8 @@
-use crate::assets::images::faction_starships::{
+use crate::assets::images::faction_starship_sprite::{
     destruction_sprite::DestructionSprite, engine_sprite::EngineSprite,
     firing_sprite::FiringSprite, shield_sprite::ShieldSprite, starship_sprite::StarshipSprite,
 };
 
-// TODO AH Implement
 #[allow(dead_code)]
 pub struct StarshipSpriteBundle {
     pub starship_sprite: StarshipSprite,

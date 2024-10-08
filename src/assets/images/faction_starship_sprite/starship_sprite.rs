@@ -4,7 +4,6 @@ use crate::{
     assets::user_interace::icons::starship_icons::StarshipIcon, resources::faction::StarshipType,
 };
 
-#[allow(dead_code)]
 #[derive(PartialEq, Clone, Copy)]
 pub enum StarshipSprite {
     AtarkBattleCruiser,

@@ -1,7 +1,6 @@
 use bevy::{ecs::system::Resource, input::keyboard::KeyCode};
 
 // TODO Some of the variables aren't used
-#[allow(dead_code)]
 #[derive(Resource)]
 pub struct KeyBindings {
     pub camera_slow: Vec<KeyCode>,
@@ -10,7 +9,9 @@ pub struct KeyBindings {
     pub camera_down: Vec<KeyCode>,
     pub camera_left: Vec<KeyCode>,
     pub camera_right: Vec<KeyCode>,
+    #[allow(dead_code)]
     pub camera_reset_position: Vec<KeyCode>,
+    #[allow(dead_code)]
     pub camera_reset_zoom: Vec<KeyCode>,
 }
 

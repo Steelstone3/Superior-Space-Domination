@@ -1,7 +1,7 @@
 use bevy::{ecs::component::Component, math::Vec2};
 
 use crate::{
-    assets::images::faction_starships::{
+    assets::images::faction_starship_sprite::{
         starship_sprite::StarshipSprite, weapon_sprite::WeaponSprite,
     },
     resources::{constants::TILE_SIZE, faction::Faction},
@@ -9,8 +9,8 @@ use crate::{
 
 use super::size_component::SizeComponent;
 
-#[derive(Component)]
 #[allow(dead_code)]
+#[derive(Component)]
 pub struct Weapon {
     weapon_sprite: WeaponSprite,
     size: SizeComponent,

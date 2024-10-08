@@ -18,11 +18,6 @@ pub struct SelectStarshipSpawnButton {
     pub icon: StarshipIcon,
 }
 
-#[allow(dead_code)]
-#[derive(Component)]
-pub struct SelectFacilitySpawnMenuButton;
-
-#[allow(dead_code)]
 #[derive(Component)]
 pub struct SelectFacilitySpawnButton {
     pub icon: SpaceFacilityIcon,
@@ -33,7 +28,6 @@ pub struct SelectFacilitySpawnButton {
 #[derive(Component, Clone, Copy)]
 pub struct Selectable;
 
-#[allow(dead_code)]
 #[derive(Component, Clone, Copy)]
 pub struct SelectedSprite {
     pub sprite_path: TeamSelectionSprite,
