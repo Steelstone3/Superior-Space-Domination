@@ -31,6 +31,8 @@ use rand::random;
 
 use super::interactions::spawn_selection::SpawnSelection;
 
+// TODO MG Too many arguements
+#[allow(clippy::too_many_arguments)]
 pub fn sprite_selection(
     mut select_event_reader: EventReader<MouseClickEvent>,
     selectable_query: Query<(&Transform, &Sprite, Entity), With<Selectable>>,
