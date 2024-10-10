@@ -28,9 +28,10 @@ pub fn spawner(
 ) {
     right_mouse_events.read().for_each(|event| {
         // let mut transform = Transform::default();
-        let mut transform = Transform { translation: event.cursor_world_position.extend(5.0), ..Default::default() };
-        
-        
+        let mut transform = Transform {
+            translation: event.cursor_world_position.extend(5.0),
+            ..Default::default()
+        };
 
         match selected_item.selection {
             SpawnSelection::None => {}
