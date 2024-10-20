@@ -20,12 +20,15 @@ pub fn clear_all_selected(
     if input.clear_just_pressed(KeyCode::Escape) {
         tracing::info!("All De-Selected");
 
-        SpawnMenuSelection::reset(&mut spawn_menu_selection);
+        SpawnMenuSelection::reset_all(&mut spawn_menu_selection);
 
         user_interface_event.send(UserInterfaceEvent {});
 
         for selection_query in selection_queries.iter() {
-            commands.entity(selection_query.entity).despawn();
+            if let Some(selected_entity) = selection_query.entity 
+            {
+                commands.entity(selected_entity).despawn();
+            }
         }
     }
 }

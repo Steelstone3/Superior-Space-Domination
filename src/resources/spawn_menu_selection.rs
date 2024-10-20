@@ -30,9 +30,14 @@ impl Default for SpawnMenuSelection {
 }
 
 impl SpawnMenuSelection {
-    pub fn reset(spawn_menu_selection: &mut ResMut<'_, SpawnMenuSelection>) {
+    pub fn reset_all(spawn_menu_selection: &mut ResMut<'_, SpawnMenuSelection>) {
         spawn_menu_selection.selection = SpawnSelection::None;
         spawn_menu_selection.selected_entity = Entity::PLACEHOLDER;
+        spawn_menu_selection.starship_selection = StarshipIcon::None;
+        spawn_menu_selection.space_facility_selection = SpaceFacilityIcon::None;
+    }
+
+    pub fn reset_selected(spawn_menu_selection: &mut ResMut<'_, SpawnMenuSelection>) {
         spawn_menu_selection.starship_selection = StarshipIcon::None;
         spawn_menu_selection.space_facility_selection = SpaceFacilityIcon::None;
     }
