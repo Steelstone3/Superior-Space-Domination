@@ -110,6 +110,7 @@ pub fn sprite_selection(
     Ok(closest)
 }
 
+// TODO Create a query
 pub fn set_selection_type(
     In(closest_selection): In<Result<ClosestSelection, ()>>,
     type_check_query: Query<(

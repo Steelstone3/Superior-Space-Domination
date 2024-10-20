@@ -12,7 +12,7 @@ use crate::{
 
 pub fn deselect_all(
     mut input: ResMut<ButtonInput<KeyCode>>,
-    mut selected_item: ResMut<SpawnMenuSelection>,
+    mut spawn_menu_selection: ResMut<SpawnMenuSelection>,
     mut user_interface_event: EventWriter<UserInterfaceEvent>,
     selection_query: Query<Entity, With<SelectedSprite>>,
     mut commands: Commands,
@@ -20,7 +20,7 @@ pub fn deselect_all(
     if input.clear_just_pressed(KeyCode::Escape) {
         tracing::info!("All De-Selected");
 
-        SpawnMenuSelection::reset(&mut selected_item);
+        SpawnMenuSelection::reset(&mut spawn_menu_selection);
 
         user_interface_event.send(UserInterfaceEvent {});
 
