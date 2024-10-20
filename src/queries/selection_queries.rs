@@ -14,7 +14,6 @@ pub struct SelectableQuery {
     pub selectable: &'static Selectable,
 }
 
-// TODO Make selected optional?
 #[derive(QueryData)]
 pub struct SelectionQuery {
     pub entity: Option<Entity>,
