@@ -38,25 +38,13 @@ pub fn spawn_sub_menu(
 ) {
     match selected_item.selection {
         SpawnSelection::None => {
-            despawn_sub_menus(
-                user_interface_events,
-                sub_menu_queries,
-                commands,
-            );
+            despawn_sub_menus(user_interface_events, sub_menu_queries, commands);
         }
         SpawnSelection::Other => {
-            despawn_sub_menus(
-                user_interface_events,
-                sub_menu_queries,
-                commands,
-            );
+            despawn_sub_menus(user_interface_events, sub_menu_queries, commands);
         }
         SpawnSelection::MultiSelection => {
-            despawn_sub_menus(
-                user_interface_events,
-                sub_menu_queries,
-                commands,
-            );
+            despawn_sub_menus(user_interface_events, sub_menu_queries, commands);
         }
         SpawnSelection::StarshipConstructionYard => {
             for _ in user_interface_events.read() {
