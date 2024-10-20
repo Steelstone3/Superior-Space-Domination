@@ -27,7 +27,8 @@ pub fn spawn_menu(
     asset_server: Res<AssetServer>,
     faction: Res<PlayerFaction>,
 ) {
-    const ICON_SIZE: f32 = TILE_SIZE * 2.0;
+    let scale = 2.0;
+    let icon_size = TILE_SIZE * scale;
 
     // Commander Button
     commands
@@ -36,11 +37,11 @@ pub fn spawn_menu(
                 display: Display::Grid,
                 grid_template_columns: vec![GridTrack::flex(1.0)],
                 grid_template_rows: vec![GridTrack::flex(1.0)],
-                width: Val::Px(ICON_SIZE * 1.0),
-                height: Val::Px(ICON_SIZE * 1.0),
+                width: Val::Px(icon_size * 1.0),
+                height: Val::Px(icon_size * 1.0),
                 position_type: PositionType::Absolute,
-                left: Val::Percent(0.0),
-                top: Val::Percent(0.0),
+                left: Val::Px(0.0),
+                top: Val::Px(0.0),
                 ..Default::default()
             },
             background_color: Color::srgba(0.0, 0.0, 0.0, 0.0).into(),
@@ -99,10 +100,10 @@ pub fn spawn_menu(
                     GridTrack::flex(1.0),
                     GridTrack::flex(1.0),
                 ],
-                width: Val::Px(ICON_SIZE * columns),
-                height: Val::Px(ICON_SIZE * rows),
+                width: Val::Px(icon_size * columns),
+                height: Val::Px(icon_size * rows),
                 position_type: PositionType::Absolute,
-                left: Val::Px(ICON_SIZE),
+                left: Val::Px(icon_size),
                 top: Val::Percent(0.0),
                 ..Default::default()
             },
