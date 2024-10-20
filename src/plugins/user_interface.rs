@@ -4,7 +4,7 @@ use crate::systems::{
     spawning::spawner::spawner,
     user_interface::{
         interactions::{
-            deselect_all::deselect_all,
+            clear_all_selected::clear_all_selected,
             select_space_facility_space_button::select_space_facility_spawn_button,
             select_spawn_menu_button::select_starship_spawn_menu_button,
             select_starship_spawn_button::select_starship_spawn_button,
@@ -30,7 +30,7 @@ impl Plugin for UserInterfacePlugin {
                 select_starship_spawn_button,
                 select_space_facility_spawn_button,
                 despawn_sub_menus,
-                deselect_all,
+                clear_all_selected,
             ),
         );
     }

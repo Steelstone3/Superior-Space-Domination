@@ -24,14 +24,14 @@ use bevy::{
 };
 use rand::random;
 
-use super::interactions::spawn_selection::SpawnSelection;
+use super::interactions::{clear_all_selected::despawn_selections, spawn_selection::SpawnSelection};
 
 pub fn sprite_selection(
     mut select_event_reader: EventReader<MouseClickEvent>,
     selectable_query: Query<SelectableQuery>,
     mut spawn_sprite_writer: EventWriter<SpawnSpriteEvent>,
     mut commands: Commands,
-    selection_query: Query<SelectionQuery>,
+    selection_queries: Query<SelectionQuery>,
 ) -> Result<ClosestSelection, ()> {
     let mut closest = ClosestSelection::default();
 
@@ -83,9 +83,10 @@ pub fn sprite_selection(
     //if valid selection found then spawn selection
     if closest.distance != -1.0 {
         //Clear selection before makeing new selection
-        for selection in selection_query.iter() {
-            commands.entity(selection.entity).despawn();
-        }
+        despawn_selections(selection_queries, &mut commands);
+        // for selection_query in selection_queries.iter() {
+        //     commands.entity(selection_query.entity).despawn();
+        // }
 
         let selection = SelectedSprite::new(random());
         let selection_entity = commands
