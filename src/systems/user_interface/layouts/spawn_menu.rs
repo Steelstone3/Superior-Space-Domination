@@ -12,7 +12,11 @@ use bevy::{
 use crate::{
     assets::user_interace::icons::commander_icons::CommanderIcon,
     components::user_interface::{SpawnMenu, SpawnMenuButton},
-    resources::faction::PlayerFaction,
+    resources::{
+        constants::TILE_SIZE,
+        faction::{PlayerFaction, SpaceFacilityType, StarshipType},
+    },
+    systems::user_interface::styles::{create_space_facility_button_bundle, create_space_facility_button_icon, create_starship_button_bundle, create_starship_button_icon},
 };
 
 pub fn spawn_menu(
@@ -34,8 +38,8 @@ pub fn spawn_menu(
                     GridTrack::flex(1.0),
                     GridTrack::flex(1.0),
                 ],
-                width: Val::Px(32.0 * 2.0),
-                height: Val::Px(32.0 * 7.0 * 2.0),
+                width: Val::Px(TILE_SIZE * 2.0),
+                height: Val::Px(TILE_SIZE * 7.0 * 2.0),
                 position_type: PositionType::Absolute,
                 left: Val::Percent(0.0),
                 top: Val::Percent(0.0),
@@ -77,6 +81,141 @@ pub fn spawn_menu(
                         background_color: Color::WHITE.into(),
                         ..Default::default()
                     });
+                })
+                // Support Ship
+                .with_children(|parent| {
+                    parent
+                        .spawn(create_starship_button_bundle(
+                            StarshipType::SupportShip,
+                            faction.player_faction,
+                        ))
+                        .with_children(|parent| {
+                            parent.spawn(create_starship_button_icon(
+                                &asset_server,
+                                StarshipType::SupportShip,
+                                faction.player_faction,
+                            ));
+                        });
+                })
+                // Scout
+                .with_children(|parent| {
+                    parent
+                        .spawn(create_starship_button_bundle(
+                            StarshipType::Scout,
+                            faction.player_faction,
+                        ))
+                        .with_children(|parent| {
+                            parent.spawn(create_starship_button_icon(
+                                &asset_server,
+                                StarshipType::Scout,
+                                faction.player_faction,
+                            ));
+                        });
+                })
+                // Fighter
+                .with_children(|parent| {
+                    parent
+                        .spawn(create_starship_button_bundle(
+                            StarshipType::Fighter,
+                            faction.player_faction,
+                        ))
+                        .with_children(|parent| {
+                            parent.spawn(create_starship_button_icon(
+                                &asset_server,
+                                StarshipType::Fighter,
+                                faction.player_faction,
+                            ));
+                        });
+                })
+                // Torpedo Ship
+                .with_children(|parent| {
+                    parent
+                        .spawn(create_starship_button_bundle(
+                            StarshipType::TorpedoShip,
+                            faction.player_faction,
+                        ))
+                        .with_children(|parent| {
+                            parent.spawn(create_starship_button_icon(
+                                &asset_server,
+                                StarshipType::TorpedoShip,
+                                faction.player_faction,
+                            ));
+                        });
+                })
+                // Bomber
+                .with_children(|parent| {
+                    parent
+                        .spawn(create_starship_button_bundle(
+                            StarshipType::Bomber,
+                            faction.player_faction,
+                        ))
+                        .with_children(|parent| {
+                            parent.spawn(create_starship_button_icon(
+                                &asset_server,
+                                StarshipType::Bomber,
+                                faction.player_faction,
+                            ));
+                        });
+                })
+                // Frigate
+                .with_children(|parent| {
+                    parent
+                        .spawn(create_starship_button_bundle(
+                            StarshipType::Frigate,
+                            faction.player_faction,
+                        ))
+                        .with_children(|parent| {
+                            parent.spawn(create_starship_button_icon(
+                                &asset_server,
+                                StarshipType::Frigate,
+                                faction.player_faction,
+                            ));
+                        });
+                })
+                // Battlecruiser
+                .with_children(|parent| {
+                    parent
+                        .spawn(create_starship_button_bundle(
+                            StarshipType::BattleCruiser,
+                            faction.player_faction,
+                        ))
+                        .with_children(|parent| {
+                            parent.spawn(create_starship_button_icon(
+                                &asset_server,
+                                StarshipType::BattleCruiser,
+                                faction.player_faction,
+                            ));
+                        });
+                })
+                // Dreadnought
+                .with_children(|parent| {
+                    parent
+                        .spawn(create_starship_button_bundle(
+                            StarshipType::Dreadnought,
+                            faction.player_faction,
+                        ))
+                        .with_children(|parent| {
+                            parent.spawn(create_starship_button_icon(
+                                &asset_server,
+                                StarshipType::Dreadnought,
+                                faction.player_faction,
+                            ));
+                        });
+                })
+                // Starship Construction Yard
+                .with_children(|parent| {
+                    parent
+                        .spawn(create_space_facility_button_bundle(
+                            SpaceFacilityType::SpaceShipConstructionYard,
+                            faction.player_faction,
+                        ))
+                        .with_children(|parent| {
+                            parent.spawn(create_space_facility_button_icon(
+                                &asset_server,
+                                SpaceFacilityType::SpaceShipConstructionYard,
+                                faction.player_faction,
+                            ));
+                        });
                 });
         });
 }

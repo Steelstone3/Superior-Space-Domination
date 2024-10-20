@@ -5,14 +5,14 @@ use bevy::{
 };
 
 use crate::components::user_interface::{
-    SelectFacilitySpawnButton, SelectStarshipSpawnButton, SpawnMenuButton, SpawnSubMenuButton,
+    SelectFacilitySpawnButton, SelectStarshipSpawnButton, SpawnMenuButton, //SpawnSubMenuButton,
 };
 
-#[derive(QueryData)]
-pub struct SpawnSubMenuQuery {
-    pub entity: Entity,
-    pub sub_menu: &'static SpawnSubMenuButton,
-}
+// #[derive(QueryData)]
+// pub struct SpawnSubMenuQuery {
+//     pub entity: Entity,
+//     pub sub_menu: &'static SpawnSubMenuButton,
+// }
 
 #[derive(QueryData)]
 #[query_data(mutable)]
