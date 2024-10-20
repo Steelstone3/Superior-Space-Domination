@@ -39,7 +39,6 @@ pub fn spawn_sub_menu(
     match selected_item.selection {
         SpawnSelection::None => {
             despawn_sub_menus(
-                // selected_item,
                 user_interface_events,
                 sub_menu_queries,
                 commands,
@@ -47,7 +46,6 @@ pub fn spawn_sub_menu(
         }
         SpawnSelection::Other => {
             despawn_sub_menus(
-                // selected_item,
                 user_interface_events,
                 sub_menu_queries,
                 commands,
@@ -55,7 +53,6 @@ pub fn spawn_sub_menu(
         }
         SpawnSelection::MultiSelection => {
             despawn_sub_menus(
-                // selected_item,
                 user_interface_events,
                 sub_menu_queries,
                 commands,
