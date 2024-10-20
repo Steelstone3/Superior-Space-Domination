@@ -10,6 +10,10 @@ use crate::{
 };
 use bevy::{ecs::component::Component, math::Vec2};
 
+// TODO spawned starships take damage a radius 1.5 to 2 times the suns size (mechanic)
+
+const SIZE: f32 = TILE_SIZE;
+
 #[derive(Component)]
 pub struct Starship {
     pub starship_sprite_bundle: StarshipSpriteBundle,
@@ -26,7 +30,7 @@ impl Starship {
             starship_sprite_bundle: StarshipSpriteBundle::new(starship_sprite),
             faction: Faction::determine_faction(starship_sprite),
             size_component: SizeComponent {
-                size: Vec2::new(TILE_SIZE, TILE_SIZE),
+                size: Vec2::new(SIZE, SIZE),
                 z_index: 5.0,
             },
             weapon: Weapon::new(starship_sprite),
