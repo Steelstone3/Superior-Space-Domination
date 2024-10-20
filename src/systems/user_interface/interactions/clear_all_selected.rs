@@ -6,7 +6,8 @@ use bevy::{
 };
 
 use crate::{
-    events::user_interface_event::UserInterfaceEvent, queries::selection_queries::SelectionQuery, resources::spawn_menu_selection::SpawnMenuSelection
+    events::user_interface_event::UserInterfaceEvent, queries::selection_queries::SelectionQuery,
+    resources::spawn_menu_selection::SpawnMenuSelection,
 };
 
 pub fn clear_all_selected(
@@ -23,12 +24,8 @@ pub fn clear_all_selected(
 
         user_interface_event.send(UserInterfaceEvent {});
 
-        despawn_selections(selection_queries, &mut commands);
-    }
-}
-
-pub fn despawn_selections(selection_queries: Query<SelectionQuery>, commands: &mut Commands) {
-    for selection_query in selection_queries.iter() {
-        commands.entity(selection_query.entity).despawn();
+        for selection_query in selection_queries.iter() {
+            commands.entity(selection_query.entity).despawn();
+        }
     }
 }
