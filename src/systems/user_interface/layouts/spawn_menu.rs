@@ -16,7 +16,10 @@ use crate::{
         constants::TILE_SIZE,
         faction::{PlayerFaction, SpaceFacilityType, StarshipType},
     },
-    systems::user_interface::styles::{create_space_facility_button_bundle, create_space_facility_button_icon, create_starship_button_bundle, create_starship_button_icon},
+    systems::user_interface::styles::{
+        create_space_facility_button_bundle, create_space_facility_button_icon,
+        create_starship_button_bundle, create_starship_button_icon,
+    },
 };
 
 pub fn spawn_menu(
