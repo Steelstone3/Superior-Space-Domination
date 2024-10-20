@@ -1,6 +1,6 @@
 use bevy::{
     app::{Plugin, Startup, Update},
-    prelude::IntoSystem,
+    prelude::{IntoSystem, IntoSystemConfigs},
 };
 
 use crate::systems::{
@@ -26,7 +26,7 @@ impl Plugin for UserInterfacePlugin {
     fn build(&self, app: &mut bevy::prelude::App) {
         app.add_systems(Startup, spawn_menu);
         app.add_systems(Update, sprite_selection.pipe(set_selection_type));
-        app.add_systems(Update, spawn_sub_menu);
+        app.add_systems(Update, spawn_sub_menu.after(set_selection_type));
         app.add_systems(
             Update,
             (
@@ -35,8 +35,9 @@ impl Plugin for UserInterfacePlugin {
                 select_space_facility_spawn_button,
                 despawn_sub_menus,
                 clear_all_selected,
-            ),
+                spawner,
+            )
+                .after(spawn_sub_menu),
         );
-        app.add_systems(Update, spawner);
     }
 }

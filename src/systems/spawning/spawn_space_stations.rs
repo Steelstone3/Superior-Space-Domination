@@ -15,7 +15,7 @@ use crate::{
     },
 };
 
-// TODO This will be based on planet location later
+// TODO This will be based on planet/ sun location later
 const DISTANCE_FROM_CENTRE: f32 = SPACE_TILE_SIZE * 5.0;
 
 pub fn spawn_space_stations(
