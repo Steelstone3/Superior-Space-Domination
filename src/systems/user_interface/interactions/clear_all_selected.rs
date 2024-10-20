@@ -25,8 +25,7 @@ pub fn clear_all_selected(
         user_interface_event.send(UserInterfaceEvent {});
 
         for selection_query in selection_queries.iter() {
-            if let Some(selected_entity) = selection_query.entity 
-            {
+            if let Some(selected_entity) = selection_query.entity {
                 commands.entity(selected_entity).despawn();
             }
         }

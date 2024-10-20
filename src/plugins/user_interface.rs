@@ -1,4 +1,7 @@
-use bevy::app::{Plugin, Startup, Update};
+use bevy::{
+    app::{Plugin, Startup, Update},
+    prelude::IntoSystem,
+};
 
 use crate::systems::{
     spawning::spawner::spawner,
@@ -13,6 +16,7 @@ use crate::systems::{
             despawn_spawn_sub_menu::despawn_sub_menus, spawn_menu::spawn_menu,
             spawn_sub_menu::spawn_sub_menu,
         },
+        sprite_selection::{set_selection_type, sprite_selection},
     },
 };
 
@@ -31,6 +35,7 @@ impl Plugin for UserInterfacePlugin {
                 select_space_facility_spawn_button,
                 despawn_sub_menus,
                 clear_all_selected,
+                sprite_selection.pipe(set_selection_type),
             ),
         );
     }

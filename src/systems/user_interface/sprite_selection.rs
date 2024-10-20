@@ -84,8 +84,7 @@ pub fn sprite_selection(
     if closest.distance != -1.0 {
         //Clear selection before makeing new selection
         for selection_query in selection_queries.iter() {
-            if let Some(selected_entity) = selection_query.entity 
-            {
+            if let Some(selected_entity) = selection_query.entity {
                 commands.entity(selected_entity).despawn();
             }
         }
