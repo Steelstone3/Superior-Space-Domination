@@ -1,7 +1,7 @@
 use std::fmt::Display;
 
 use crate::{
-    assets::user_interace::icons::starship_icons::StarshipIcon, resources::faction::StarshipType,
+    assets::user_interface::icons::starship_icons::StarshipIcon, resources::faction::StarshipType,
 };
 
 #[derive(PartialEq, Clone, Copy)]

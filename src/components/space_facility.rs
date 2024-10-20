@@ -2,7 +2,7 @@ use super::size_component::SizeComponent;
 use crate::{
     assets::{
         images::space_facility_sprite::SpaceFacilitySprite,
-        user_interace::icons::space_facility_icons::SpaceFacilityIcon,
+        user_interface::icons::space_facility_icons::SpaceFacilityIcon,
     },
     resources::constants::SPACE_TILE_SIZE,
 };
