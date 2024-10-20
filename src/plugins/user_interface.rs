@@ -26,7 +26,7 @@ impl Plugin for UserInterfacePlugin {
     fn build(&self, app: &mut bevy::prelude::App) {
         app.add_systems(Startup, spawn_menu);
         app.add_systems(Update, sprite_selection.pipe(set_selection_type));
-        app.add_systems(Update, spawn_sub_menu.after(set_selection_type));
+        app.add_systems(Update, spawn_sub_menu);
         app.add_systems(
             Update,
             (
