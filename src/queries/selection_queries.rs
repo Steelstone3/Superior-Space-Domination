@@ -16,6 +16,6 @@ pub struct SelectableQuery {
 
 #[derive(QueryData)]
 pub struct SelectionQuery {
-    pub entity: Entity,
+    pub entity: Option<Entity>,
     pub selected: &'static SelectedSprite,
 }

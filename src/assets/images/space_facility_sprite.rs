@@ -2,7 +2,7 @@ use bevy::reflect::Reflect;
 use rand_derive2::RandGen;
 use std::fmt::Display;
 
-use crate::assets::user_interace::icons::space_facility_icons::SpaceFacilityIcon;
+use crate::assets::user_interface::icons::space_facility_icons::SpaceFacilityIcon;
 
 #[allow(clippy::enum_variant_names)]
 #[derive(RandGen, Debug, PartialEq, Reflect, Clone, Copy)]

@@ -31,7 +31,7 @@ pub fn sprite_selection(
     selectable_query: Query<SelectableQuery>,
     mut spawn_sprite_writer: EventWriter<SpawnSpriteEvent>,
     mut commands: Commands,
-    selection_query: Query<SelectionQuery>,
+    selection_queries: Query<SelectionQuery>,
 ) -> Result<ClosestSelection, ()> {
     let mut closest = ClosestSelection::default();
 
@@ -83,8 +83,10 @@ pub fn sprite_selection(
     //if valid selection found then spawn selection
     if closest.distance != -1.0 {
         //Clear selection before makeing new selection
-        for selection in selection_query.iter() {
-            commands.entity(selection.entity).despawn();
+        for selection_query in selection_queries.iter() {
+            if let Some(selected_entity) = selection_query.entity {
+                commands.entity(selected_entity).despawn();
+            }
         }
 
         let selection = SelectedSprite::new(random());
@@ -110,6 +112,7 @@ pub fn sprite_selection(
     Ok(closest)
 }
 
+// TODO Create a query
 pub fn set_selection_type(
     In(closest_selection): In<Result<ClosestSelection, ()>>,
     type_check_query: Query<(
@@ -125,9 +128,13 @@ pub fn set_selection_type(
         //Detmine the type of selection for the ui
         if let Ok(selection_type) = type_check_query.get(closest_selection.entity) {
             if let Some(_space_station) = selection_type.0 {
+                SpawnMenuSelection::reset_selected(&mut spawn_menu_selection);
+
                 spawn_menu_selection.selection = SpawnSelection::Starbase;
                 info!("Starbase Selected");
             } else if let Some(_space_facility) = selection_type.1 {
+                SpawnMenuSelection::reset_selected(&mut spawn_menu_selection);
+
                 spawn_menu_selection.selection = SpawnSelection::StarshipConstructionYard;
                 info!("Starship Construction Yard Selected");
             } else if let Some(spaceship) = selection_type.2 {
@@ -135,6 +142,8 @@ pub fn set_selection_type(
                     spaceship.starship_sprite_bundle.starship_sprite,
                 );
                 if spaceship_type == StarshipType::SupportShip {
+                    SpawnMenuSelection::reset_selected(&mut spawn_menu_selection);
+
                     spawn_menu_selection.selection = SpawnSelection::SupportShip;
                     info!("Support Ship Selected");
                 } else {

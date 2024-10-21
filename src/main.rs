@@ -1,4 +1,5 @@
 use bevy::prelude::*;
+use bevy_egui::EguiPlugin;
 use plugins::{
     event_handlers::EventHandlersPlugin, events::EventsPlugin,
     groups::developer_plugin_group::DeveloperPluginGroup, resources::ResourcesPlugin,
@@ -34,6 +35,7 @@ fn main() {
                     }),
                     ..Default::default()
                 }),
+            EguiPlugin,
             EventsPlugin,
             EventHandlersPlugin,
             ResourcesPlugin,

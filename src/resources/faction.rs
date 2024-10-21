@@ -7,7 +7,9 @@ use crate::assets::{
         faction_starship_sprite::starship_sprite::StarshipSprite,
         space_facility_sprite::SpaceStationSprite,
     },
-    user_interace::icons::{space_facility_icons::SpaceFacilityIcon, starship_icons::StarshipIcon},
+    user_interface::icons::{
+        space_facility_icons::SpaceFacilityIcon, starship_icons::StarshipIcon,
+    },
 };
 
 #[derive(Resource, Default, Clone, Copy)]
@@ -153,31 +155,33 @@ impl StarshipType {
     }
 }
 
-pub enum StarStationType {
+pub enum SpaceStationType {
     SpaceStation,
 }
 
-impl StarStationType {
+impl SpaceStationType {
     pub fn sprite_convert_from(&self, faction: Faction) -> SpaceStationSprite {
         match faction {
             Faction::Atark => match self {
-                StarStationType::SpaceStation => SpaceStationSprite::AtarkSpaceStation,
+                SpaceStationType::SpaceStation => SpaceStationSprite::AtarkSpaceStation,
             },
             Faction::Karcan => match self {
-                StarStationType::SpaceStation => SpaceStationSprite::KarcanSpaceStation,
+                SpaceStationType::SpaceStation => SpaceStationSprite::KarcanSpaceStation,
             },
             Faction::Noozler => match self {
-                StarStationType::SpaceStation => SpaceStationSprite::NoozlerSpaceStation,
+                SpaceStationType::SpaceStation => SpaceStationSprite::NoozlerSpaceStation,
             },
         }
     }
 }
 
+#[allow(dead_code)]
 pub enum SpaceFacilityType {
     SpaceShipConstructionYard,
 }
 
 impl SpaceFacilityType {
+    #[allow(dead_code)]
     pub fn icon_convert_from(&self, faction: Faction) -> SpaceFacilityIcon {
         match faction {
             Faction::Atark => match self {
