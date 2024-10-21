@@ -7,8 +7,8 @@ use bevy::prelude::Component;
 #[derive(Component)]
 pub struct SpawnMenu;
 
-#[derive(Component)]
-pub struct SpawnSubMenuButton;
+// #[derive(Component)]
+// pub struct SpawnSubMenuButton;
 
 #[derive(Component)]
 pub struct SpawnMenuButton;
