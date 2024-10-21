@@ -1,9 +1,14 @@
+use bevy::{
+    ecs::{event::EventWriter, system::Commands},
+    prelude::{EventReader, Res},
+    transform::components::Transform,
+    utils::tracing,
+};
+
 use crate::{
-    assets::user_interface::icons::{
-        space_facility_icons::SpaceFacilityIcon, starship_icons::StarshipIcon,
     assets::{
         images::faction_starship_sprite::starship_sprite::StarshipSprite,
-        user_interace::icons::{
+        user_interface::icons::{
             space_facility_icons::SpaceFacilityIcon, starship_icons::StarshipIcon,
         },
     },
@@ -19,12 +24,6 @@ use crate::{
     },
     resources::spawn_menu_selection::SpawnMenuSelection,
     systems::user_interface::interactions::spawn_selection::SpawnSelection,
-};
-use bevy::{
-    ecs::{event::EventWriter, system::Commands},
-    prelude::{EventReader, Res},
-    transform::components::Transform,
-    utils::tracing,
 };
 
 pub fn spawner(

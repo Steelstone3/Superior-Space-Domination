@@ -20,7 +20,7 @@ pub fn controllable_move_to_target(
             continue;
         }
 
-        let current_transform = controllable_query.1.clone();
+        let current_transform = *controllable_query.1;
         let mut target_location = controllable_query.0.target_location;
         //ensure moveable stays at current z index
         target_location.z = current_transform.translation.z;
