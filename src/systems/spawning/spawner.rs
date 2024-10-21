@@ -1,9 +1,14 @@
 use crate::{
-    assets::user_interace::icons::{
-        space_facility_icons::SpaceFacilityIcon, starship_icons::StarshipIcon,
+    assets::{
+        images::faction_starship_sprite::starship_sprite::StarshipSprite,
+        user_interace::icons::{
+            space_facility_icons::SpaceFacilityIcon, starship_icons::StarshipIcon,
+        },
     },
     components::{
-        controllable::Movement, space_facility::SpaceFacility, starship::Starship,
+        controllable::Movement,
+        space_facility::SpaceFacility,
+        starship::{ShipSpeed, Starship},
         user_interface::Selectable,
     },
     events::{
@@ -96,6 +101,11 @@ fn spawn_starship(
 
     if selected_item.starship_selection != StarshipIcon::None {
         let starship = Starship::new_from_icon(selected_item.starship_selection);
+
+        let ship_speed = ShipSpeed::new_from_ship_type(StarshipSprite::starship_type_convert_from(
+            starship.starship_sprite_bundle.starship_sprite,
+        ));
+
         transform.translation.z = starship.size_component.z_index;
 
         spawn_sprite_event.send(SpawnSpriteEvent::spawn_sprite(SpawnSprite {
@@ -107,6 +117,8 @@ fn spawn_starship(
                 .insert(Selectable)
                 .insert(Movement {
                     target_location: transform.translation,
+                    max_speed: ship_speed.speed,
+                    current_speed: 0.0,
                 })
                 .id(),
         }));
