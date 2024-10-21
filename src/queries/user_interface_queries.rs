@@ -1,18 +1,10 @@
+use crate::components::user_interface::{
+    SelectFacilitySpawnButton, SelectStarshipSpawnButton, SpawnMenuButton,
+};
 use bevy::{
     ecs::query::{Changed, QueryData, QueryFilter},
-    prelude::Entity,
     ui::{BorderColor, Interaction},
 };
-
-use crate::components::user_interface::{
-    SelectFacilitySpawnButton, SelectStarshipSpawnButton, SpawnMenuButton, SpawnSubMenuButton,
-};
-
-#[derive(QueryData)]
-pub struct SpawnSubMenuQuery {
-    pub entity: Entity,
-    pub sub_menu: &'static SpawnSubMenuButton,
-}
 
 #[derive(QueryData)]
 #[query_data(mutable)]
