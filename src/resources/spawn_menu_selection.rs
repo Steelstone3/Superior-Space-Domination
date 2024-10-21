@@ -4,7 +4,7 @@ use bevy::{
 };
 
 use crate::{
-    assets::user_interace::icons::{
+    assets::user_interface::icons::{
         space_facility_icons::SpaceFacilityIcon, starship_icons::StarshipIcon,
     },
     systems::user_interface::interactions::spawn_selection::SpawnSelection,

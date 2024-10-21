@@ -1,7 +1,14 @@
+use bevy::{
+    ecs::{event::EventWriter, system::Commands},
+    prelude::{EventReader, Res},
+    transform::components::Transform,
+    utils::tracing,
+};
+
 use crate::{
     assets::{
         images::faction_starship_sprite::starship_sprite::StarshipSprite,
-        user_interace::icons::{
+        user_interface::icons::{
             space_facility_icons::SpaceFacilityIcon, starship_icons::StarshipIcon,
         },
     },
@@ -18,16 +25,10 @@ use crate::{
     resources::spawn_menu_selection::SpawnMenuSelection,
     systems::user_interface::interactions::spawn_selection::SpawnSelection,
 };
-use bevy::{
-    ecs::{event::EventWriter, system::Commands},
-    prelude::{EventReader, Res},
-    transform::components::Transform,
-    utils::tracing,
-};
 
 pub fn spawner(
     mut commands: Commands,
-    selected_item: Res<SpawnMenuSelection>,
+    spawn_menu_selection: Res<SpawnMenuSelection>,
     mut right_mouse_events: EventReader<MouseRightClickEvent>,
     mut spawn_sprite_event: EventWriter<SpawnSpriteEvent>,
 ) {
@@ -38,14 +39,14 @@ pub fn spawner(
             ..Default::default()
         };
 
-        match selected_item.selection {
+        match spawn_menu_selection.selection {
             SpawnSelection::None => {}
             SpawnSelection::Other => {}
             SpawnSelection::MultiSelection => {}
             SpawnSelection::StarshipConstructionYard => {
                 spawn_starship(
                     &mut transform,
-                    &selected_item,
+                    &spawn_menu_selection,
                     &mut spawn_sprite_event,
                     &mut commands,
                 );
@@ -53,7 +54,7 @@ pub fn spawner(
             SpawnSelection::SupportShip => {
                 spawn_space_facility(
                     &mut transform,
-                    &selected_item,
+                    &spawn_menu_selection,
                     &mut spawn_sprite_event,
                     &mut commands,
                 );
@@ -61,7 +62,7 @@ pub fn spawner(
             SpawnSelection::Starbase => {
                 spawn_starship(
                     &mut transform,
-                    &selected_item,
+                    &spawn_menu_selection,
                     &mut spawn_sprite_event,
                     &mut commands,
                 );
