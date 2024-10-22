@@ -1,4 +1,5 @@
 pub mod animation_timer;
+pub mod closest_selection;
 pub mod controllable;
 pub mod planet;
 pub mod size_component;

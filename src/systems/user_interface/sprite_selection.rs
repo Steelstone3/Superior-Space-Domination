@@ -1,8 +1,9 @@
 use crate::{
     assets::images::faction_starship_sprite::starship_sprite::StarshipSprite,
     components::{
-        space_facility::SpaceFacility, space_station::SpaceStation, starship::Starship,
-        tracking::Tracking, user_interface::SelectedSprite,
+        closest_selection::ClosestSelection, space_facility::SpaceFacility,
+        space_station::SpaceStation, starship::Starship, tracking::Tracking,
+        user_interface::SelectedSprite,
     },
     events::{
         mouse_click_event::MouseClickEvent,
@@ -11,7 +12,6 @@ use crate::{
     },
     queries::selection_queries::{SelectableQuery, SelectionQuery},
     resources::{faction::StarshipType, spawn_menu_selection::SpawnMenuSelection},
-    types::closest_selection::ClosestSelection,
 };
 use bevy::{
     ecs::{
