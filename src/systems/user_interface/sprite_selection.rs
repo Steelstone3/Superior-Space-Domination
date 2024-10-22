@@ -10,21 +10,16 @@ use crate::{
         spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
         user_interface_event::UserInterfaceEvent,
     },
-    queries::selection_queries::{SelectableQuery, SelectionQuery},
+    queries::user_interface_queries::{SelectableQuery, SelectionQuery},
     resources::{faction::StarshipType, spawn_menu_selection::SpawnMenuSelection},
+    systems::user_interface::interactions::spawn_selection::SpawnSelection,
 };
 use bevy::{
-    ecs::{
-        event::{EventReader, EventWriter},
-        system::{Commands, Query},
-    },
     log::info,
     math::Vec3Swizzles,
-    prelude::{In, ResMut},
+    prelude::{Commands, EventReader, EventWriter, In, Query, ResMut},
 };
 use rand::random;
-
-use super::interactions::spawn_selection::SpawnSelection;
 
 pub fn sprite_selection(
     mut select_event_reader: EventReader<MouseClickEvent>,
