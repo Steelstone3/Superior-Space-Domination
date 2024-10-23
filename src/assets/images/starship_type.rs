@@ -134,31 +134,15 @@ mod starship_type_should {
         Faction::Atark,
         StarshipSprite::AtarkSupportShip
     )]
-    #[case(
-        StarshipType::Scout,
-        Faction::Atark,
-        StarshipSprite::AtarkScout
-    )]
-    #[case(
-        StarshipType::Fighter,
-        Faction::Atark,
-        StarshipSprite::AtarkFighter
-    )]
+    #[case(StarshipType::Scout, Faction::Atark, StarshipSprite::AtarkScout)]
+    #[case(StarshipType::Fighter, Faction::Atark, StarshipSprite::AtarkFighter)]
     #[case(
         StarshipType::TorpedoShip,
         Faction::Atark,
         StarshipSprite::AtarkTorpedoShip
     )]
-    #[case(
-        StarshipType::Bomber,
-        Faction::Atark,
-        StarshipSprite::AtarkBomber
-    )]
-    #[case(
-        StarshipType::Frigate,
-        Faction::Atark,
-        StarshipSprite::AtarkFrigate
-    )]
+    #[case(StarshipType::Bomber, Faction::Atark, StarshipSprite::AtarkBomber)]
+    #[case(StarshipType::Frigate, Faction::Atark, StarshipSprite::AtarkFrigate)]
     #[case(
         StarshipType::BattleCruiser,
         Faction::Atark,
@@ -174,31 +158,15 @@ mod starship_type_should {
         Faction::Karcan,
         StarshipSprite::KarcanSupportShip
     )]
-    #[case(
-        StarshipType::Scout,
-        Faction::Karcan,
-        StarshipSprite::KarcanScout
-    )]
-    #[case(
-        StarshipType::Fighter,
-        Faction::Karcan,
-        StarshipSprite::KarcanFighter
-    )]
+    #[case(StarshipType::Scout, Faction::Karcan, StarshipSprite::KarcanScout)]
+    #[case(StarshipType::Fighter, Faction::Karcan, StarshipSprite::KarcanFighter)]
     #[case(
         StarshipType::TorpedoShip,
         Faction::Karcan,
         StarshipSprite::KarcanTorpedoShip
     )]
-    #[case(
-        StarshipType::Bomber,
-        Faction::Karcan,
-        StarshipSprite::KarcanBomber
-    )]
-    #[case(
-        StarshipType::Frigate,
-        Faction::Karcan,
-        StarshipSprite::KarcanFrigate
-    )]
+    #[case(StarshipType::Bomber, Faction::Karcan, StarshipSprite::KarcanBomber)]
+    #[case(StarshipType::Frigate, Faction::Karcan, StarshipSprite::KarcanFrigate)]
     #[case(
         StarshipType::BattleCruiser,
         Faction::Karcan,
@@ -214,11 +182,7 @@ mod starship_type_should {
         Faction::Noozler,
         StarshipSprite::NoozlerSupportShip
     )]
-    #[case(
-        StarshipType::Scout,
-        Faction::Noozler,
-        StarshipSprite::NoozlerScout
-    )]
+    #[case(StarshipType::Scout, Faction::Noozler, StarshipSprite::NoozlerScout)]
     #[case(
         StarshipType::Fighter,
         Faction::Noozler,
@@ -229,11 +193,7 @@ mod starship_type_should {
         Faction::Noozler,
         StarshipSprite::NoozlerTorpedoShip
     )]
-    #[case(
-        StarshipType::Bomber,
-        Faction::Noozler,
-        StarshipSprite::NoozlerBomber
-    )]
+    #[case(StarshipType::Bomber, Faction::Noozler, StarshipSprite::NoozlerBomber)]
     #[case(
         StarshipType::Frigate,
         Faction::Noozler,
@@ -254,31 +214,15 @@ mod starship_type_should {
         Faction::Granok,
         StarshipSprite::GranokSupportShip
     )]
-    #[case(
-        StarshipType::Scout,
-        Faction::Granok,
-        StarshipSprite::GranokScout
-    )]
-    #[case(
-        StarshipType::Fighter,
-        Faction::Granok,
-        StarshipSprite::GranokFighter
-    )]
+    #[case(StarshipType::Scout, Faction::Granok, StarshipSprite::GranokScout)]
+    #[case(StarshipType::Fighter, Faction::Granok, StarshipSprite::GranokFighter)]
     #[case(
         StarshipType::TorpedoShip,
         Faction::Granok,
         StarshipSprite::GranokTorpedoShip
     )]
-    #[case(
-        StarshipType::Bomber,
-        Faction::Granok,
-        StarshipSprite::GranokBomber
-    )]
-    #[case(
-        StarshipType::Frigate,
-        Faction::Granok,
-        StarshipSprite::GranokFrigate
-    )]
+    #[case(StarshipType::Bomber, Faction::Granok, StarshipSprite::GranokBomber)]
+    #[case(StarshipType::Frigate, Faction::Granok, StarshipSprite::GranokFrigate)]
     #[case(
         StarshipType::BattleCruiser,
         Faction::Granok,
@@ -307,31 +251,15 @@ mod starship_type_should {
         Faction::Atark,
         StarshipIcon::AtarkSupportShip
     )]
-    #[case(
-        StarshipType::Scout,
-        Faction::Atark,
-        StarshipIcon::AtarkScout
-    )]
-    #[case(
-        StarshipType::Fighter,
-        Faction::Atark,
-        StarshipIcon::AtarkFighter
-    )]
+    #[case(StarshipType::Scout, Faction::Atark, StarshipIcon::AtarkScout)]
+    #[case(StarshipType::Fighter, Faction::Atark, StarshipIcon::AtarkFighter)]
     #[case(
         StarshipType::TorpedoShip,
         Faction::Atark,
         StarshipIcon::AtarkTorpedoShip
     )]
-    #[case(
-        StarshipType::Bomber,
-        Faction::Atark,
-        StarshipIcon::AtarkBomber
-    )]
-    #[case(
-        StarshipType::Frigate,
-        Faction::Atark,
-        StarshipIcon::AtarkFrigate
-    )]
+    #[case(StarshipType::Bomber, Faction::Atark, StarshipIcon::AtarkBomber)]
+    #[case(StarshipType::Frigate, Faction::Atark, StarshipIcon::AtarkFrigate)]
     #[case(
         StarshipType::BattleCruiser,
         Faction::Atark,
@@ -347,31 +275,15 @@ mod starship_type_should {
         Faction::Karcan,
         StarshipIcon::KarcanSupportShip
     )]
-    #[case(
-        StarshipType::Scout,
-        Faction::Karcan,
-        StarshipIcon::KarcanScout
-    )]
-    #[case(
-        StarshipType::Fighter,
-        Faction::Karcan,
-        StarshipIcon::KarcanFighter
-    )]
+    #[case(StarshipType::Scout, Faction::Karcan, StarshipIcon::KarcanScout)]
+    #[case(StarshipType::Fighter, Faction::Karcan, StarshipIcon::KarcanFighter)]
     #[case(
         StarshipType::TorpedoShip,
         Faction::Karcan,
         StarshipIcon::KarcanTorpedoShip
     )]
-    #[case(
-        StarshipType::Bomber,
-        Faction::Karcan,
-        StarshipIcon::KarcanBomber
-    )]
-    #[case(
-        StarshipType::Frigate,
-        Faction::Karcan,
-        StarshipIcon::KarcanFrigate
-    )]
+    #[case(StarshipType::Bomber, Faction::Karcan, StarshipIcon::KarcanBomber)]
+    #[case(StarshipType::Frigate, Faction::Karcan, StarshipIcon::KarcanFrigate)]
     #[case(
         StarshipType::BattleCruiser,
         Faction::Karcan,
@@ -387,31 +299,15 @@ mod starship_type_should {
         Faction::Noozler,
         StarshipIcon::NoozlerSupportShip
     )]
-    #[case(
-        StarshipType::Scout,
-        Faction::Noozler,
-        StarshipIcon::NoozlerScout
-    )]
-    #[case(
-        StarshipType::Fighter,
-        Faction::Noozler,
-        StarshipIcon::NoozlerFighter
-    )]
+    #[case(StarshipType::Scout, Faction::Noozler, StarshipIcon::NoozlerScout)]
+    #[case(StarshipType::Fighter, Faction::Noozler, StarshipIcon::NoozlerFighter)]
     #[case(
         StarshipType::TorpedoShip,
         Faction::Noozler,
         StarshipIcon::NoozlerTorpedoShip
     )]
-    #[case(
-        StarshipType::Bomber,
-        Faction::Noozler,
-        StarshipIcon::NoozlerBomber
-    )]
-    #[case(
-        StarshipType::Frigate,
-        Faction::Noozler,
-        StarshipIcon::NoozlerFrigate
-    )]
+    #[case(StarshipType::Bomber, Faction::Noozler, StarshipIcon::NoozlerBomber)]
+    #[case(StarshipType::Frigate, Faction::Noozler, StarshipIcon::NoozlerFrigate)]
     #[case(
         StarshipType::BattleCruiser,
         Faction::Noozler,
@@ -427,31 +323,15 @@ mod starship_type_should {
         Faction::Granok,
         StarshipIcon::GranokSupportShip
     )]
-    #[case(
-        StarshipType::Scout,
-        Faction::Granok,
-        StarshipIcon::GranokScout
-    )]
-    #[case(
-        StarshipType::Fighter,
-        Faction::Granok,
-        StarshipIcon::GranokFighter
-    )]
+    #[case(StarshipType::Scout, Faction::Granok, StarshipIcon::GranokScout)]
+    #[case(StarshipType::Fighter, Faction::Granok, StarshipIcon::GranokFighter)]
     #[case(
         StarshipType::TorpedoShip,
         Faction::Granok,
         StarshipIcon::GranokTorpedoShip
     )]
-    #[case(
-        StarshipType::Bomber,
-        Faction::Granok,
-        StarshipIcon::GranokBomber
-    )]
-    #[case(
-        StarshipType::Frigate,
-        Faction::Granok,
-        StarshipIcon::GranokFrigate
-    )]
+    #[case(StarshipType::Bomber, Faction::Granok, StarshipIcon::GranokBomber)]
+    #[case(StarshipType::Frigate, Faction::Granok, StarshipIcon::GranokFrigate)]
     #[case(
         StarshipType::BattleCruiser,
         Faction::Granok,
