@@ -61,3 +61,10 @@ Or
 > bash remove_dependencies.sh
 
 Please use good op-sec habits and check the contents of both .sh files before running them as these will modify your system
+
+## Credits
+
+This game is made possible by a selection of talented asset creators. Atributions are as follows:
+
+- [pixel planet generator](<https://deep-fold.itch.io/pixel-planet-generator>) by Deep-Fold
+- [space background generator](<https://deep-fold.itch.io/space-background-generator>) by Deep-Fold
