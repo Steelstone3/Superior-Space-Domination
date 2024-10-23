@@ -169,7 +169,46 @@ mod starship_type_should {
         Faction::Atark,
         StarshipSprite::AtarkDreadnought
     )]
-    
+    #[case(
+        StarshipType::SupportShip,
+        Faction::Karcan,
+        StarshipSprite::KarcanSupportShip
+    )]
+    #[case(
+        StarshipType::Scout,
+        Faction::Karcan,
+        StarshipSprite::KarcanScout
+    )]
+    #[case(
+        StarshipType::Fighter,
+        Faction::Karcan,
+        StarshipSprite::KarcanFighter
+    )]
+    #[case(
+        StarshipType::TorpedoShip,
+        Faction::Karcan,
+        StarshipSprite::KarcanTorpedoShip
+    )]
+    #[case(
+        StarshipType::Bomber,
+        Faction::Karcan,
+        StarshipSprite::KarcanBomber
+    )]
+    #[case(
+        StarshipType::Frigate,
+        Faction::Karcan,
+        StarshipSprite::KarcanFrigate
+    )]
+    #[case(
+        StarshipType::BattleCruiser,
+        Faction::Karcan,
+        StarshipSprite::KarcanBattleCruiser
+    )]
+    #[case(
+        StarshipType::Dreadnought,
+        Faction::Karcan,
+        StarshipSprite::KarcanDreadnought
+    )]
     #[case(
         StarshipType::SupportShip,
         Faction::Noozler,
