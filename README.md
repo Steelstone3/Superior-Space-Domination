@@ -64,7 +64,10 @@ Please use good op-sec habits and check the contents of both .sh files before ru
 
 ## Credits
 
-This game is made possible by a selection of talented asset creators. Atributions are as follows:
+This game is made possible by a selection of talented asset creators who's work is published under open licenses making this game possible. Atributions are as follows:
 
-- [pixel planet generator](<https://deep-fold.itch.io/pixel-planet-generator>) by Deep-Fold
-- [space background generator](<https://deep-fold.itch.io/space-background-generator>) by Deep-Fold
+- [pixel planet generator](<https://deep-fold.itch.io/pixel-planet-generator>) by Deep-Fold under the MIT License
+- [space background generator](<https://deep-fold.itch.io/space-background-generator>) by Deep-Fold under the MIT License
+- [void fleet pack 1](<https://foozlecc.itch.io/void-fleet-pack-1>) by Foozle under the CC0 1.0 Universal License
+- [void fleet pack 2](<https://foozlecc.itch.io/void-fleet-pack-2>) by Foozle under the CC0 1.0 Universal License
+- [void fleet pack 3](<https://foozlecc.itch.io/void-fleet-pack-3>) by Foozle under the CC0 1.0 Universal License
