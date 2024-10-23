@@ -1,16 +1,14 @@
 use crate::{
     assets::images::faction_starship_sprite::starship_sprite::StarshipSprite,
     components::{
-        closest_selection::ClosestSelection, space_facility::SpaceFacility,
-        space_station::SpaceStation, starship::Starship, tracking::Tracking,
-        user_interface::SelectedSprite,
+        closest_selection::ClosestSelection, tracking::Tracking, user_interface::SelectedSprite,
     },
     events::{
         mouse_click_event::MouseClickEvent,
         spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
         user_interface_event::UserInterfaceEvent,
     },
-    queries::user_interface_queries::{SelectableQuery, SelectionQuery},
+    queries::user_interface_queries::{SelectableQuery, SelectionQuery, TypeCheckQuery},
     resources::{faction::StarshipType, spawn_menu_selection::SpawnMenuSelection},
     systems::user_interface::interactions::spawn_selection::SpawnSelection,
 };
@@ -107,14 +105,9 @@ pub fn sprite_selection(
     Ok(closest)
 }
 
-// TODO Create a query
 pub fn set_selection_type(
     In(closest_selection): In<Result<ClosestSelection, ()>>,
-    type_check_query: Query<(
-        Option<&SpaceStation>,
-        Option<&SpaceFacility>,
-        Option<&Starship>,
-    )>,
+    type_check_query: Query<TypeCheckQuery>,
     mut spawn_menu_selection: ResMut<SpawnMenuSelection>,
     mut user_interface_event: EventWriter<UserInterfaceEvent>,
 ) {
@@ -122,17 +115,17 @@ pub fn set_selection_type(
     if let Ok(closest_selection) = closest_selection {
         //Detmine the type of selection for the ui
         if let Ok(selection_type) = type_check_query.get(closest_selection.entity) {
-            if let Some(_space_station) = selection_type.0 {
+            if let Some(_) = selection_type.space_station {
                 SpawnMenuSelection::reset_selected(&mut spawn_menu_selection);
 
                 spawn_menu_selection.selection = SpawnSelection::Starbase;
                 info!("Starbase Selected");
-            } else if let Some(_space_facility) = selection_type.1 {
+            } else if let Some(_) = selection_type.space_facility {
                 SpawnMenuSelection::reset_selected(&mut spawn_menu_selection);
 
                 spawn_menu_selection.selection = SpawnSelection::StarshipConstructionYard;
                 info!("Starship Construction Yard Selected");
-            } else if let Some(spaceship) = selection_type.2 {
+            } else if let Some(spaceship) = selection_type.spaceship {
                 let spaceship_type = StarshipSprite::starship_type_convert_from(
                     spaceship.starship_sprite_bundle.starship_sprite,
                 );

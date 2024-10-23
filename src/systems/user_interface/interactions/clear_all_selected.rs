@@ -1,14 +1,13 @@
+use crate::{
+    events::user_interface_event::UserInterfaceEvent,
+    queries::user_interface_queries::SelectionQuery,
+    resources::spawn_menu_selection::SpawnMenuSelection,
+};
 use bevy::{
     ecs::{event::EventWriter, system::ResMut},
     input::{keyboard::KeyCode, ButtonInput},
     prelude::{Commands, Query},
     utils::tracing,
-};
-
-use crate::{
-    events::user_interface_event::UserInterfaceEvent,
-    queries::user_interface_queries::SelectionQuery,
-    resources::spawn_menu_selection::SpawnMenuSelection,
 };
 
 pub fn clear_all_selected(

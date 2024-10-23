@@ -1,4 +1,9 @@
-use crate::components::user_interface::{Selectable, SelectedSprite};
+use crate::components::{
+    space_facility::SpaceFacility,
+    space_station::SpaceStation,
+    starship::Starship,
+    user_interface::{Selectable, SelectedSprite},
+};
 use bevy::{
     ecs::query::QueryData,
     prelude::{Entity, Transform},
@@ -17,4 +22,11 @@ pub struct SelectableQuery {
 pub struct SelectionQuery {
     pub entity: Option<Entity>,
     pub selected: &'static SelectedSprite,
+}
+
+#[derive(QueryData)]
+pub struct TypeCheckQuery {
+    pub space_station: Option<&'static SpaceStation>,
+    pub space_facility: Option<&'static SpaceFacility>,
+    pub spaceship: Option<&'static Starship>,
 }
