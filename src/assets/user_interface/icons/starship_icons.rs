@@ -28,14 +28,14 @@ pub enum StarshipIcon {
     NoozlerFrigate,
     NoozlerBattleCruiser,
     NoozlerDreadnought,
-    GarnokSupportShip,
-    GarnokScout,
-    GarnokFighter,
-    GarnokTorpedoShip,
-    GarnokBomber,
-    GarnokFrigate,
-    GarnokBattleCruiser,
-    GarnokDreadnought,
+    GranokSupportShip,
+    GranokScout,
+    GranokFighter,
+    GranokTorpedoShip,
+    GranokBomber,
+    GranokFrigate,
+    GranokBattleCruiser,
+    GranokDreadnought,
     None,
 }
 
@@ -186,52 +186,52 @@ impl Display for StarshipIcon {
                     "user_interface/icons/starships/noozler/noozler_dreadnought_icon.png"
                 )
             }
-            StarshipIcon::GarnokSupportShip =>  {
+            StarshipIcon::GranokSupportShip => {
                 write!(
                     formatter,
-                    "user_interface/icons/starships/garnok/garnok_dreadnought_icon.png"
+                    "user_interface/icons/starships/granok/granok_dreadnought_icon.png"
                 )
             }
-            StarshipIcon::GarnokScout =>  {
+            StarshipIcon::GranokScout => {
                 write!(
                     formatter,
-                    "user_interface/icons/starships/garnok/garnok_dreadnought_icon.png"
+                    "user_interface/icons/starships/granok/granok_dreadnought_icon.png"
                 )
             }
-            StarshipIcon::GarnokFighter =>  {
+            StarshipIcon::GranokFighter => {
                 write!(
                     formatter,
-                    "user_interface/icons/starships/garnok/garnok_dreadnought_icon.png"
+                    "user_interface/icons/starships/granok/granok_dreadnought_icon.png"
                 )
             }
-            StarshipIcon::GarnokTorpedoShip =>  {
+            StarshipIcon::GranokTorpedoShip => {
                 write!(
                     formatter,
-                    "user_interface/icons/starships/garnok/garnok_dreadnought_icon.png"
+                    "user_interface/icons/starships/granok/granok_dreadnought_icon.png"
                 )
             }
-            StarshipIcon::GarnokBomber =>  {
+            StarshipIcon::GranokBomber => {
                 write!(
                     formatter,
-                    "user_interface/icons/starships/garnok/garnok_dreadnought_icon.png"
+                    "user_interface/icons/starships/granok/granok_dreadnought_icon.png"
                 )
             }
-            StarshipIcon::GarnokFrigate =>  {
+            StarshipIcon::GranokFrigate => {
                 write!(
                     formatter,
-                    "user_interface/icons/starships/garnok/garnok_dreadnought_icon.png"
+                    "user_interface/icons/starships/granok/granok_dreadnought_icon.png"
                 )
             }
-            StarshipIcon::GarnokBattleCruiser =>  {
+            StarshipIcon::GranokBattleCruiser => {
                 write!(
                     formatter,
-                    "user_interface/icons/starships/garnok/garnok_dreadnought_icon.png"
+                    "user_interface/icons/starships/granok/granok_dreadnought_icon.png"
                 )
             }
-            StarshipIcon::GarnokDreadnought =>  {
+            StarshipIcon::GranokDreadnought => {
                 write!(
                     formatter,
-                    "user_interface/icons/starships/garnok/garnok_dreadnought_icon.png"
+                    "user_interface/icons/starships/granok/granok_dreadnought_icon.png"
                 )
             }
             StarshipIcon::None => write!(formatter, ""),

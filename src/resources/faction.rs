@@ -9,10 +9,10 @@ pub struct PlayerFaction {
 #[derive(Default, PartialEq, Clone, Copy)]
 pub enum Faction {
     Atark,
-    #[default]
     Karcan,
     Noozler,
-    Garnok,
+    #[default]
+    Granok,
 }
 
 impl Faction {
@@ -42,14 +42,14 @@ impl Faction {
             StarshipSprite::NoozlerScout => Faction::Noozler,
             StarshipSprite::NoozlerSupportShip => Faction::Noozler,
             StarshipSprite::NoozlerTorpedoShip => Faction::Noozler,
-            StarshipSprite::GarnokBattleCruiser => Faction::Garnok,
-            StarshipSprite::GarnokBomber => Faction::Garnok,
-            StarshipSprite::GarnokDreadnought => Faction::Garnok,
-            StarshipSprite::GarnokFighter => Faction::Garnok,
-            StarshipSprite::GarnokFrigate => Faction::Garnok,
-            StarshipSprite::GarnokScout => Faction::Garnok,
-            StarshipSprite::GarnokSupportShip => Faction::Garnok,
-            StarshipSprite::GarnokTorpedoShip => Faction::Garnok,
+            StarshipSprite::GranokBattleCruiser => Faction::Granok,
+            StarshipSprite::GranokBomber => Faction::Granok,
+            StarshipSprite::GranokDreadnought => Faction::Granok,
+            StarshipSprite::GranokFighter => Faction::Granok,
+            StarshipSprite::GranokFrigate => Faction::Granok,
+            StarshipSprite::GranokScout => Faction::Granok,
+            StarshipSprite::GranokSupportShip => Faction::Granok,
+            StarshipSprite::GranokTorpedoShip => Faction::Granok,
         }
     }
 }

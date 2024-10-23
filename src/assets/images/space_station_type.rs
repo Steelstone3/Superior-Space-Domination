@@ -17,8 +17,8 @@ impl SpaceStationType {
             Faction::Noozler => match self {
                 SpaceStationType::SpaceStation => SpaceStationSprite::NoozlerSpaceStation,
             },
-            Faction::Garnok => match self {
-                SpaceStationType::SpaceStation => SpaceStationSprite::GarnokSpaceStation,
+            Faction::Granok => match self {
+                SpaceStationType::SpaceStation => SpaceStationSprite::GranokSpaceStation,
             },
         }
     }

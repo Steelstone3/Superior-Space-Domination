@@ -25,15 +25,14 @@ pub enum WeaponSprite {
     NoozlerScout,
     NoozlerSupportShip,
     NoozlerTorpedoShip,
-
-    GarnokBattleCruiser,
-    GarnokBomber,
-    GarnokDreadnought,
-    GarnokFighter,
-    GarnokFrigate,
-    GarnokScout,
-    GarnokSupportShip,
-    GarnokTorpedoShip,
+    GranokBattleCruiser,
+    GranokBomber,
+    GranokDreadnought,
+    GranokFighter,
+    GranokFrigate,
+    GranokScout,
+    GranokSupportShip,
+    GranokTorpedoShip,
 }
 
 // TODO weapon sprites
@@ -64,14 +63,14 @@ impl Display for WeaponSprite {
             WeaponSprite::NoozlerScout => write!(formatter, ""),
             WeaponSprite::NoozlerSupportShip => write!(formatter, ""),
             WeaponSprite::NoozlerTorpedoShip => write!(formatter, ""),
-            WeaponSprite::GarnokBattleCruiser => write!(formatter, ""),
-            WeaponSprite::GarnokBomber => write!(formatter, ""),
-            WeaponSprite::GarnokDreadnought => write!(formatter, ""),
-            WeaponSprite::GarnokFighter => write!(formatter, ""),
-            WeaponSprite::GarnokFrigate => write!(formatter, ""),
-            WeaponSprite::GarnokScout => write!(formatter, ""),
-            WeaponSprite::GarnokSupportShip => write!(formatter, ""),
-            WeaponSprite::GarnokTorpedoShip => write!(formatter, ""),
+            WeaponSprite::GranokBattleCruiser => write!(formatter, ""),
+            WeaponSprite::GranokBomber => write!(formatter, ""),
+            WeaponSprite::GranokDreadnought => write!(formatter, ""),
+            WeaponSprite::GranokFighter => write!(formatter, ""),
+            WeaponSprite::GranokFrigate => write!(formatter, ""),
+            WeaponSprite::GranokScout => write!(formatter, ""),
+            WeaponSprite::GranokSupportShip => write!(formatter, ""),
+            WeaponSprite::GranokTorpedoShip => write!(formatter, ""),
         }
     }
 }

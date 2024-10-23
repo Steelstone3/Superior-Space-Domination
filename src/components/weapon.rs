@@ -145,43 +145,43 @@ impl Weapon {
                 faction: Faction::Noozler,
             },
             // TODO Weapon sprites
-            StarshipSprite::GarnokBattleCruiser => Self {
-                weapon_sprite: WeaponSprite::GarnokBattleCruiser,
+            StarshipSprite::GranokBattleCruiser => Self {
+                weapon_sprite: WeaponSprite::GranokBattleCruiser,
                 size,
                 faction: Faction::Noozler,
             },
-            StarshipSprite::GarnokBomber => Self {
-                weapon_sprite: WeaponSprite::GarnokBomber,
+            StarshipSprite::GranokBomber => Self {
+                weapon_sprite: WeaponSprite::GranokBomber,
                 size,
                 faction: Faction::Noozler,
             },
-            StarshipSprite::GarnokDreadnought => Self {
-                weapon_sprite: WeaponSprite::GarnokDreadnought,
+            StarshipSprite::GranokDreadnought => Self {
+                weapon_sprite: WeaponSprite::GranokDreadnought,
                 size,
                 faction: Faction::Noozler,
             },
-            StarshipSprite::GarnokFighter => Self {
-                weapon_sprite: WeaponSprite::GarnokFighter,
+            StarshipSprite::GranokFighter => Self {
+                weapon_sprite: WeaponSprite::GranokFighter,
                 size,
                 faction: Faction::Noozler,
             },
-            StarshipSprite::GarnokFrigate => Self {
-                weapon_sprite: WeaponSprite::GarnokFrigate,
+            StarshipSprite::GranokFrigate => Self {
+                weapon_sprite: WeaponSprite::GranokFrigate,
                 size,
                 faction: Faction::Noozler,
             },
-            StarshipSprite::GarnokScout => Self {
-                weapon_sprite: WeaponSprite::GarnokScout,
+            StarshipSprite::GranokScout => Self {
+                weapon_sprite: WeaponSprite::GranokScout,
                 size,
                 faction: Faction::Noozler,
             },
-            StarshipSprite::GarnokSupportShip => Self {
-                weapon_sprite: WeaponSprite::GarnokSupportShip,
+            StarshipSprite::GranokSupportShip => Self {
+                weapon_sprite: WeaponSprite::GranokSupportShip,
                 size,
                 faction: Faction::Noozler,
             },
-            StarshipSprite::GarnokTorpedoShip => Self {
-                weapon_sprite: WeaponSprite::GarnokTorpedoShip,
+            StarshipSprite::GranokTorpedoShip => Self {
+                weapon_sprite: WeaponSprite::GranokTorpedoShip,
                 size,
                 faction: Faction::Noozler,
             },

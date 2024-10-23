@@ -7,7 +7,7 @@ pub enum SpaceFacilityIcon {
     AtarkSpaceShipConstructionYard,
     KarcanSpaceShipConstructionYard,
     NoozlerSpaceShipConstructionYard,
-    GarnokSpaceShipConstructionYard,
+    GranokSpaceShipConstructionYard,
     None,
 }
 
@@ -27,9 +27,9 @@ impl Display for SpaceFacilityIcon {
                 "user_interface/icons/space_facilities/noozler/noozler_spaceship_construction_yard.png"
             ),
             // TODO add asset
-            SpaceFacilityIcon::GarnokSpaceShipConstructionYard => write!(
+            SpaceFacilityIcon::GranokSpaceShipConstructionYard => write!(
                 formatter,
-                "user_interface/icons/space_facilities/garnok/garnok_spaceship_construction_yard.png"
+                "user_interface/icons/space_facilities/granok/granok_spaceship_construction_yard.png"
             ),
             SpaceFacilityIcon::None => write!(formatter, ""),
         }

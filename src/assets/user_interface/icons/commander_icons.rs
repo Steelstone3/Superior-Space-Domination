@@ -10,7 +10,7 @@ pub enum CommanderIcon {
     AtarkCommander,
     KaranCommander,
     NoozlerCommander,
-    GarnokCommander,
+    GranokCommander,
     None,
 }
 
@@ -36,10 +36,10 @@ impl Display for CommanderIcon {
                 )
             }
             // TODO create asset
-            CommanderIcon::GarnokCommander => {
+            CommanderIcon::GranokCommander => {
                 write!(
                     formatter,
-                    "user_interface/icons/starships/garnok/garnok_commander.png"
+                    "user_interface/icons/starships/granok/granok_commander.png"
                 )
             }
             CommanderIcon::None => {
@@ -55,7 +55,7 @@ impl CommanderIcon {
             Faction::Atark => CommanderIcon::AtarkCommander,
             Faction::Karcan => CommanderIcon::KaranCommander,
             Faction::Noozler => CommanderIcon::NoozlerCommander,
-            Faction::Garnok => CommanderIcon::GarnokCommander,
+            Faction::Granok => CommanderIcon::GranokCommander,
         }
     }
 }
