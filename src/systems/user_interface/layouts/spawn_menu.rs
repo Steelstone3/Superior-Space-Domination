@@ -2,10 +2,8 @@ use bevy::prelude::{Res, ResMut};
 use bevy_egui::{egui, EguiContexts};
 
 use crate::{
-    resources::{
-        faction::{PlayerFaction, SpaceFacilityType, StarshipType},
-        spawn_menu_selection::SpawnMenuSelection,
-    },
+    assets::images::{space_facility_type::SpaceFacilityType, starship_type::StarshipType},
+    resources::{faction::PlayerFaction, spawn_menu_selection::SpawnMenuSelection},
     systems::user_interface::interactions::spawn_selection::SpawnSelection,
 };
 

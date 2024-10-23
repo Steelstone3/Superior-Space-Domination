@@ -1,5 +1,7 @@
 use crate::{
-    assets::images::faction_starship_sprite::starship_sprite::StarshipSprite,
+    assets::images::{
+        faction_starship_sprite::starship_sprite::StarshipSprite, starship_type::StarshipType,
+    },
     components::{
         controllable::Movement,
         starship::{ShipSpeed, Starship},
@@ -7,7 +9,7 @@ use crate::{
     },
     events::spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
     queries::faction_queries::SpaceStationQuery,
-    resources::faction::{PlayerFaction, StarshipType},
+    resources::faction::PlayerFaction,
 };
 use bevy::prelude::{Commands, EventWriter, Query, Res};
 

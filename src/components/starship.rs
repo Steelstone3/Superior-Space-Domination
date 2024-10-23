@@ -3,13 +3,12 @@ use super::{
 };
 use crate::{
     assets::{
-        images::faction_starship_sprite::starship_sprite::StarshipSprite,
+        images::{
+            faction_starship_sprite::starship_sprite::StarshipSprite, starship_type::StarshipType,
+        },
         user_interface::icons::starship_icons::StarshipIcon,
     },
-    resources::{
-        constants::TILE_SIZE,
-        faction::{Faction, StarshipType},
-    },
+    resources::{constants::TILE_SIZE, faction::Faction},
 };
 use bevy::{ecs::component::Component, math::Vec2};
 

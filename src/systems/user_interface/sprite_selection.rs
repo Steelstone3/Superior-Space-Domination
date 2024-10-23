@@ -1,5 +1,7 @@
 use crate::{
-    assets::images::faction_starship_sprite::starship_sprite::StarshipSprite,
+    assets::images::{
+        faction_starship_sprite::starship_sprite::StarshipSprite, starship_type::StarshipType,
+    },
     components::{
         closest_selection::ClosestSelection, tracking::Tracking, user_interface::SelectedSprite,
     },
@@ -9,7 +11,7 @@ use crate::{
         user_interface_event::UserInterfaceEvent,
     },
     queries::user_interface_queries::{SelectableQuery, SelectionQuery, TypeCheckQuery},
-    resources::{faction::StarshipType, spawn_menu_selection::SpawnMenuSelection},
+    resources::spawn_menu_selection::SpawnMenuSelection,
     systems::user_interface::interactions::spawn_selection::SpawnSelection,
 };
 use bevy::{

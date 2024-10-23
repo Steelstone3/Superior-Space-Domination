@@ -1,8 +1,7 @@
-use std::fmt::Display;
-
-use crate::{
-    assets::user_interface::icons::starship_icons::StarshipIcon, resources::faction::StarshipType,
+use crate::assets::{
+    images::starship_type::StarshipType, user_interface::icons::starship_icons::StarshipIcon,
 };
+use std::fmt::Display;
 
 #[derive(PartialEq, Clone, Copy)]
 pub enum StarshipSprite {

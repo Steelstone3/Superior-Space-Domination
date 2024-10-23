@@ -7,12 +7,10 @@ use bevy::{
 use rand::Rng;
 
 use crate::{
+    assets::images::space_station_type::SpaceStationType,
     components::{space_station::SpaceStation, user_interface::Selectable},
     events::spawn_sprite_event::{SpawnSprite, SpawnSpriteEvent},
-    resources::{
-        constants::SPACE_TILE_SIZE,
-        faction::{PlayerFaction, SpaceStationType},
-    },
+    resources::{constants::SPACE_TILE_SIZE, faction::PlayerFaction},
 };
 
 // TODO This will be based on planet/ sun location later
