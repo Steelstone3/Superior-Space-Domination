@@ -117,12 +117,12 @@ pub fn set_selection_type(
     if let Ok(closest_selection) = closest_selection {
         //Detmine the type of selection for the ui
         if let Ok(selection_type) = type_check_query.get(closest_selection.entity) {
-            if let Some(_) = selection_type.space_station {
+            if selection_type.space_station.is_some() {
                 SpawnMenuSelection::reset_selected(&mut spawn_menu_selection);
 
                 spawn_menu_selection.selection = SpawnSelection::Starbase;
                 info!("Starbase Selected");
-            } else if let Some(_) = selection_type.space_facility {
+            } else if selection_type.space_facility.is_some() {
                 SpawnMenuSelection::reset_selected(&mut spawn_menu_selection);
 
                 spawn_menu_selection.selection = SpawnSelection::StarshipConstructionYard;
