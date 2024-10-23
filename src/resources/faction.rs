@@ -8,10 +8,10 @@ pub struct PlayerFaction {
 
 #[derive(Default, PartialEq, Clone, Copy)]
 pub enum Faction {
+    #[default]
     Atark,
     Karcan,
     Noozler,
-    #[default]
     Granok,
 }
 
