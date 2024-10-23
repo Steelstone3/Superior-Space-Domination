@@ -249,6 +249,46 @@ mod starship_type_should {
         Faction::Noozler,
         StarshipSprite::NoozlerDreadnought
     )]
+    #[case(
+        StarshipType::SupportShip,
+        Faction::Granok,
+        StarshipSprite::GranokSupportShip
+    )]
+    #[case(
+        StarshipType::Scout,
+        Faction::Granok,
+        StarshipSprite::GranokScout
+    )]
+    #[case(
+        StarshipType::Fighter,
+        Faction::Granok,
+        StarshipSprite::GranokFighter
+    )]
+    #[case(
+        StarshipType::TorpedoShip,
+        Faction::Granok,
+        StarshipSprite::GranokTorpedoShip
+    )]
+    #[case(
+        StarshipType::Bomber,
+        Faction::Granok,
+        StarshipSprite::GranokBomber
+    )]
+    #[case(
+        StarshipType::Frigate,
+        Faction::Granok,
+        StarshipSprite::GranokFrigate
+    )]
+    #[case(
+        StarshipType::BattleCruiser,
+        Faction::Granok,
+        StarshipSprite::GranokBattleCruiser
+    )]
+    #[case(
+        StarshipType::Dreadnought,
+        Faction::Granok,
+        StarshipSprite::GranokDreadnought
+    )]
     fn sprite_convert_from(
         #[case] starship_type: StarshipType,
         #[case] faction: Faction,
