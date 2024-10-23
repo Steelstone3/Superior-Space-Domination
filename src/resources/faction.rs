@@ -12,6 +12,7 @@ pub enum Faction {
     #[default]
     Karcan,
     Noozler,
+    Garnok,
 }
 
 impl Faction {
@@ -41,6 +42,14 @@ impl Faction {
             StarshipSprite::NoozlerScout => Faction::Noozler,
             StarshipSprite::NoozlerSupportShip => Faction::Noozler,
             StarshipSprite::NoozlerTorpedoShip => Faction::Noozler,
+            StarshipSprite::GarnokBattleCruiser => Faction::Garnok,
+            StarshipSprite::GarnokBomber => Faction::Garnok,
+            StarshipSprite::GarnokDreadnought => Faction::Garnok,
+            StarshipSprite::GarnokFighter => Faction::Garnok,
+            StarshipSprite::GarnokFrigate => Faction::Garnok,
+            StarshipSprite::GarnokScout => Faction::Garnok,
+            StarshipSprite::GarnokSupportShip => Faction::Garnok,
+            StarshipSprite::GarnokTorpedoShip => Faction::Garnok,
         }
     }
 }

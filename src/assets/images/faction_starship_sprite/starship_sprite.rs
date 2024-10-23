@@ -29,6 +29,14 @@ pub enum StarshipSprite {
     NoozlerScout,
     NoozlerSupportShip,
     NoozlerTorpedoShip,
+    GarnokBattleCruiser,
+    GarnokBomber,
+    GarnokDreadnought,
+    GarnokFighter,
+    GarnokFrigate,
+    GarnokScout,
+    GarnokSupportShip,
+    GarnokTorpedoShip,
 }
 
 impl Display for StarshipSprite {
@@ -130,6 +138,38 @@ impl Display for StarshipSprite {
                 formatter,
                 "images/factions/noozler/starships/torpedo_ship/noozler_torpedo_ship.png"
             ),
+            StarshipSprite::GarnokBattleCruiser => write!(
+                formatter,
+                "images/factions/garnok/starships/torpedo_ship/garnok_torpedo_ship.png"
+            ),
+            StarshipSprite::GarnokBomber => write!(
+                formatter,
+                "images/factions/garnok/starships/torpedo_ship/garnok_torpedo_ship.png"
+            ),
+            StarshipSprite::GarnokDreadnought => write!(
+                formatter,
+                "images/factions/garnok/starships/torpedo_ship/garnok_torpedo_ship.png"
+            ),
+            StarshipSprite::GarnokFighter => write!(
+                formatter,
+                "images/factions/garnok/starships/torpedo_ship/garnok_torpedo_ship.png"
+            ),
+            StarshipSprite::GarnokFrigate => write!(
+                formatter,
+                "images/factions/garnok/starships/torpedo_ship/garnok_torpedo_ship.png"
+            ),
+            StarshipSprite::GarnokScout => write!(
+                formatter,
+                "images/factions/garnok/starships/torpedo_ship/garnok_torpedo_ship.png"
+            ),
+            StarshipSprite::GarnokSupportShip => write!(
+                formatter,
+                "images/factions/garnok/starships/torpedo_ship/garnok_torpedo_ship.png"
+            ),
+            StarshipSprite::GarnokTorpedoShip => write!(
+                formatter,
+                "images/factions/garnok/starships/torpedo_ship/garnok_torpedo_ship.png"
+            ),
         }
     }
 }
@@ -161,6 +201,14 @@ impl StarshipSprite {
             StarshipIcon::NoozlerFrigate => StarshipSprite::NoozlerFrigate,
             StarshipIcon::NoozlerBattleCruiser => StarshipSprite::NoozlerBattleCruiser,
             StarshipIcon::NoozlerDreadnought => StarshipSprite::NoozlerDreadnought,
+            StarshipIcon::GarnokSupportShip => StarshipSprite::GarnokSupportShip,
+            StarshipIcon::GarnokScout => StarshipSprite::GarnokScout,
+            StarshipIcon::GarnokFighter => StarshipSprite::GarnokFighter,
+            StarshipIcon::GarnokTorpedoShip => StarshipSprite::GarnokTorpedoShip,
+            StarshipIcon::GarnokBomber => StarshipSprite::GarnokBomber,
+            StarshipIcon::GarnokFrigate => StarshipSprite::GarnokFrigate,
+            StarshipIcon::GarnokBattleCruiser => StarshipSprite::GarnokBattleCruiser,
+            StarshipIcon::GarnokDreadnought => StarshipSprite::GarnokDreadnought,
             StarshipIcon::None => panic!("Spaceship Sprite: Must have an icon to convert"),
         }
     }
@@ -169,28 +217,36 @@ impl StarshipSprite {
         match starship_sprite {
             StarshipSprite::AtarkBattleCruiser
             | StarshipSprite::KarcanBattleCruiser
-            | StarshipSprite::NoozlerBattleCruiser => StarshipType::BattleCruiser,
+            | StarshipSprite::NoozlerBattleCruiser
+            | StarshipSprite::GarnokBattleCruiser => StarshipType::BattleCruiser,
             StarshipSprite::AtarkBomber
             | StarshipSprite::KarcanBomber
-            | StarshipSprite::NoozlerBomber => StarshipType::Bomber,
+            | StarshipSprite::NoozlerBomber
+            | StarshipSprite::GarnokBomber => StarshipType::Bomber,
             StarshipSprite::AtarkDreadnought
             | StarshipSprite::KarcanDreadnought
-            | StarshipSprite::NoozlerDreadnought => StarshipType::Dreadnought,
+            | StarshipSprite::NoozlerDreadnought
+            | StarshipSprite::GarnokDreadnought => StarshipType::Dreadnought,
             StarshipSprite::AtarkFighter
             | StarshipSprite::KarcanFighter
-            | StarshipSprite::NoozlerFighter => StarshipType::Fighter,
+            | StarshipSprite::NoozlerFighter
+            | StarshipSprite::GarnokFighter => StarshipType::Fighter,
             StarshipSprite::AtarkFrigate
             | StarshipSprite::KarcanFrigate
-            | StarshipSprite::NoozlerFrigate => StarshipType::Frigate,
+            | StarshipSprite::NoozlerFrigate
+            | StarshipSprite::GarnokFrigate => StarshipType::Frigate,
             StarshipSprite::AtarkScout
             | StarshipSprite::KarcanScout
-            | StarshipSprite::NoozlerScout => StarshipType::Scout,
+            | StarshipSprite::NoozlerScout
+            | StarshipSprite::GarnokScout => StarshipType::Scout,
             StarshipSprite::AtarkSupportShip
             | StarshipSprite::KarcanSupportShip
-            | StarshipSprite::NoozlerSupportShip => StarshipType::SupportShip,
+            | StarshipSprite::NoozlerSupportShip
+            | StarshipSprite::GarnokSupportShip => StarshipType::SupportShip,
             StarshipSprite::AtarkTorpedoShip
             | StarshipSprite::KarcanTorpedoShip
-            | StarshipSprite::NoozlerTorpedoShip => StarshipType::TorpedoShip,
+            | StarshipSprite::NoozlerTorpedoShip
+            | StarshipSprite::GarnokTorpedoShip => StarshipType::TorpedoShip,
         }
     }
 }

@@ -10,6 +10,7 @@ pub enum SpaceStationSprite {
     AtarkSpaceStation,
     KarcanSpaceStation,
     NoozlerSpaceStation,
+    GarnokSpaceStation,
 }
 
 impl Display for SpaceStationSprite {
@@ -33,6 +34,12 @@ impl Display for SpaceStationSprite {
                     "images/factions/noozler/space_facilities/noozler_space_station.png"
                 )
             }
+            SpaceStationSprite::GarnokSpaceStation => {
+                write!(
+                    formatter,
+                    "images/factions/garnok/space_facilities/garnok_space_station.png"
+                )
+            }
         }
     }
 }
@@ -43,6 +50,7 @@ pub enum SpaceFacilitySprite {
     AtarkSpaceShipConstructionYard,
     KarcanSpaceShipConstructionYard,
     NoozlerSpaceShipConstructionYard,
+    GarnokSpaceShipConstructionYard,
 }
 
 impl Display for SpaceFacilitySprite {
@@ -66,6 +74,13 @@ impl Display for SpaceFacilitySprite {
                     "images/factions/noozler/space_facilities/noozler_spaceship_construction_yard.png"
                 )
             }
+            // TODO create asset
+            SpaceFacilitySprite::GarnokSpaceShipConstructionYard => {
+                write!(
+                    formatter,
+                    "images/factions/garnok/space_facilities/garnok_spaceship_construction_yard.png"
+                )
+            }
         }
     }
 }
@@ -81,6 +96,10 @@ impl SpaceFacilitySprite {
             }
             SpaceFacilityIcon::NoozlerSpaceShipConstructionYard => {
                 SpaceFacilitySprite::NoozlerSpaceShipConstructionYard
+            }
+            // TODO create asset
+            SpaceFacilityIcon::GarnokSpaceShipConstructionYard => {
+                SpaceFacilitySprite::GarnokSpaceShipConstructionYard
             }
             SpaceFacilityIcon::None => {
                 panic!("Space Facility Sprite: Must have an icon to convert")

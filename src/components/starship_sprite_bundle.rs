@@ -183,6 +183,63 @@ impl StarshipSpriteBundle {
                 firing_sprite: FiringSprite::NoozlerTorpedoShip,
                 destruction_sprite: DestructionSprite::NoozlerTorpedoShip,
             },
+            // TODO Animation sprite sheets
+            StarshipSprite::GarnokBattleCruiser => Self {
+                starship_sprite,
+                shield_sprite: ShieldSprite::NoozlerTorpedoShip,
+                engine_sprite: EngineSprite::NoozlerTorpedoShip,
+                firing_sprite: FiringSprite::NoozlerTorpedoShip,
+                destruction_sprite: DestructionSprite::NoozlerTorpedoShip,
+            },
+            StarshipSprite::GarnokBomber => Self {
+                starship_sprite,
+                shield_sprite: ShieldSprite::NoozlerTorpedoShip,
+                engine_sprite: EngineSprite::NoozlerTorpedoShip,
+                firing_sprite: FiringSprite::NoozlerTorpedoShip,
+                destruction_sprite: DestructionSprite::NoozlerTorpedoShip,
+            },
+            StarshipSprite::GarnokDreadnought => Self {
+                starship_sprite,
+                shield_sprite: ShieldSprite::NoozlerTorpedoShip,
+                engine_sprite: EngineSprite::NoozlerTorpedoShip,
+                firing_sprite: FiringSprite::NoozlerTorpedoShip,
+                destruction_sprite: DestructionSprite::NoozlerTorpedoShip,
+            },
+            StarshipSprite::GarnokFighter => Self {
+                starship_sprite,
+                shield_sprite: ShieldSprite::NoozlerTorpedoShip,
+                engine_sprite: EngineSprite::NoozlerTorpedoShip,
+                firing_sprite: FiringSprite::NoozlerTorpedoShip,
+                destruction_sprite: DestructionSprite::NoozlerTorpedoShip,
+            },
+            StarshipSprite::GarnokFrigate => Self {
+                starship_sprite,
+                shield_sprite: ShieldSprite::NoozlerTorpedoShip,
+                engine_sprite: EngineSprite::NoozlerTorpedoShip,
+                firing_sprite: FiringSprite::NoozlerTorpedoShip,
+                destruction_sprite: DestructionSprite::NoozlerTorpedoShip,
+            },
+            StarshipSprite::GarnokScout => Self {
+                starship_sprite,
+                shield_sprite: ShieldSprite::NoozlerTorpedoShip,
+                engine_sprite: EngineSprite::NoozlerTorpedoShip,
+                firing_sprite: FiringSprite::NoozlerTorpedoShip,
+                destruction_sprite: DestructionSprite::NoozlerTorpedoShip,
+            },
+            StarshipSprite::GarnokSupportShip => Self {
+                starship_sprite,
+                shield_sprite: ShieldSprite::NoozlerTorpedoShip,
+                engine_sprite: EngineSprite::NoozlerTorpedoShip,
+                firing_sprite: FiringSprite::NoozlerTorpedoShip,
+                destruction_sprite: DestructionSprite::NoozlerTorpedoShip,
+            },
+            StarshipSprite::GarnokTorpedoShip => Self {
+                starship_sprite,
+                shield_sprite: ShieldSprite::NoozlerTorpedoShip,
+                engine_sprite: EngineSprite::NoozlerTorpedoShip,
+                firing_sprite: FiringSprite::NoozlerTorpedoShip,
+                destruction_sprite: DestructionSprite::NoozlerTorpedoShip,
+            },
         }
     }
 }

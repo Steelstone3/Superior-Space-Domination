@@ -28,6 +28,14 @@ pub enum StarshipIcon {
     NoozlerFrigate,
     NoozlerBattleCruiser,
     NoozlerDreadnought,
+    GarnokSupportShip,
+    GarnokScout,
+    GarnokFighter,
+    GarnokTorpedoShip,
+    GarnokBomber,
+    GarnokFrigate,
+    GarnokBattleCruiser,
+    GarnokDreadnought,
     None,
 }
 
@@ -176,6 +184,54 @@ impl Display for StarshipIcon {
                 write!(
                     formatter,
                     "user_interface/icons/starships/noozler/noozler_dreadnought_icon.png"
+                )
+            }
+            StarshipIcon::GarnokSupportShip =>  {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/garnok/garnok_dreadnought_icon.png"
+                )
+            }
+            StarshipIcon::GarnokScout =>  {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/garnok/garnok_dreadnought_icon.png"
+                )
+            }
+            StarshipIcon::GarnokFighter =>  {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/garnok/garnok_dreadnought_icon.png"
+                )
+            }
+            StarshipIcon::GarnokTorpedoShip =>  {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/garnok/garnok_dreadnought_icon.png"
+                )
+            }
+            StarshipIcon::GarnokBomber =>  {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/garnok/garnok_dreadnought_icon.png"
+                )
+            }
+            StarshipIcon::GarnokFrigate =>  {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/garnok/garnok_dreadnought_icon.png"
+                )
+            }
+            StarshipIcon::GarnokBattleCruiser =>  {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/garnok/garnok_dreadnought_icon.png"
+                )
+            }
+            StarshipIcon::GarnokDreadnought =>  {
+                write!(
+                    formatter,
+                    "user_interface/icons/starships/garnok/garnok_dreadnought_icon.png"
                 )
             }
             StarshipIcon::None => write!(formatter, ""),

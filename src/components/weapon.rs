@@ -144,6 +144,47 @@ impl Weapon {
                 size,
                 faction: Faction::Noozler,
             },
+            // TODO Weapon sprites
+            StarshipSprite::GarnokBattleCruiser => Self {
+                weapon_sprite: WeaponSprite::GarnokBattleCruiser,
+                size,
+                faction: Faction::Noozler,
+            },
+            StarshipSprite::GarnokBomber => Self {
+                weapon_sprite: WeaponSprite::GarnokBomber,
+                size,
+                faction: Faction::Noozler,
+            },
+            StarshipSprite::GarnokDreadnought => Self {
+                weapon_sprite: WeaponSprite::GarnokDreadnought,
+                size,
+                faction: Faction::Noozler,
+            },
+            StarshipSprite::GarnokFighter => Self {
+                weapon_sprite: WeaponSprite::GarnokFighter,
+                size,
+                faction: Faction::Noozler,
+            },
+            StarshipSprite::GarnokFrigate => Self {
+                weapon_sprite: WeaponSprite::GarnokFrigate,
+                size,
+                faction: Faction::Noozler,
+            },
+            StarshipSprite::GarnokScout => Self {
+                weapon_sprite: WeaponSprite::GarnokScout,
+                size,
+                faction: Faction::Noozler,
+            },
+            StarshipSprite::GarnokSupportShip => Self {
+                weapon_sprite: WeaponSprite::GarnokSupportShip,
+                size,
+                faction: Faction::Noozler,
+            },
+            StarshipSprite::GarnokTorpedoShip => Self {
+                weapon_sprite: WeaponSprite::GarnokTorpedoShip,
+                size,
+                faction: Faction::Noozler,
+            },
         }
     }
 }

@@ -64,6 +64,16 @@ impl StarshipType {
                 StarshipType::BattleCruiser => StarshipIcon::NoozlerBattleCruiser,
                 StarshipType::Dreadnought => StarshipIcon::NoozlerDreadnought,
             },
+            Faction::Garnok => match self {
+                StarshipType::SupportShip => StarshipIcon::GarnokSupportShip,
+                StarshipType::Scout => StarshipIcon::GarnokScout,
+                StarshipType::Fighter => StarshipIcon::GarnokFighter,
+                StarshipType::TorpedoShip => StarshipIcon::GarnokTorpedoShip,
+                StarshipType::Bomber => StarshipIcon::GarnokBomber,
+                StarshipType::Frigate => StarshipIcon::GarnokFrigate,
+                StarshipType::BattleCruiser => StarshipIcon::GarnokBattleCruiser,
+                StarshipType::Dreadnought => StarshipIcon::GarnokDreadnought,
+            },
         }
     }
 
@@ -98,6 +108,16 @@ impl StarshipType {
                 StarshipType::Frigate => StarshipSprite::NoozlerFrigate,
                 StarshipType::BattleCruiser => StarshipSprite::NoozlerBattleCruiser,
                 StarshipType::Dreadnought => StarshipSprite::NoozlerDreadnought,
+            },
+            Faction::Garnok => match self {
+                StarshipType::SupportShip => StarshipSprite::GarnokSupportShip,
+                StarshipType::Scout => StarshipSprite::GarnokScout,
+                StarshipType::Fighter => StarshipSprite::GarnokFighter,
+                StarshipType::TorpedoShip => StarshipSprite::GarnokTorpedoShip,
+                StarshipType::Bomber => StarshipSprite::GarnokBomber,
+                StarshipType::Frigate => StarshipSprite::GarnokFrigate,
+                StarshipType::BattleCruiser => StarshipSprite::GarnokBattleCruiser,
+                StarshipType::Dreadnought => StarshipSprite::GarnokDreadnought,
             },
         }
     }

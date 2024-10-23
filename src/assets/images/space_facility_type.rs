@@ -26,6 +26,11 @@ impl SpaceFacilityType {
                     SpaceFacilityIcon::NoozlerSpaceShipConstructionYard
                 }
             },
+            Faction::Garnok => match self {
+                SpaceFacilityType::SpaceShipConstructionYard => {
+                    SpaceFacilityIcon::GarnokSpaceShipConstructionYard
+                }
+            },
         }
     }
 }
