@@ -4,7 +4,7 @@ use crate::{
 };
 use std::fmt::Display;
 
-#[derive(PartialEq)]
+#[derive(PartialEq, Debug)]
 pub enum StarshipType {
     SupportShip,
     Scout,
@@ -120,5 +120,105 @@ impl StarshipType {
                 StarshipType::Dreadnought => StarshipSprite::GranokDreadnought,
             },
         }
+    }
+}
+
+#[cfg(test)]
+mod starship_type_should {
+    use super::*;
+    use rstest::rstest;
+
+    #[rstest]
+    #[case(
+        StarshipType::SupportShip,
+        Faction::Atark,
+        StarshipSprite::AtarkSupportShip
+    )]
+    #[case(
+        StarshipType::Scout,
+        Faction::Atark,
+        StarshipSprite::AtarkScout
+    )]
+    #[case(
+        StarshipType::Fighter,
+        Faction::Atark,
+        StarshipSprite::AtarkFighter
+    )]
+    #[case(
+        StarshipType::TorpedoShip,
+        Faction::Atark,
+        StarshipSprite::AtarkTorpedoShip
+    )]
+    #[case(
+        StarshipType::Bomber,
+        Faction::Atark,
+        StarshipSprite::AtarkBomber
+    )]
+    #[case(
+        StarshipType::Frigate,
+        Faction::Atark,
+        StarshipSprite::AtarkFrigate
+    )]
+    #[case(
+        StarshipType::BattleCruiser,
+        Faction::Atark,
+        StarshipSprite::AtarkBattleCruiser
+    )]
+    #[case(
+        StarshipType::Dreadnought,
+        Faction::Atark,
+        StarshipSprite::AtarkDreadnought
+    )]
+    
+    #[case(
+        StarshipType::SupportShip,
+        Faction::Noozler,
+        StarshipSprite::NoozlerSupportShip
+    )]
+    #[case(
+        StarshipType::Scout,
+        Faction::Noozler,
+        StarshipSprite::NoozlerScout
+    )]
+    #[case(
+        StarshipType::Fighter,
+        Faction::Noozler,
+        StarshipSprite::NoozlerFighter
+    )]
+    #[case(
+        StarshipType::TorpedoShip,
+        Faction::Noozler,
+        StarshipSprite::NoozlerTorpedoShip
+    )]
+    #[case(
+        StarshipType::Bomber,
+        Faction::Noozler,
+        StarshipSprite::NoozlerBomber
+    )]
+    #[case(
+        StarshipType::Frigate,
+        Faction::Noozler,
+        StarshipSprite::NoozlerFrigate
+    )]
+    #[case(
+        StarshipType::BattleCruiser,
+        Faction::Noozler,
+        StarshipSprite::NoozlerBattleCruiser
+    )]
+    #[case(
+        StarshipType::Dreadnought,
+        Faction::Noozler,
+        StarshipSprite::NoozlerDreadnought
+    )]
+    fn sprite_convert_from(
+        #[case] starship_type: StarshipType,
+        #[case] faction: Faction,
+        #[case] converted_type: StarshipSprite,
+    ) {
+        // When
+        let actual_converted_type = starship_type.sprite_convert_from(faction);
+
+        // Then
+        assert_eq!(converted_type, actual_converted_type);
     }
 }

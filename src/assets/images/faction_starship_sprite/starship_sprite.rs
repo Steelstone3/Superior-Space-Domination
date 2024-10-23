@@ -3,7 +3,7 @@ use crate::assets::{
 };
 use std::fmt::Display;
 
-#[derive(PartialEq, Clone, Copy)]
+#[derive(PartialEq, Clone, Copy, Debug)]
 pub enum StarshipSprite {
     AtarkBattleCruiser,
     AtarkBomber,
