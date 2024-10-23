@@ -38,6 +38,7 @@ impl SpawnMenuSelection {
     }
 
     pub fn reset_selected(spawn_menu_selection: &mut ResMut<'_, SpawnMenuSelection>) {
+        spawn_menu_selection.selection = SpawnSelection::None;
         spawn_menu_selection.starship_selection = StarshipIcon::None;
         spawn_menu_selection.space_facility_selection = SpaceFacilityIcon::None;
     }
