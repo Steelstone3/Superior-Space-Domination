@@ -18,8 +18,18 @@ pub struct SpaceFacility {
 }
 
 impl SpaceFacility {
-    pub fn new_from_icon(starship_icon: SpaceFacilityIcon) -> SpaceFacility {
-        let sprite_path = SpaceFacilitySprite::sprite_convert_from(starship_icon);
+    pub fn new(space_facility_sprite: SpaceFacilitySprite) -> SpaceFacility {
+        Self {
+            sprite_path: space_facility_sprite,
+            size_component: SizeComponent {
+                size: SPACE_FACILITY_SIZE,
+                z_index: 3.0,
+            },
+        }
+    }
+
+    pub fn new_from_icon(space_facility_icon: SpaceFacilityIcon) -> SpaceFacility {
+        let sprite_path = SpaceFacilitySprite::sprite_convert_from(space_facility_icon);
 
         Self {
             sprite_path,

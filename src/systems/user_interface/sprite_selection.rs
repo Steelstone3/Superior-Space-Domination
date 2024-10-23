@@ -1,6 +1,8 @@
 use crate::{
     assets::images::{
-        faction_starship_sprite::starship_sprite::StarshipSprite, starship_type::StarshipType,
+        faction_starship_sprite::starship_sprite::StarshipSprite,
+        space_facility_sprite::SpaceFacilitySprite, space_facility_type::SpaceFacilityType,
+        starship_type::StarshipType,
     },
     components::{
         closest_selection::ClosestSelection, tracking::Tracking, user_interface::SelectedSprite,
@@ -117,23 +119,27 @@ pub fn set_selection_type(
     if let Ok(closest_selection) = closest_selection {
         //Detmine the type of selection for the ui
         if let Ok(selection_type) = type_check_query.get(closest_selection.entity) {
-            if selection_type.space_station.is_some() {
+            if let Some(space_facility) = selection_type.space_facility {
                 SpawnMenuSelection::reset_selected(&mut spawn_menu_selection);
 
-                spawn_menu_selection.selection = SpawnSelection::Starbase;
-                info!("Starbase Selected");
-            } else if selection_type.space_facility.is_some() {
-                SpawnMenuSelection::reset_selected(&mut spawn_menu_selection);
+                let space_facility_type = SpaceFacilitySprite::space_facility_type_convert_from(
+                    space_facility.sprite_path,
+                );
 
-                spawn_menu_selection.selection = SpawnSelection::StarshipConstructionYard;
-                info!("Starship Construction Yard Selected");
+                if space_facility_type == SpaceFacilityType::SpaceShipConstructionYard {
+                    spawn_menu_selection.selection = SpawnSelection::StarshipConstructionYard;
+                    info!("Starship Construction Yard Selected");
+                } else {
+                    spawn_menu_selection.selection = SpawnSelection::Starbase;
+                    info!("Starbase Selected");
+                }
             } else if let Some(spaceship) = selection_type.spaceship {
+                SpawnMenuSelection::reset_selected(&mut spawn_menu_selection);
+
                 let spaceship_type = StarshipSprite::starship_type_convert_from(
                     spaceship.starship_sprite_bundle.starship_sprite,
                 );
                 if spaceship_type == StarshipType::SupportShip {
-                    SpawnMenuSelection::reset_selected(&mut spawn_menu_selection);
-
                     spawn_menu_selection.selection = SpawnSelection::SupportShip;
                     info!("Support Ship Selected");
                 } else {
@@ -141,6 +147,8 @@ pub fn set_selection_type(
                     spawn_menu_selection.selection = SpawnSelection::Other;
                 }
             } else {
+                SpawnMenuSelection::reset_selected(&mut spawn_menu_selection);
+
                 spawn_menu_selection.selection = SpawnSelection::Other;
                 info!("Other Selected");
             }
