@@ -1,10 +1,10 @@
 [package]
-name = "superior-space-domination"
+name = "deadcell-solar-conquest"
 version = "0.5.0"
 authors = ["Skippy <steelstone3@gmail.com>", "Demengies <Demengies@gmail.com>"]
 edition = "2021"
-homepage = "https://github.com/Steelstone3/Superior-Space-Domination"
-repository = "https://github.com/Steelstone3/Superior-Space-Domination"
+homepage = "https://github.com/Steelstone3/Deadcell-Solar-Conquest"
+repository = "https://github.com/Steelstone3/Deadcell-Solar-Conquest"
 license = "GPLv3"
 readme = "README.md"
 include = []

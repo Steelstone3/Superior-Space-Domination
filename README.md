@@ -1,10 +1,10 @@
-# Superior Space Domination
+# Deadcell Solar Conquest
 
-Superior space domination is a space map control tactical rts-strategy game written in rust.
+Deadcell solar conquest is a space map control tactical rts-strategy game written in rust.
 
-## Running Superior Space Domination
+## Running Deadcell Solar Conquest
 
-> cd ~/Superior-Space-Domination
+> cd ~/Deadcell-Solar-Conquest
 >
 > cargo build
 >
@@ -12,7 +12,7 @@ Superior space domination is a space map control tactical rts-strategy game writ
 
 ## Tests
 
-> cd ~/Superior-Space-Domination
+> cd ~/Deadcell-Solar-Conquest
 >
 > cargo test
 
