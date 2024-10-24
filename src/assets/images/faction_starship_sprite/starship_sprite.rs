@@ -252,7 +252,7 @@ impl StarshipSprite {
 }
 
 #[cfg(test)]
-mod space_facility_sprite_should {
+mod starship_sprite_should {
     // use super::*;
     use rstest::rstest;
 

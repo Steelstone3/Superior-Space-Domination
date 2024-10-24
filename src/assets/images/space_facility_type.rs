@@ -71,7 +71,7 @@ impl SpaceFacilityType {
 }
 
 #[cfg(test)]
-mod space_facility_sprite_should {
+mod space_facility_type_should {
     use super::*;
     use rstest::rstest;
 
@@ -126,5 +126,6 @@ mod space_facility_sprite_should {
     }
 
     #[rstest]
+    #[ignore]
     fn space_facility_type_convert_from() {}
 }
