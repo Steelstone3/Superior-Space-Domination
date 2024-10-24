@@ -251,7 +251,6 @@ impl StarshipSprite {
     }
 }
 
-
 #[cfg(test)]
 mod space_facility_sprite_should {
     // use super::*;
