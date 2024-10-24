@@ -69,3 +69,21 @@ impl SpaceFacilityType {
         }
     }
 }
+
+#[cfg(test)]
+mod space_facility_sprite_should {
+    // use super::*;
+    use rstest::rstest;
+
+    #[rstest]
+    #[ignore = "to do"]
+    fn icon_convert_from_space_station() {}
+
+    #[rstest]
+    #[ignore = "to do"]
+    fn icon_convert_from() {}
+
+    #[rstest]
+    #[ignore = "to do"]
+    fn space_facility_type_convert_from() {}
+}

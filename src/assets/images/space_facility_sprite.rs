@@ -112,3 +112,21 @@ impl SpaceFacilitySprite {
         }
     }
 }
+
+#[cfg(test)]
+mod space_facility_sprite_should {
+    // use super::*;
+    use rstest::rstest;
+
+    #[test]
+    #[ignore = "to do"]
+    fn sprite_convert_from_none() {}
+
+    #[rstest]
+    #[ignore = "to do"]
+    fn sprite_convert_from() {}
+
+    #[rstest]
+    #[ignore = "to do"]
+    fn space_facility_type_convert_from() {}
+}
