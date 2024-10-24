@@ -115,12 +115,18 @@ impl SpaceFacilitySprite {
 
 #[cfg(test)]
 mod space_facility_sprite_should {
-    // use super::*;
+    use super::*;
     use rstest::rstest;
 
     #[test]
-    #[ignore = "to do"]
-    fn sprite_convert_from_none() {}
+    #[should_panic(expected = "Space Facility Sprite: Must have an icon to convert")]
+    fn sprite_convert_from_none() {
+        // Given
+        let space_facility_icon = SpaceFacilityIcon::None;
+
+        // When
+        SpaceFacilitySprite::sprite_convert_from(space_facility_icon);
+    }
 
     #[rstest]
     #[ignore = "to do"]
