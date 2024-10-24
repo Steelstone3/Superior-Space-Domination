@@ -72,18 +72,29 @@ impl SpaceFacilityType {
 
 #[cfg(test)]
 mod space_facility_sprite_should {
-    // use super::*;
+    use super::*;
     use rstest::rstest;
 
     #[rstest]
-    #[ignore = "to do"]
-    fn icon_convert_from_space_station() {}
+    #[should_panic(expected="No space station icon")]
+    #[case::panic(SpaceFacilityType::SpaceStation, Faction::Atark)]
+    #[should_panic(expected="No space station icon")]
+    #[case::panic(SpaceFacilityType::SpaceStation, Faction::Karcan)]
+    #[should_panic(expected="No space station icon")]
+    #[case::panic(SpaceFacilityType::SpaceStation, Faction::Noozler)]
+    #[should_panic(expected="No space station icon")]
+    #[case::panic(SpaceFacilityType::SpaceStation, Faction::Granok)]
+    fn icon_convert_from_space_station(
+        #[case] space_facility_type: SpaceFacilityType,
+        #[case] faction: Faction,
+    ) {
+        // When
+        space_facility_type.icon_convert_from(faction);
+    }
 
     #[rstest]
-    #[ignore = "to do"]
     fn icon_convert_from() {}
 
     #[rstest]
-    #[ignore = "to do"]
     fn space_facility_type_convert_from() {}
 }
