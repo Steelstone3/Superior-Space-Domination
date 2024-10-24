@@ -250,3 +250,21 @@ impl StarshipSprite {
         }
     }
 }
+
+#[cfg(test)]
+mod starship_sprite_should {
+    // use super::*;
+    use rstest::rstest;
+
+    #[rstest]
+    #[ignore = "to do"]
+    fn sprite_convert_from_none() {}
+
+    #[rstest]
+    #[ignore = "to do"]
+    fn sprite_convert_from() {}
+
+    #[rstest]
+    #[ignore = "to do"]
+    fn starship_type_convert_from() {}
+}

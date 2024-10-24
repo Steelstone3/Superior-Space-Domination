@@ -69,3 +69,63 @@ impl SpaceFacilityType {
         }
     }
 }
+
+#[cfg(test)]
+mod space_facility_type_should {
+    use super::*;
+    use rstest::rstest;
+
+    #[rstest]
+    #[should_panic(expected = "No space station icon")]
+    #[case::panic(SpaceFacilityType::SpaceStation, Faction::Atark)]
+    #[should_panic(expected = "No space station icon")]
+    #[case::panic(SpaceFacilityType::SpaceStation, Faction::Karcan)]
+    #[should_panic(expected = "No space station icon")]
+    #[case::panic(SpaceFacilityType::SpaceStation, Faction::Noozler)]
+    #[should_panic(expected = "No space station icon")]
+    #[case::panic(SpaceFacilityType::SpaceStation, Faction::Granok)]
+    fn icon_convert_from_space_station(
+        #[case] space_facility_type: SpaceFacilityType,
+        #[case] faction: Faction,
+    ) {
+        // When
+        space_facility_type.icon_convert_from(faction);
+    }
+
+    #[rstest]
+    #[case::panic(
+        SpaceFacilityType::SpaceShipConstructionYard,
+        Faction::Atark,
+        SpaceFacilityIcon::AtarkSpaceShipConstructionYard
+    )]
+    #[case::panic(
+        SpaceFacilityType::SpaceShipConstructionYard,
+        Faction::Karcan,
+        SpaceFacilityIcon::KarcanSpaceShipConstructionYard
+    )]
+    #[case::panic(
+        SpaceFacilityType::SpaceShipConstructionYard,
+        Faction::Noozler,
+        SpaceFacilityIcon::NoozlerSpaceShipConstructionYard
+    )]
+    #[case::panic(
+        SpaceFacilityType::SpaceShipConstructionYard,
+        Faction::Granok,
+        SpaceFacilityIcon::GranokSpaceShipConstructionYard
+    )]
+    fn icon_convert_from(
+        #[case] space_facility_type: SpaceFacilityType,
+        #[case] faction: Faction,
+        #[case] space_facility_icon: SpaceFacilityIcon,
+    ) {
+        // When
+        let actual_space_facility_icon = space_facility_type.icon_convert_from(faction);
+
+        // Then
+        assert_eq!(space_facility_icon, actual_space_facility_icon);
+    }
+
+    #[rstest]
+    #[ignore]
+    fn space_facility_type_convert_from() {}
+}
