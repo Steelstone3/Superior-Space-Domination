@@ -76,13 +76,13 @@ mod space_facility_sprite_should {
     use rstest::rstest;
 
     #[rstest]
-    #[should_panic(expected="No space station icon")]
+    #[should_panic(expected = "No space station icon")]
     #[case::panic(SpaceFacilityType::SpaceStation, Faction::Atark)]
-    #[should_panic(expected="No space station icon")]
+    #[should_panic(expected = "No space station icon")]
     #[case::panic(SpaceFacilityType::SpaceStation, Faction::Karcan)]
-    #[should_panic(expected="No space station icon")]
+    #[should_panic(expected = "No space station icon")]
     #[case::panic(SpaceFacilityType::SpaceStation, Faction::Noozler)]
-    #[should_panic(expected="No space station icon")]
+    #[should_panic(expected = "No space station icon")]
     #[case::panic(SpaceFacilityType::SpaceStation, Faction::Granok)]
     fn icon_convert_from_space_station(
         #[case] space_facility_type: SpaceFacilityType,
