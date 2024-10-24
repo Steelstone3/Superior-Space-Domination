@@ -130,7 +130,13 @@ mod space_facility_sprite_should {
 
     #[rstest]
     #[ignore = "to do"]
-    fn sprite_convert_from() {}
+    fn sprite_convert_from() {
+        // Given
+
+        // When
+
+        // Then
+    }
 
     #[rstest]
     #[ignore = "to do"]
