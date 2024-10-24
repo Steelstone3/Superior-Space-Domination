@@ -129,16 +129,76 @@ mod space_facility_sprite_should {
     }
 
     #[rstest]
-    #[ignore = "to do"]
-    fn sprite_convert_from() {
-        // Given
-
+    #[case(
+        SpaceFacilityIcon::AtarkSpaceShipConstructionYard,
+        SpaceFacilitySprite::AtarkSpaceShipConstructionYard
+    )]
+    #[case(
+        SpaceFacilityIcon::KarcanSpaceShipConstructionYard,
+        SpaceFacilitySprite::KarcanSpaceShipConstructionYard
+    )]
+    #[case(
+        SpaceFacilityIcon::NoozlerSpaceShipConstructionYard,
+        SpaceFacilitySprite::NoozlerSpaceShipConstructionYard
+    )]
+    #[case(
+        SpaceFacilityIcon::GranokSpaceShipConstructionYard,
+        SpaceFacilitySprite::GranokSpaceShipConstructionYard
+    )]
+    fn sprite_convert_from(
+        #[case] space_facility_icon: SpaceFacilityIcon,
+        #[case] space_facility_sprite: SpaceFacilitySprite,
+    ) {
         // When
+        let actual_space_facility_sprite =
+            SpaceFacilitySprite::sprite_convert_from(space_facility_icon);
 
         // Then
+        assert_eq!(space_facility_sprite, actual_space_facility_sprite);
     }
 
     #[rstest]
-    #[ignore = "to do"]
-    fn space_facility_type_convert_from() {}
+    #[case(
+        SpaceFacilitySprite::AtarkSpaceShipConstructionYard,
+        SpaceFacilityType::SpaceShipConstructionYard
+    )]
+    #[case(
+        SpaceFacilitySprite::KarcanSpaceShipConstructionYard,
+        SpaceFacilityType::SpaceShipConstructionYard
+    )]
+    #[case(
+        SpaceFacilitySprite::NoozlerSpaceShipConstructionYard,
+        SpaceFacilityType::SpaceShipConstructionYard
+    )]
+    #[case(
+        SpaceFacilitySprite::GranokSpaceShipConstructionYard,
+        SpaceFacilityType::SpaceShipConstructionYard
+    )]
+    #[case(
+        SpaceFacilitySprite::AtarkSpaceStation,
+        SpaceFacilityType::SpaceStation
+    )]
+    #[case(
+        SpaceFacilitySprite::KarcanSpaceStation,
+        SpaceFacilityType::SpaceStation
+    )]
+    #[case(
+        SpaceFacilitySprite::NoozlerSpaceStation,
+        SpaceFacilityType::SpaceStation
+    )]
+    #[case(
+        SpaceFacilitySprite::GranokSpaceStation,
+        SpaceFacilityType::SpaceStation
+    )]
+    fn space_facility_type_convert_from(
+        #[case] space_facility_sprite: SpaceFacilitySprite,
+        #[case] space_facility_type: SpaceFacilityType,
+    ) {
+        // When
+        let actual_space_facility_type =
+            SpaceFacilitySprite::space_facility_type_convert_from(space_facility_sprite);
+
+        // Then
+        assert_eq!(space_facility_type, actual_space_facility_type)
+    }
 }
